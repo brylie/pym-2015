@@ -60,27 +60,27 @@ ageGroupsChoices = [
 // Event registrations, consisting of one or more registrants
 Registrations = new Meteor.Collection("registrations");
 Registrations.attachSchema(new SimpleSchema({
-    registrants: {
+    'registration.registrants': {
         type: [Object],
         optional: false
     },
-    'registrants.$.first_name' :{
+    'registration.registrants.$.first_name' :{
         type: String,
         label: "First Name",
         max: 200
     },
-    'registrants.$.last_name': {
+    'registration.registrants.$.last_name': {
         type: String,
         label: "Last Name",
         max: 200
     },
-    'registrants.$.age_group': {
+    'registration.registrants.$.age_group': {
         type: String,
         allowedValues: ageGroupsChoices,
         optional: false,
         label: "Age Group"
     },
-    'registrants.$.accommodations': {
+    'registration.registrants.$.accommodations': {
         type: String,
         allowedValues: accommodationsChoices,
         optional: false,
