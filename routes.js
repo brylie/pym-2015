@@ -3,5 +3,7 @@ Router.configure({
 });
 
 Router.route('/', function () {
-    this.render('baseLayout', {data: {title: '2015 PYM Registration'}});
+    this.render('welcome', {data: {title: '2015 PYM Registration'}});
 });
+
+Router.route('/register');
