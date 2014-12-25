@@ -1,5 +1,14 @@
+ageGroupsOptions = [
+    '0-5',
+    '6-10',
+    '11-15',
+    '16-20',
+    '20-30',
+    '30+'
+];
+
 // Housing accommodations during the event
-accommodationsChoices = [
+accommodationsOptions = [
     'Private',
     'Semi-private',
     'Dorm',
@@ -16,15 +25,7 @@ accommodationsChoices = [
 //    }
 //}));
 
-//// Registrant age groups, used for pricing calculations, etc.
-ageGroupsChoices = [
-    '0-5',
-    '6-10',
-    '11-15',
-    '16-20',
-    '20-30',
-    '30+'
-];
+
 //AgeGroups = new Meteor.Collection("Age Groups");
 //AgeGroups.attachSchema(new SimpleSchema({
 //    title: {
@@ -76,13 +77,13 @@ Registrations.attachSchema(new SimpleSchema({
     },
     'registration.registrants.$.age_group': {
         type: String,
-        allowedValues: ageGroupsChoices,
+        allowedValues: ageGroupsOptions
         optional: false,
         label: "Age Group"
     },
     'registration.registrants.$.accommodations': {
         type: String,
-        allowedValues: accommodationsChoices,
+        allowedValues: accommodationsOptions,
         optional: false,
         label: "Accommodations"
     }
