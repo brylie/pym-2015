@@ -14,6 +14,8 @@ boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.3
 chrismbeckett:fontawesome4@4.2.2
+coffeescript@1.0.5
+dburles:mongo-collection-instances@0.2.2
 ddp@1.0.13
 deps@1.0.6
 ejson@1.0.5
@@ -22,6 +24,7 @@ fastclick@1.0.2
 follower-livedata@1.0.3
 geojson-utils@1.0.2
 handlebars@1.0.2
+houston:admin@2.0.0
 html-tools@1.0.3
 htmljs@1.0.3
 http@1.0.9
@@ -66,6 +69,7 @@ spacebars-compiler@1.0.4
 srp@1.0.2
 stylus@1.0.6
 templating@1.0.10
+tmeasday:paginated-subscription@0.2.4
 tracker@1.0.4
 ui@1.0.5
 underscore@1.0.2
