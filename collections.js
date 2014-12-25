@@ -16,47 +16,6 @@ accommodationsOptions = [
     'Young Adult Friends',
     'Junior Yearly Meeting'
 ];
-//Accommodations = new Meteor.Collection("Accommodations");
-//Accommodations.attachSchema(new SimpleSchema({
-//    title: {
-//        type: String,
-//        label: "Title",
-//        max: 200
-//    }
-//}));
-
-
-//AgeGroups = new Meteor.Collection("Age Groups");
-//AgeGroups.attachSchema(new SimpleSchema({
-//    title: {
-//        type: String,
-//        label: "Title",
-//        max: 200
-//    }
-//}));
-
-// Individual registrant details
-//Registrants = new Meteor.Collection("registrants");
-//Registrants.attachSchema(new SimpleSchema({
-//    first_name: {
-//        type: String,
-//        label: "First Name",
-//        max: 200
-//    },
-//    last_name: {
-//        type: String,
-//        label: "Last Name",
-//        max: 200
-//    },
-//    age_group: {
-//        type: AgeGroups,
-//        label: "Age Group"
-//    },
-//    accommodations: {
-//        type: Accommodations,
-//        label: "Accommodations"
-//    }
-//}));
 
 // Event registrations, consisting of one or more registrants
 Registrations = new Meteor.Collection("registrations");
@@ -77,7 +36,7 @@ Registrations.attachSchema(new SimpleSchema({
     },
     'registration.registrants.$.age_group': {
         type: String,
-        allowedValues: ageGroupsOptions
+        allowedValues: ageGroupsOptions,
         optional: false,
         label: "Age Group"
     },
@@ -88,3 +47,20 @@ Registrations.attachSchema(new SimpleSchema({
         label: "Accommodations"
     }
 }));
+Registrations.allow({
+    insert: function () {
+        // TODO: consider whether user should be logged in to register
+        // otherwise, collect registration details on registration form
+        return true;
+    },
+    update: function () {
+        // TODO: change permissions
+        // e.g. if user.role === 'registrair' or user._id === registration.ownerId
+        return true;
+    },
+    remove: function () {
+        // TODO: change permissions
+        // e.g. if user.role === 'registrair' or user._id === registration.ownerId
+        return true;
+    }
+});
