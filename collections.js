@@ -1,5 +1,5 @@
 // Housing accommodations during the event
-accommodationsTypes = [
+accommodationsChoices = [
     'Private',
     'Semi-private',
     'Dorm',
@@ -74,4 +74,16 @@ Registrations.attachSchema(new SimpleSchema({
         label: "Last Name",
         max: 200
     },
+    'registrants.$.age_group': {
+        type: String,
+        allowedValues: ageGroupsChoices,
+        optional: false,
+        label: "Age Group"
+    },
+    'registrants.$.accommodations': {
+        type: String,
+        allowedValues: accommodationsChoices,
+        optional: false,
+        label: "Accommodations"
+    }
 }));
