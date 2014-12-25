@@ -7,3 +7,7 @@ Router.route('/', function () {
 });
 
 Router.route('/register');
+
+Router.route('/registration/:_id', function () {
+    this.render('registration');
+});
