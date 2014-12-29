@@ -33,8 +33,15 @@ Registrants.attachSchema(new SimpleSchema({
         label: "Last Name",
         max: 200
     },
-    favoriteYear: {
-        type: Number
+    ageGroup: {
+        type: String,
+        allowedValues: [
+            '0-5',
+            '6-12',
+            '13-17',
+            '18-25',
+            '26+'
+        ]
     }
 }));
 Registrants.allow({

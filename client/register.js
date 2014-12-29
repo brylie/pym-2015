@@ -1,22 +1,11 @@
 Template.register.helpers({
     options: function () {
         return [
-            {
-                optgroup: "Fun Years",
-                options: [
-                    {label: "2014 the year", value: 2014},
-                    {label: "2013", value: 2013},
-                    {label: "2012", value: 2012}
-                ]
-            },
-            {
-                optgroup: "Boring Years",
-                options: [
-                    {label: "2011", value: 2011},
-                    {label: "2010", value: 2010},
-                    {label: "2009", value: 2009}
-                ]
-            }
+            {label: "Child (0-5)", value: "child"},
+            {label: "Youth (6-12)", value: "youth"},
+            {label: "Teen (13-17)", value: "teen"},
+            {label: "Young Friend (18-25)", value: "young_friend"},
+            {label: "Adult (26+)", value: "adult"}
         ];
     }
 });
