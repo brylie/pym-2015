@@ -1,4 +1,12 @@
 <template name="register">
-    <h1>Register for 2015 PYM.</h1>
-    {{> quickForm collection="Registrations" id="registrationForm" type="insert"}}
+    <h1>Online Registration Form</h1>
+    {{#autoForm collection="Registrants" id="registrationForm" type="insert"}}
+    <fieldset>
+        <legend>Registrant Details</legend>
+        {{> afQuickField name='first_name' id="first_name"}}
+        {{> afQuickField name='last_name'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+
 </template>

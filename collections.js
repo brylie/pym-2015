@@ -1,11 +1,14 @@
-ageGroupsOptions = [
-    '0-5',
-    '6-10',
-    '11-15',
-    '16-20',
-    '20-30',
-    '30+'
-];
+// Combined list of accommodations and age group options
+// displayed in registration form
+// used as basis for auto-value computations
+ageGroups = {
+    adult: '26+',
+    youngAdult: '18-25',
+    teen: '13-18',
+    youth: '6-12',
+    child: '0-5'
+};
+
 
 // Housing accommodations during the event
 accommodationsOptions = [
@@ -17,37 +20,21 @@ accommodationsOptions = [
     'Junior Yearly Meeting'
 ];
 
-// Event registrations, consisting of one or more registrants
-Registrations = new Meteor.Collection("registrations");
-Registrations.attachSchema(new SimpleSchema({
-    'registration.registrants': {
-        type: [Object],
-        optional: false
-    },
-    'registration.registrants.$.first_name' :{
+
+Registrants = new Meteor.Collection("registrants");
+Registrants.attachSchema(new SimpleSchema({
+    'first_name' :{
         type: String,
         label: "First Name",
         max: 200
     },
-    'registration.registrants.$.last_name': {
+    'last_name': {
         type: String,
         label: "Last Name",
         max: 200
     },
-    'registration.registrants.$.age_group': {
-        type: String,
-        allowedValues: ageGroupsOptions,
-        optional: false,
-        label: "Age Group"
-    },
-    'registration.registrants.$.accommodations': {
-        type: String,
-        allowedValues: accommodationsOptions,
-        optional: false,
-        label: "Accommodations"
-    }
 }));
-Registrations.allow({
+Registrants.allow({
     insert: function () {
         // TODO: consider whether user should be logged in to register
         // otherwise, collect registration details on registration form
