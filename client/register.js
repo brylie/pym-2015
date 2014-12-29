@@ -1,15 +1,10 @@
-Schemas.Select = new SimpleSchema({
-  favoriteYear: {
-    type: Number
-  }
-});
 Template.register.helpers({
     options: function () {
         return [
             {
                 optgroup: "Fun Years",
                 options: [
-                    {label: "2014", value: 2014},
+                    {label: "2014 the year", value: 2014},
                     {label: "2013", value: 2013},
                     {label: "2012", value: 2012}
                 ]

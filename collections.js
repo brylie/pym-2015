@@ -33,6 +33,9 @@ Registrants.attachSchema(new SimpleSchema({
         label: "Last Name",
         max: 200
     },
+    favoriteYear: {
+        type: Number
+    }
 }));
 Registrants.allow({
     insert: function () {
