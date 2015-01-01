@@ -42,6 +42,14 @@ Registrants.attachSchema(new SimpleSchema({
             'youngAdult',
             'adult'
         ]
+    },
+    registrationType: {
+        type: String,
+        allowedValues: [
+            'commuter',
+            'daily',
+            'weekly'
+        ]
     }
 }));
 Registrants.allow({

@@ -8,7 +8,7 @@ Template.register.helpers({
             {label: "Adult (26+)", value: "adult"}
         ];
     },
-    registrationTypeoptions: function () {
+    registrationTypeOptions: function () {
         return [
             {label: "Commuter", value: "commuter"},
             {label: "Daily", value: "daily"},
