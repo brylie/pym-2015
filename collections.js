@@ -36,11 +36,11 @@ Registrants.attachSchema(new SimpleSchema({
     ageGroup: {
         type: String,
         allowedValues: [
-            '0-5',
-            '6-12',
-            '13-17',
-            '18-25',
-            '26+'
+            'child',
+            'youth',
+            'teen',
+            'youngAdult',
+            'adult'
         ]
     }
 }));
