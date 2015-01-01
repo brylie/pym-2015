@@ -10,13 +10,5 @@
 
         <!-- Registration type -->
         {{> afFormGroup name="registrationType" id="registrationType" options=registrationTypeOptions}}
-
-        <!-- Conditional registration options -->
-        {{# if afFieldValueIs name="registrationType" value="commuter" }}
-        {{> registerCommuter }}
-        {{/ if }}
-
-        {{> overnightAccommodations }}
-        <!--            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions}}-->
     </fieldset>
 </template>

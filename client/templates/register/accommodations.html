@@ -1,0 +1,9 @@
+<template name="accommodations">
+    <!-- Conditional registration options -->
+    {{# if afFieldValueIs name="registrationType" value="commuter" }}
+        {{> registerCommuter }}
+    {{/ if }}
+
+    {{> overnightAccommodations }}
+    <!--            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions}}-->
+</template>

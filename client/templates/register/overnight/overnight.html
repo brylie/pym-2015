@@ -1,10 +1,15 @@
 <template name="overnightAccommodations">
     {{# if afFieldValueIs name="registrationType" value="daily"}}
-    <p>Daily!</p>
+    <fieldgroup>
+      <legend>Daily Accommodations</legend>
+    </fieldgroup>
+
     {{/ if }}
 
     {{# if afFieldValueIs name="registrationType" value="weekly"}}
-    <p>Weekly!</p>
+     <fieldgroup>
+      <legend>Overnight Accommodations</legend>
+    </fieldgroup>
     {{/ if }}
 
     <!-- Linens -->
