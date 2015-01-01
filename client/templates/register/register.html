@@ -1,26 +1,12 @@
 <template name="register">
     <h1>Online Registration Form</h1>
-        {{#autoForm collection="Registrants" id="registration-form" type="insert"}}
-        <fieldset>
-            <legend>Registrant Details</legend>
-            <!-- Basic personal information -->
-            {{> afQuickField name='first_name' id="first_name"}}
-            {{> afQuickField name='last_name' id="last_name"}}
-
-            <!-- Age Group -->
-            {{> afFormGroup name="ageGroup" id="age_group" options=options}}
-
-            <!-- Registration type -->
-            {{> afFormGroup name="registrationType" id="registrationType" options=registrationTypeOptions}}
-
-            <!-- Conditional registration options -->
-            {{# if afFieldValueIs name="registrationType" value="commuter" }}
-            {{> registerCommuter }}
-            {{/ if }}
-
-            {{> overnightAccommodations }}
-<!--            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions}}-->
-        </fieldset>
-        <button type="submit" class="btn btn-primary">Register</button>
-        {{/autoForm}}
+    {{#autoForm collection="Registrants" id="registration-form" type="insert"}}
+    {{> registrantDetails }}
+<!--
+    {{> accommodations }}
+    {{> diet }}
+    {{>needs }}
+-->
+    <button type="submit" class="btn btn-primary">Register</button>
+    {{/autoForm}}
 </template>

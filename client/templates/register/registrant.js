@@ -1,4 +1,4 @@
-Template.register.helpers({
+Template.registrantDetails.helpers({
     options: function () {
         return [
             {label: "Child (0-5)", value: "child"},
