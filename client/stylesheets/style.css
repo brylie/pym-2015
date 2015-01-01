@@ -1,0 +1,9 @@
+#registration-form {
+    margin: 1em;
+}
+@media (min-width: 33em) {
+    #registration-form {
+        width: 62%;
+        margin: auto;
+    }
+}
