@@ -3,12 +3,27 @@
         {{#autoForm collection="Registrants" id="registrationForm" type="insert"}}
         <fieldset>
             <legend>Registrant Details</legend>
+            <!-- Basic personal information -->
             {{> afQuickField name='first_name' id="first_name"}}
             {{> afQuickField name='last_name' id="last_name"}}
+
+            <!-- Age Group -->
             {{> afFormGroup name="ageGroup" id="age_group" options=options}}
+
+            <!-- Registration type -->
             {{> afFormGroup name="registrationType" id="registrationType" options=registrationTypeOptions}}
+
+            <!-- Conditional registration options -->
+            {{# if afFieldValueIs name="registrationType" value="commuter" }}
+            {{> registerCommuter }}
+            {{/ if }}
+
 <!--            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions}}-->
         </fieldset>
         <button type="submit" class="btn btn-primary">Register</button>
         {{/autoForm}}
+</template>
+
+<template name="registerCommuter">
+    <p>Commuter!</p>
 </template>
