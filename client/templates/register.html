@@ -1,14 +1,14 @@
 <template name="register">
     <h1>Online Registration Form</h1>
-    <div class="panel panel-primary">
         {{#autoForm collection="Registrants" id="registrationForm" type="insert"}}
         <fieldset>
             <legend>Registrant Details</legend>
             {{> afQuickField name='first_name' id="first_name"}}
-            {{> afQuickField name='last_name'}}
+            {{> afQuickField name='last_name' id="last_name"}}
             {{> afFormGroup name="ageGroup" id="age_group" options=options}}
+<!--            {{> afFormGroup name="registrationType" id="registrationType" options=registrationTypeOptions}}-->
+<!--            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions}}-->
         </fieldset>
         <button type="submit" class="btn btn-primary">Register</button>
         {{/autoForm}}
-    </div>
 </template>
