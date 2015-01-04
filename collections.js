@@ -8,7 +8,9 @@ ageGroups = {
     youth: '6-12',
     child: '0-5'
 };
-
+// first day of the event, used for date choices
+firstDay = new Date(2015, 06, 14); // Month is zero based in JS, day needed one extra for the select form
+lastDay = new Date(2015, 06, 19); // Month is zero based in JS, day needed one extra for the select form
 
 // Housing accommodations during the event
 accommodationsOptions = [
@@ -50,11 +52,22 @@ Registrants.attachSchema(new SimpleSchema({
             'daily',
             'weekly'
         ]
-    },
-    days: {
-    type: [String],
-    allowedValues: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  }
+    }
+//    arrival: {
+//        type: Date,
+//        min: firstDay,
+//        max: lastDay
+//    },
+//    departure: {
+//        type: Date,
+//        min: firstDay,
+//        max: lastDay,
+//        custom: function () {
+//            if (this.value < this.field('arrival').value) {
+//                return "departAfterArrive";
+//            }
+//        }
+//    }
 }));
 Registrants.allow({
     insert: function () {
@@ -72,4 +85,7 @@ Registrants.allow({
         // e.g. if user.role === 'registrair' or user._id === registration.ownerId
         return true;
     }
+});
+SimpleSchema.messages({
+    departAfterArrive: "The departure date must be after the arrival date."
 });
