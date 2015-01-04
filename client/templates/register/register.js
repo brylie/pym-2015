@@ -1,7 +1,12 @@
 Template.register.events({
     'change select': function () {
-        registration_type = $('#registration_type').val();
-        age_group = $('#age_group').val();
-        console.log("Age group value: " + age_group);
+        logValues();
     }
 });
+
+logValues = function () {
+    registrationType = $('#registration_type').val();
+    ageGroup = $('#age_group').val();
+    console.log("Age group: " + ageGroup);
+    console.log("Registration type: " + registrationType);
+}
