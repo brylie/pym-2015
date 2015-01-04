@@ -1,26 +1,23 @@
 // Combined list of accommodations and age group options
 // displayed in registration form
 // used as basis for auto-value computations
-ageGroups = {
-    adult: '26+',
-    youngAdult: '18-25',
-    teen: '13-18',
-    youth: '6-12',
-    child: '0-5'
-};
-// first day of the event, used for date choices
-firstDay = new Date(2015, 06, 14); // Month is zero based in JS, day needed one extra for the select form
-lastDay = new Date(2015, 06, 19); // Month is zero based in JS, day needed one extra for the select form
+//ageGroups = {
+//    adult: '26+',
+//    youngAdult: '18-25',
+//    teen: '13-18',
+//    youth: '6-12',
+//    child: '0-5'
+//};
 
 // Housing accommodations during the event
-accommodationsOptions = [
-    'Private',
-    'Semi-private',
-    'Dorm',
-    'Camping',
-    'Young Adult Friends',
-    'Junior Yearly Meeting'
-];
+//accommodationsOptions = [
+//    'Private',
+//    'Semi-private',
+//    'Dorm',
+//    'Camping',
+//    'Young Adult Friends',
+//    'Junior Yearly Meeting'
+//];
 
 
 Registrants = new Meteor.Collection("registrants");
@@ -52,23 +49,20 @@ Registrants.attachSchema(new SimpleSchema({
             'daily',
             'weekly'
         ]
+    },
+    accommodations: {
+        type: String,
+        allowedValues: [
+            'camping',
+            'semi-private',
+            'private',
+            'jym',
+            'yaf'
+        ]
     }
-//    arrival: {
-//        type: Date,
-//        min: firstDay,
-//        max: lastDay
-//    },
-//    departure: {
-//        type: Date,
-//        min: firstDay,
-//        max: lastDay,
-//        custom: function () {
-//            if (this.value < this.field('arrival').value) {
-//                return "departAfterArrive";
-//            }
-//        }
-//    }
 }));
+
+// Permissions
 Registrants.allow({
     insert: function () {
         // TODO: consider whether user should be logged in to register
@@ -86,6 +80,6 @@ Registrants.allow({
         return true;
     }
 });
-SimpleSchema.messages({
-    departAfterArrive: "The departure date must be after the arrival date."
-});
+//SimpleSchema.messages({
+//    departAfterArrive: "The departure date must be after the arrival date."
+//});
