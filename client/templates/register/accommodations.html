@@ -1,9 +1,31 @@
 <template name="accommodations">
-    <!-- Conditional registration options -->
-    {{# if afFieldValueIs name="registrationType" value="commuter" }}
-        {{> registerCommuter }}
-    {{/ if }}
+    <fieldset>
+        <!-- Conditional registration options -->
 
-    {{> overnightAccommodations }}
-    <!--            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions}}-->
+        <!-- Commuter -->
+        <!--
+        {{# if afFieldValueIs name="registrationType" value="commuter" }}
+        {{> days }}
+        {{/ if }}
+        -->
+
+        <!-- Daily accommodations -->
+        <!-- If daily, get the arrival and departure dates -->
+        {{# if afFieldValueIs name="registrationType" value="daily"}}
+        <!--{{> days }}-->
+        {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+        {{/ if }}
+
+
+
+        <!-- Weekly accommodations -->
+
+
+        {{# if afFieldValueIs name="registrationType" value="weekly" }}
+        {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+        {{/ if }}
+
+
+        <!-- Linens -->
+    </fieldset>
 </template>
