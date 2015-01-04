@@ -3,11 +3,9 @@
         <!-- Conditional registration options -->
 
         <!-- Commuter -->
-        <!--
         {{# if afFieldValueIs name="registrationType" value="commuter" }}
-        {{> days }}
+        <!--  {{> days }}-->
         {{/ if }}
-        -->
 
         <!-- Daily accommodations -->
         <!-- If daily, get the arrival and departure dates -->
@@ -16,15 +14,10 @@
         {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
         {{/ if }}
 
-
-
         <!-- Weekly accommodations -->
-
-
         {{# if afFieldValueIs name="registrationType" value="weekly" }}
         {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
         {{/ if }}
-
 
         <!-- Linens -->
     </fieldset>
