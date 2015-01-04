@@ -50,7 +50,11 @@ Registrants.attachSchema(new SimpleSchema({
             'daily',
             'weekly'
         ]
-    }
+    },
+    days: {
+    type: [String],
+    allowedValues: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  }
 }));
 Registrants.allow({
     insert: function () {
