@@ -58,7 +58,20 @@ Registrants.attachSchema(new SimpleSchema({
             'private',
             'jym',
             'yaf'
-        ]
+        ],
+        optional: true,
+        custom: function () {
+            // Required if registration is daily or weekly
+            if ( !this.isSet
+                &&
+                (
+                this.field('registrationType').value === "daily"
+                ||
+                this.field('registrationType').value === "weekly")
+               ) {
+                return "required";
+            }
+        }
     }
 }));
 
