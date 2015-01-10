@@ -11,12 +11,12 @@
         <!-- If daily, get the arrival and departure dates -->
         {{# if afFieldValueIs name="registrationType" value="daily"}}
         <!--{{> days }}-->
-        {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+        {{> accommodationsOptions }}
         {{/ if }}
 
         <!-- Weekly accommodations -->
         {{# if afFieldValueIs name="registrationType" value="weekly" }}
-        {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+        {{> accommodationsOptions }}
         {{/ if }}
 
         <!-- Linens -->
