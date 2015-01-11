@@ -2,7 +2,7 @@ Template.accommodationsOptions.helpers({
     'adultAccommodationsOptions': function () {
         return [
             {label: "Camping", value: "camping"},
-            {label: "Semi-private", value: "semi-private"},
+            {label: "Semi-private", value: "semiprivate"},
             {label: "Private", value: "private"},
             {label: "Young Adult Friends", value: "yaf"}
         ];
@@ -10,7 +10,7 @@ Template.accommodationsOptions.helpers({
    'youngAdultAccommodationsOptions': function () {
         return [
             {label: "Camping", value: "camping"},
-            {label: "Semi-private", value: "semi-private"},
+            {label: "Semi-private", value: "semiprivate"},
             {label: "Private", value: "private"},
             {label: "Junior Yearly Meeting", value: "jym"},
             {label: "Young Adult Friends", value: "yaf"}
@@ -19,7 +19,7 @@ Template.accommodationsOptions.helpers({
     'teenAccommodationsOptions': function () {
         return [
             {label: "Camping", value: "camping"},
-            {label: "Semi-private", value: "semi-private"},
+            {label: "Semi-private", value: "semiprivate"},
             {label: "Private", value: "private"},
             {label: "Junior Yearly Meeting", value: "jym"},
             {label: "Young Adult Friends", value: "yaf"}
@@ -28,7 +28,7 @@ Template.accommodationsOptions.helpers({
     'youthAccommodationsOptions': function () {
         return [
             {label: "Camping", value: "camping"},
-            {label: "Semi-private", value: "semi-private"},
+            {label: "Semi-private", value: "semiprivate"},
             {label: "Private", value: "private"},
             {label: "Junior Yearly Meeting", value: "jym"}
         ];
@@ -36,7 +36,7 @@ Template.accommodationsOptions.helpers({
     'childAccommodationsOptions': function () {
         return [
             {label: "Camping", value: "camping"},
-            {label: "Semi-private", value: "semi-private"},
+            {label: "Semi-private", value: "semiprivate"},
             {label: "Private", value: "private"}
         ];
     },
