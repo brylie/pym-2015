@@ -8,6 +8,6 @@ Template.register.created = function () {
 
 Template.register.helpers({
     'price': function () {
-        return;
+        return calculateRegistrationPrice();
     }
 });
