@@ -5,3 +5,9 @@ Template.register.created = function () {
     registrationTypeVar = new ReactiveVar;
     accommodationsVar = new ReactiveVar
 };
+
+Template.register.helpers({
+    'price': function () {
+        return;
+    }
+});
