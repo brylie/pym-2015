@@ -50,6 +50,23 @@ Registrants.attachSchema(new SimpleSchema({
                 return "required";
             }
         }
+    },
+    days: {
+        type: [String],
+        optional: true,
+        autoform: {
+            type: "select-checkbox-inline",
+            options: function () {
+                return [
+                    {label: "Monday", value: "Monday"},
+                    {label: "Tuesday", value: "Tuesday"},
+                    {label: "Wednesday", value: "Wednesday"},
+                    {label: "Thursday", value: "Thursday"},
+                    {label: "Friday", value: "Friday"},
+                    {label: "Saturday", value: "Saturday"}
+                ];
+            }
+        }
     }
 }));
 

@@ -1,4 +1,9 @@
 <template name="days">
-    {{> afQuickField name="arrival" value="2015-07-13" type="date" }}
-    {{> afQuickField name="departure" value="2015-07-18" type="date" }}
+    {{# if afFieldValueIs name="registrationType" value="commuter"}}
+    {{> afFormGroup name="days" }}
+    {{/ if }}
+
+    {{# if afFieldValueIs name="registrationType" value="daily"}}
+    {{> afFormGroup name="days" }}
+    {{/ if }}
 </template>
