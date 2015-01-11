@@ -11,6 +11,10 @@
     {{> diet }}
     {{>needs }}
 -->
-    <button type="submit" class="btn btn-primary">Register {{#if price }}Price: $ {{ price }} {{/if}}</button>
+
+    <!-- TODO: hide button if no 'price' has been calculated. I.e. invalid registration. -->
+    <button type="submit" class="btn btn-lg btn-primary">
+        Register {{#if price }}<span class="badge">$ {{ price }}</span> {{/if}}
+    </button>
     {{/autoForm}}
 </template>
