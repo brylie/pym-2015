@@ -1,9 +1,29 @@
 <template name="registrantDetails">
     <fieldset>
         <legend>Registrant Details</legend>
+
         <!-- Basic personal information -->
-        {{> afQuickField name='first_name' id="first_name"}}
-        {{> afQuickField name='last_name' id="last_name"}}
+        <!-- first name -->
+        <div class="control-group">
+            <label class="control-label" for="first_name">First Name</label>
+            <div class="controls">
+                {{> afFieldInput name='first_name' class='form-control'}}
+                {{#if afFieldIsInvalid name='first_name'}}
+                <span class="help-block">{{afFieldMessage name='first_name'}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <!-- last name -->
+        <div class="control-group">
+            <label class="control-label" for="last_name">Last Name</label>
+            <div class="controls">
+                {{> afFieldInput name='last_name' class='form-control'}}
+                {{#if afFieldIsInvalid name='last_name'}}
+                <span class="help-block">{{afFieldMessage name='last_name'}}</span>
+                {{/if}}
+            </div>
+        </div>
+<!--        {{> afQuickField name='last_name' id="last_name"}}-->
 
         <!-- Age Group -->
         {{> afFormGroup name="ageGroup" id="age_group" options=ageGroupOptions}}
