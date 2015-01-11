@@ -1,0 +1,3 @@
+Template.accommodations.rendered = function () {
+
+}
