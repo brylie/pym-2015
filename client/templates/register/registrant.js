@@ -16,3 +16,13 @@ Template.registrantDetails.helpers({
         ];
     }
 });
+
+Template.registrantDetails.events({
+    'change #registration_type': function (event, template) {
+        // Weekly registrations have all days
+        if (registrationType === "weekly") {
+            // Set days to all
+            daysVar.set("All");
+        }
+    }
+});
