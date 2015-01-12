@@ -18,11 +18,24 @@ Template.registrantDetails.helpers({
 });
 
 Template.registrantDetails.events({
-    'change #registration_type': function (event, template) {
-        // Weekly registrations have all days
-        if (registrationType === "weekly") {
-            // Set days to all
-            daysVar.set("All");
-        }
+    'change #registration_type': function () {
+        // trying to reset days selection when template changes
+        // for some reason this is not working, or is it?
+        resetReactiveVars();
+        $("#accommodations").val("");
+
+        // cycle through each day
+        $('input[name="days"]').each(function() {
+            // make sure day is not checked
+            this.checked = false;
+        });
+    },
+    'change #age_group': function () {
+        console.log("Age group changed.");
+        $("#accommodations").val("");
+//        registrationFeeVar.set();
+//        resetReactiveVars();
+//        setReactiveVars();
+//        setRegistrationFeeVar();
     }
 });
