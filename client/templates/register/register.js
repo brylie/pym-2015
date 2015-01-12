@@ -1,12 +1,3 @@
-Template.register.created = function () {
-    // Set up reactive variables to temporarily hold the values of registration form fields
-    // These variables may be used in dynamic calculations
-    ageGroupVar = new ReactiveVar;
-    registrationTypeVar = new ReactiveVar;
-    accommodationsVar = new ReactiveVar;
-    daysVar = new ReactiveVar;
-};
-
 Template.register.rendered = function () {
     // Reset form select field values
     // to prevent an edge case bug for code push
@@ -17,21 +8,32 @@ Template.register.rendered = function () {
 }
 Template.register.helpers({
     'price': function () {
-        return calculateRegistrationPrice(ageGroupVar, registrationTypeVar, accommodationsVar);
+        // get the dynamically calculated registration fee
+        // Set the registration object
+        // from current registration details
+        try{
+            var registration = {
+                ageGroup: ageGroupVar.get(),
+                type: registrationTypeVar.get(),
+                accommodations: accommodationsVar.get(),
+                days: daysVar.get()
+            };
+        } catch (error) {
+            // console.log(error.message);
+        }
+
+        // Calculate the price
+        return calculateRegistrationPrice(registration);
+        //return registrationFeeVar.get();
     }
 });
 
 Template.register.events({
-    'change #age_group': function () {
-        // Set the age group reactive variable
-        ageGroupVar.set($('#age_group').val());
-    },
-    'change #registration_type': function () {
-        // Set the registration type reactive variable
-        registrationTypeVar.set($('#registration_type').val());
-    },
-    'change #accommodations': function () {
-        // Set the accommodations reactive variable
-        accommodationsVar.set($('#accommodations').val());
+    'change form': function () {
+        // Make sure all reactive vars are up to date
+        setReactiveVars();
+
+        // calculate the fee and set the variable for template helper
+        setRegistrationFeeVar();
     }
 });
