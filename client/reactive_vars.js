@@ -30,7 +30,6 @@ setDaysVar = function () {
     // add days to reactive variable
     // used for price calculations
     daysVar.set(daysArray);
-    console.log("Days: " + daysVar.get());
 }
 
 setReactiveVars = function () {
@@ -49,4 +48,20 @@ setReactiveVars = function () {
     setDaysVar();
 }
 
-
+setRegistrationFeeVar = function () {
+//    // Set the registration object
+//    // from current registration details
+//    try{
+//        var registration = {
+//            ageGroup: ageGroupVar.get(),
+//            type: registrationTypeVar.get(),
+//            accommodations: accommodationsVar.get(),
+//            days: daysVar.get()
+//        };
+//    } catch (error) {
+//        console.log(error.message);
+//    }
+//
+//    // Calculate the price
+//    registrationFeeVar.set(calculateRegistrationPrice(registration));
+}
