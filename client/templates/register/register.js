@@ -4,6 +4,7 @@ Template.register.created = function () {
     ageGroupVar = new ReactiveVar;
     registrationTypeVar = new ReactiveVar;
     accommodationsVar = new ReactiveVar;
+    daysVar = new ReactiveVar;
 };
 
 Template.register.rendered = function () {
@@ -14,7 +15,6 @@ Template.register.rendered = function () {
     $('#registration_type').val('');
     $('#accommodations').val('');
 }
-
 Template.register.helpers({
     'price': function () {
         return calculateRegistrationPrice(ageGroupVar, registrationTypeVar, accommodationsVar);
