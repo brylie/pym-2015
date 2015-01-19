@@ -32,7 +32,7 @@ Registrants.attachSchema(new SimpleSchema({
         type: String,
         allowedValues: [
             'camping',
-            'semi-private',
+            'semiprivate',
             'private',
             'jym',
             'yaf'
