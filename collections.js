@@ -67,6 +67,27 @@ Registrants.attachSchema(new SimpleSchema({
                 ];
             }
         }
+    },
+    'fee' : {
+        type: Number,
+        label: "Fee",
+        optional: true,
+        autoValue: function (doc ) {
+            // Set up an empty registration object
+            // to hold values from the submitted registration
+            var registration = {};
+
+            // get values from submitted registration and
+            // set attributes on the registration object
+            registration.ageGroup = this.field("ageGroup").value;
+            registration.type = this.field("registrationType").value;
+            registration.accommodations = this.field("accommodations").value;
+            registration.days =  this.field("days").value;
+
+            // calculate the registration fee
+            // based on the submitted registration
+            return calculateRegistrationPrice(registration);
+        }
     }
 }));
 
