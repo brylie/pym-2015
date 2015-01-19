@@ -1,0 +1,30 @@
+<template name="dashboard">
+    <div class="container">
+        <table id="datatable" class="table table-hover table-bordered table-striped">
+            <thead>
+                <th>Full Name</th>
+                <th>Age Group</th>
+                <th>Registration Type</th>
+                <th>Accommodations</th>
+                <th>Days</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                {{# each registrants }}
+                {{> dashboardRegistrant }}
+                {{/ each }}
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<template name="dashboardRegistrant">
+    <tr>
+        <td>{{ first_name }}  {{ last_name }}</td>
+        <td>{{ ageGroup }}</td>
+        <td>{{ registrationType }}</td>
+        <td>{{ accommodations }}</td>
+        <td>{{ days }}</td>
+        <td><big><i class="fa fa-trash btn btn-danger deleteRegistration"></i></big></td>
+    </tr>
+</template>
