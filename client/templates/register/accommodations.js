@@ -1,3 +1,0 @@
-Template.accommodations.rendered = function () {
-
-}
