@@ -1,0 +1,12 @@
+<template name="accommodations">
+    <fieldset>
+        <!-- Conditional registration options -->
+
+        <!-- Only show accommodations if they are relevant -->
+        {{# if requiresAccommodations }}
+        {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+        {{/ if }}
+
+        <!-- Linens -->
+    </fieldset>
+</template>
