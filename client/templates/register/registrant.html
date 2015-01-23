@@ -13,6 +13,7 @@
                 {{/if}}
             </div>
         </div>
+
         <!-- last name -->
         <div class="control-group">
             <label class="control-label" for="last_name">Last Name</label>
@@ -24,10 +25,11 @@
             </div>
         </div>
 
-        <!-- Age Group -->
-        {{> afFormGroup name="ageGroup" id="age_group" options=ageGroupOptions}}
+        <!-- Age -->
+        {{> afFormGroup name="age" id="age"}}
 
         <!-- Registration type -->
         {{> afFormGroup name="registrationType" id="registration_type" options=registrationTypeOptions}}
+
     </fieldset>
 </template>
