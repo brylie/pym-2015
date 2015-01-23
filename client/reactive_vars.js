@@ -18,12 +18,15 @@ resetReactiveVars = function () {
 }
 
 setDaysVar = function () {
+    // Save selected days
+    // as a reactive variable
+    // for fee calculation, etc
+
     // Create placeholder days array
     var daysArray = new Array();
 
-    // for each day
+    // get a list of all selected days
     $('input[name="days"]:checked').each(function() {
-        // add day to days array
         daysArray.push(this.value);
     });
 
@@ -36,7 +39,10 @@ setReactiveVars = function () {
     resetReactiveVars();
 
     // Set the age group reactive variable
-    ageGroupVar.set($('#age_group').val());
+    // calculated based on the value of the age field
+    var age = $("#age").val();
+    var ageGroup = calculateAgeGroup(age);
+    ageGroupVar.set(ageGroup);
 
     // Set the registration type reactive variable
     registrationTypeVar.set($('#registration_type').val());
@@ -49,19 +55,6 @@ setReactiveVars = function () {
 }
 
 setRegistrationFeeVar = function () {
-//    // Set the registration object
-//    // from current registration details
-//    try{
-//        var registration = {
-//            ageGroup: ageGroupVar.get(),
-//            type: registrationTypeVar.get(),
-//            accommodations: accommodationsVar.get(),
-//            days: daysVar.get()
-//        };
-//    } catch (error) {
-//        console.log(error.message);
-//    }
-//
-//    // Calculate the price
-//    registrationFeeVar.set(calculateRegistrationPrice(registration));
+    // Create this function if necessary
+    // e.g. if calculating financial aid, donations, etc
 }
