@@ -1,16 +1,22 @@
 Template.register.rendered = function () {
-    // Reset form select field values
-    // to prevent an edge case bug for code push
-    // where accommodations value was undefined
+    /*
+    * Reset form select field values
+    * to prevent an edge case bug for code push
+    * where accommodations value was undefined
+    */
+
     $('#age_group').val('');
     $('#registration_type').val('');
     $('#accommodations').val('');
 }
 Template.register.helpers({
     'price': function () {
-        // get the dynamically calculated registration fee
-        // Set the registration object
-        // from current registration details
+        /*
+        * Get the dynamically calculated registration fee.
+        */
+
+        //Set the registration object
+        // from current registration details.
         try{
             var registration = {
                 ageGroup: ageGroupVar.get(),
@@ -19,21 +25,20 @@ Template.register.helpers({
                 days: daysVar.get()
             };
         } catch (error) {
-            // console.log(error.message);
+            console.log(error.message);
         }
 
         // Calculate the price
         return calculateRegistrationPrice(registration);
-        //return registrationFeeVar.get();
     }
 });
 
 Template.register.events({
     'change form': function () {
-        // Make sure all reactive vars are up to date
+        // Make sure all reactive vars are up to date.
         setReactiveVars();
 
-        // calculate the fee and set the variable for template helper
+        // Calculate the fee and set the variable for template helper.
         setRegistrationFeeVar();
     }
 });
