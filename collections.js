@@ -1,6 +1,6 @@
 Registrants = new Meteor.Collection("registrants");
 Registrants.attachSchema(new SimpleSchema({
-    'first_name' :{
+    'first_name' : {
         type: String,
         label: "First Name",
         max: 200
@@ -10,7 +10,12 @@ Registrants.attachSchema(new SimpleSchema({
         label: "Last Name",
         max: 200
     },
-    ageGroup: {
+    'age': {
+        type: Number,
+        max: 115,
+        min: 0
+    },
+    'ageGroup': {
         type: String,
         allowedValues: [
             'child',
@@ -18,9 +23,14 @@ Registrants.attachSchema(new SimpleSchema({
             'teen',
             'youngAdult',
             'adult'
-        ]
+        ],
+        optional: true,
+        autoValue: function (doc) {
+            // calculate age group based on age field
+            return calculateAgeGroup(this.field("age").value);
+        }
     },
-    registrationType: {
+    'registrationType': {
         type: String,
         allowedValues: [
             'commuter',
@@ -28,7 +38,7 @@ Registrants.attachSchema(new SimpleSchema({
             'weekly'
         ]
     },
-    accommodations: {
+    'accommodations': {
         type: String,
         allowedValues: [
             'camping',
@@ -72,7 +82,7 @@ Registrants.attachSchema(new SimpleSchema({
         type: Number,
         label: "Fee",
         optional: true,
-        autoValue: function (doc ) {
+        autoValue: function (doc) {
             // Set up an empty registration object
             // to hold values from the submitted registration
             var registration = {};
