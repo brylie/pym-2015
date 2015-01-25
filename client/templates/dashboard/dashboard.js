@@ -1,6 +1,21 @@
 Template.dashboard.helpers({
     'registrants': function () {
         return Registrants.find();
+    },
+     'childRegistrantCount': function () {
+        return Counts.get('childRegistrantCount');
+    },
+     'youthRegistrantCount': function () {
+        return Counts.get('youthRegistrantCount');
+    },
+     'teenRegistrantCount': function () {
+        return Counts.get('teenRegistrantCount');
+    },
+     'youngAdultRegistrantCount': function () {
+        return Counts.get('youngAdultRegistrantCount');
+    },
+    'adultRegistrantCount': function () {
+        return Counts.get('adultRegistrantCount');
     }
 });
 

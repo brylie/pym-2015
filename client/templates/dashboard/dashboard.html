@@ -1,6 +1,22 @@
 <template name="dashboard">
-    <div class="container">
-        <table id="datatable" class="table table-hover table-bordered table-striped">
+    <div class="row">
+        <div class="col-md-3 panel panel-default">
+            <div class="panel-header">
+                <h2>Age Group</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Children <span class="badge">{{ childRegistrantCount }}</span></li>
+                    <li class="list-group-item">Youth <span class="badge">{{ youthRegistrantCount }}</span></li>
+                    <li class="list-group-item">Teens <span class="badge">{{ teenRegistrantCount }}</span></li>
+                    <li class="list-group-item">Young Adults <span class="badge">{{ youngAdultRegistrantCount }}</span></li>
+                    <li class="list-group-item">Adults <span class="badge">{{ adultRegistrantCount }}</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-hover table-bordered table-striped">
             <thead>
                 <th>Full Name</th>
                 <th>Age Group</th>
