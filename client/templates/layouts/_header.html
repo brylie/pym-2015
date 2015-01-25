@@ -14,6 +14,9 @@
       </div>
 
       <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="nav navbar-nav navbar-left">
+              <a href="{{ pathFor 'register' }}" class="btn btn-success navbar-btn">Register for PYM</a>
+          </ul>
         {{#if currentUser}}
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
