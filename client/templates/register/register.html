@@ -1,24 +1,32 @@
 <template name="register">
-    <h1>Online Registration Form</h1>
-    {{#autoForm collection="Registrants" id="registration-form" type="insert"}}
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1>Online Registration Form</h1>
+            </div>
+            <div class="panel-body">
+                {{#autoForm collection="Registrants" id="registration-form" type="insert"}}
 
-    <!-- first name, last name, age goup, registration type -->
-    {{> registrantDetails }}
+                <!-- first name, last name, age goup, registration type -->
+                {{> registrantDetails }}
 
-    <!-- dynamic accommodations form, based on registration type -->
-    {{> accommodations }}
+                <!-- dynamic accommodations form, based on registration type -->
+                {{> accommodations }}
 
-    <!-- conditionally display days selection -->
-    {{> days }}
+                <!-- conditionally display days selection -->
+                {{> days }}
 
-    <!--
-    {{> diet }}
-    {{>needs }}
+                <!--
+{{> diet }}
+{{>needs }}
 -->
 
-    <!-- TODO: hide button if no 'price' has been calculated. I.e. invalid registration. -->
-    <button type="submit" class="btn btn-lg btn-primary">
-        Register {{#if price }}<span class="badge">$ {{ price }}</span> {{/if}}
-    </button>
-    {{/autoForm}}
+                <!-- TODO: hide button if no 'price' has been calculated. I.e. invalid registration. -->
+                <button type="submit" class="btn btn-lg btn-primary">
+                    Register {{#if price }}<span class="badge">$ {{ price }}</span> {{/if}}
+                </button>
+                {{/autoForm}}
+            </div>
+        </div>
+    </div>
 </template>
