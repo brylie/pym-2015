@@ -1,0 +1,5 @@
+RegisterController = AppController.extend({
+    data: {
+
+    }
+});
