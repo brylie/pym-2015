@@ -1,19 +1,23 @@
 <template name="dashboard">
     <div class="row">
-        <div class="col-md-3 panel panel-default">
-            <div class="panel-header">
-                <h2>Age Group</h2>
-            </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item">Children <span class="badge">{{ childRegistrantCount }}</span></li>
-                    <li class="list-group-item">Youth <span class="badge">{{ youthRegistrantCount }}</span></li>
-                    <li class="list-group-item">Teens <span class="badge">{{ teenRegistrantCount }}</span></li>
-                    <li class="list-group-item">Young Adults <span class="badge">{{ youngAdultRegistrantCount }}</span></li>
-                    <li class="list-group-item">Adults <span class="badge">{{ adultRegistrantCount }}</span></li>
-                </ul>
-            </div>
-        </div>
+        <ul class="list-group col-md-3">
+            {{# with registrantCounts }}
+            <li class="list-group-item">Children <span class="badge">{{ child }}</span></li>
+            <li class="list-group-item">Youth <span class="badge">{{ youth }}</span></li>
+            <li class="list-group-item">Teens <span class="badge">{{ teen }}</span></li>
+            <li class="list-group-item">Young Adults <span class="badge">{{ youngAdult }}</span></li>
+            <li class="list-group-item">Adults <span class="badge">{{ adult }}</span></li>
+            {{/ with }}
+        </ul>
+        <ul class="list-group col-md-3">
+            {{# with accommodationCounts }}
+            <li class="list-group-item">Camping <span class="badge">{{ camping }}</span></li>
+            <li class="list-group-item">Semi-private <span class="badge">{{ semiprivate }}</span></li>
+            <li class="list-group-item">Private <span class="badge">{{ private }}</span></li>
+            <li class="list-group-item">YAF Area <span class="badge">{{ yaf }}</span></li>
+            <li class="list-group-item">JYM Area <span class="badge">{{ jym }}</span></li>
+            {{/ with }}
+        </ul>
     </div>
     <div class="row">
         <table class="table table-hover table-bordered table-striped">
