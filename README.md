@@ -8,7 +8,7 @@ Installation
 
 Meteor
 ------
-This application is built with Meteor.js. You will need to have Meteor installed.
+This application is built with [Meteor.js](http://meteor.com). You will need to have Meteor installed.
 
 Install Meteor on:
 * [GNU/Linux or Mac OSX](http://docs.meteor.com/#/basic/)
@@ -21,7 +21,7 @@ Once Meteor is installed, make sure you [install Git](http://git-scm.com/book/en
 PYM 2015
 --------
 Now you can clone and run the PYM 2015 registration platform with the following commands:
-* `git clone` - clone the repository
+* `git clone https://github.com/quaker-io/pym-2015.git` - clone the repository
 * `cd pym-2015` - change into the sourcecode directory
 * `meteor` - run the application
 
