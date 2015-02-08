@@ -35,14 +35,14 @@ Template.accommodations.helpers({
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    {label: "Private", value: "private"}
+                    //{label: "Private", value: "private"}
                 ];
             case 'youth':
                 return [
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    {label: "Private", value: "private"},
+                    //{label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"}
                 ];
             case 'teen':
@@ -50,7 +50,7 @@ Template.accommodations.helpers({
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    {label: "Private", value: "private"},
+                    //{label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"},
                     {label: "Young Adult Friends", value: "yaf"}
                 ];
@@ -59,7 +59,7 @@ Template.accommodations.helpers({
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    {label: "Private", value: "private"},
+                    //{label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"},
                     {label: "Young Adult Friends", value: "yaf"}
                 ];
@@ -68,7 +68,7 @@ Template.accommodations.helpers({
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    {label: "Private", value: "private"},
+                    //{label: "Private", value: "private"},
                     {label: "Young Adult Friends", value: "yaf"}
                 ];
         }
