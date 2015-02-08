@@ -33,12 +33,14 @@ Template.accommodations.helpers({
             case 'child':
                 return [
                     {label: "Camping", value: "camping"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
                     {label: "Private", value: "private"}
                 ];
             case 'youth':
                 return [
                     {label: "Camping", value: "camping"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
                     {label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"}
@@ -46,6 +48,7 @@ Template.accommodations.helpers({
             case 'teen':
                 return [
                     {label: "Camping", value: "camping"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
                     {label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"},
@@ -54,6 +57,7 @@ Template.accommodations.helpers({
             case 'youngAdult':
                 return [
                     {label: "Camping", value: "camping"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
                     {label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"},
@@ -62,6 +66,7 @@ Template.accommodations.helpers({
             case 'adult':
                 return [
                     {label: "Camping", value: "camping"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
                     {label: "Private", value: "private"},
                     {label: "Young Adult Friends", value: "yaf"}
