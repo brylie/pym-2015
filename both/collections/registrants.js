@@ -11,6 +11,7 @@ Registrants.attachSchema(new SimpleSchema({
         max: 200
     },
     'age': {
+        label: "Age at time of event",
         type: Number,
         max: 115,
         min: 0
