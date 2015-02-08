@@ -43,7 +43,8 @@ Registrants.attachSchema(new SimpleSchema({
         type: String,
         allowedValues: [
             'camping',
-            'dorm',
+            'dorm-distant-bathroom',
+            'dorm-proximate-bathroom',
             'semiprivate',
             'private',
             'jym',
