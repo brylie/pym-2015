@@ -32,6 +32,26 @@ Template.dashboard.helpers({
     }
 });
 
+Template.dashboard.events({
+    'click #download-csv': function () {
+        // Get current date for filename
+        var dateNow = moment().format('YYYY-MM-DD');
+
+        // Fetch all registrants
+        // TODO: fix this to work with subscription
+        var registrantsJSON = Registrants.find().fetch();
+
+        // Convert JSON to CSV
+        var registrantsCSV= Papa.unparse(registrantsJSON);
+
+        // Add registrants to binary blob for downloading
+        var registrantsBLOB = new Blob([registrantsCSV], {type: "text/csv"});
+
+        // Download the file
+        saveAs(registrantsBLOB, "pym2015-registrants-asOf-" + dateNow + ".csv");
+    }
+});
+
 Template.dashboardRegistrant.events({
     'click .deleteRegistration': function () {
         if (confirm("Delete this registration?")) {
