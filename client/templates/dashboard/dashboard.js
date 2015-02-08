@@ -22,8 +22,9 @@ Template.dashboard.helpers({
 
         // Get the values for each count
         accommodationCounts.camping = Counts.get('campingRegistrantAccommodationCount');
+        accommodationCounts.dormDistant = Counts.get('dormDistantRegistrantAccommodationCount');
+        accommodationCounts.dormProximate = Counts.get('dormProximateRegistrantAccommodationCount');
         accommodationCounts.semiprivate = Counts.get('semiprivateRegistrantAccommodationCount');
-        accommodationCounts.private = Counts.get('privateRegistrantAccommodationCount');
         accommodationCounts.yaf = Counts.get('yafRegistrantAccommodationCount');
         accommodationCounts.jym = Counts.get('jymRegistrantAccommodationCount');
 
