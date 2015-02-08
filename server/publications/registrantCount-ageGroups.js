@@ -1,3 +1,7 @@
+/*
+* These publications provide a count of various registrant age groups.
+*/
+
 // Age group publications
 Meteor.publish('childRegistrantCount', function() {
     Counts.publish(this, 'childRegistrantCount', Registrants.find({'ageGroup': 'child'}));
