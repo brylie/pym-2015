@@ -101,6 +101,34 @@ Registrants.attachSchema(new SimpleSchema({
             // based on the submitted registration
             return calculateRegistrationPrice(registration);
         }
+    },
+    foodPreference: {
+        type: [String],
+        optional: true,
+        autoform: {
+            type: "select-checkbox-inline",
+            allowedValues: [
+                'Vegan',
+                'Gluten-free',
+                'Dairy-free',
+                'Sugar-free',
+                'Soy-free',
+                'Raw vegetables',
+                'Low-salt',
+                'Vegetarian'
+            ],
+            options: function () {
+                return [
+                    {label: "Vegan", value: "Vegan"},
+                    {label: "Gluten-free", value: "Gluten-free"},
+                    {label: "Dairy-free", value: "Dairy-free"},
+                    {label: "Sugar-free", value: "Sugar-free"},
+                    {label: "Soy-free", value: "Soy-free"},
+                    {label: "Raw vegetables", value: "Raw vegetables"},
+                    {label: "Low-salt", value: "Low-salt"}
+                ];
+            }
+        }
     }
 }));
 
