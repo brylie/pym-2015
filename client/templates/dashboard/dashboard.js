@@ -40,9 +40,12 @@ Template.dashboard.events({
 
         // Fetch all registrants
         // TODO: fix this to work with subscription
+        // TODO: determine if it is advisable to have a global registrantsJSON variable
         registrantsJSON = Registrants.find().fetch();
 
         // Flatten Registrants array fields
+        // TODO: can this be done without a global RegistrantsJSON variable
+        // TODO: can this be done in a single function, e.g. map?
         flattenFoodChoices();
         flattenDaysChoices();
 
@@ -66,6 +69,11 @@ Template.dashboardRegistrant.events({
 });
 
 var flattenFoodChoices = function () {
+    /*
+    * Takes a registrant object
+    * flattens the food choices array
+    * updates the global registrants JSON
+    */
     var count = 0;
     _.each(registrantsJSON, function (registrant) {
         if (registrant.foodPreference) {
@@ -79,6 +87,11 @@ var flattenFoodChoices = function () {
 };
 
 var flattenDaysChoices = function () {
+    /*
+    * Takes a registrant object
+    * flattens the days array
+    * updates the global registrants JSON
+    */
     var count = 0;
     _.each(registrantsJSON, function (registrant) {
         if (registrant.days) {
