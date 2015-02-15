@@ -40,7 +40,11 @@ Template.dashboard.events({
 
         // Fetch all registrants
         // TODO: fix this to work with subscription
-        var registrantsJSON = Registrants.find().fetch();
+        registrantsJSON = Registrants.find().fetch();
+
+        // Flatten Registrants array fields
+        flattenFoodChoices();
+        flattenDaysChoices();
 
         // Convert JSON to CSV
         var registrantsCSV= Papa.unparse(registrantsJSON);
@@ -60,3 +64,29 @@ Template.dashboardRegistrant.events({
         }
     }
 });
+
+var flattenFoodChoices = function () {
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.foodPreference) {
+            var foodPreference = registrant.foodPreference.join(", ");
+            registrantsJSON[count].foodPreference = foodPreference;
+        } else {
+            registrantsJSON[count].foodPreference = "";
+        }
+        count ++;
+    });
+};
+
+var flattenDaysChoices = function () {
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.days) {
+            var days = registrant.days.join(", ");
+            registrantsJSON[count].days = days;
+        } else {
+            registrantsJSON[count].days = "";
+        }
+        count ++;
+    });
+};
