@@ -108,17 +108,20 @@ Registrants.attachSchema(new SimpleSchema({
         autoform: {
             type: "select-checkbox-inline",
             allowedValues: [
+                'Omnivore',
+                'Vegetarian',
                 'Vegan',
                 'Gluten-free',
                 'Dairy-free',
                 'Sugar-free',
                 'Soy-free',
                 'Raw vegetables',
-                'Low-salt',
-                'Vegetarian'
+                'Low-salt'
             ],
             options: function () {
                 return [
+                    {label: "Omnivore", value: "Omnivore"},
+                    {label: "Vegetarian", value: "Vegetarian"},
                     {label: "Vegan", value: "Vegan"},
                     {label: "Gluten-free", value: "Gluten-free"},
                     {label: "Dairy-free", value: "Dairy-free"},
