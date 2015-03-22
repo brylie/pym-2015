@@ -1,6 +1,12 @@
 <template name="login">
-    <h1>Login template</h1>
-    <p>In order to access the event registration form, you must sign-in to this site. If you have not already created an account, simply sign-up. You can then proceed with one or more event registration(s).</p>
-    <a href="{{ pathFor 'atSignIn' }}" class="btn btn-default navbar-btn">Existing account sign in</a>
-    <a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary navbar-btn">New account sign up</a>
+    <h1>Sign-in to proceed</h1>
+    <p>To register online for PYM, you must sign-in. Create a new account, if needed.</p>
+    <a href="{{ pathFor 'atSignIn' }}" class="btn btn-success navbar-btn">
+        <i class="fa fa-sign-in"></i>&nbsp;
+        Sign in to <em>existing account</em>
+    </a>
+    <a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary navbar-btn">
+        <i class="fa fa-pencil"></i>&nbsp;
+        Sign up for <em>new account</em>
+    </a>
 </template>
