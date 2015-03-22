@@ -135,10 +135,6 @@ Registrants.attachSchema(new SimpleSchema({
     }
 }));
 
-SimpleSchema.messages({
-    departAfterArrive: "The departure date must be after the arrival date."
-});
-
 Registrants.before.insert(function (userId, doc){
     // set registration created date to current date
     doc.createdAt = Date.now();
