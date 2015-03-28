@@ -136,7 +136,8 @@ Registrants.attachSchema(new SimpleSchema({
     'registrantEmail': {
         type: String,
         regEx: SimpleSchema.RegEx.Email,
-        label: "Registrant E-mail address"
+        label: "Registrant E-mail address",
+        optional: true
     }
 }));
 
