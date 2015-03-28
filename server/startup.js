@@ -1,6 +1,16 @@
 Meteor.startup(function () {
-//    if (Accommodations.find().count() === 0) {
-//        Accommodations.insert({ title: "Private", basePrice: 250, numberAvailable: 100});
-//        Accommodations.insert({ title: "Semi-Private", basePrice: 200, numberAvailable: 75});
-//    }
+    if (Meteor.users.find().fetch().length === 0) {
+        // Create a registrar user object
+        var registrarUser = {
+            name: "Registrar Test",
+            email: 'registrar@example.com',
+            password: 'testing123'
+        };
+
+        // Create user in database
+        var id = Accounts.createUser(registrarUser);
+
+        // Assign registrar user to registrar role
+        Roles.addUsersToRoles(id, 'registrar');
+    }
 });
