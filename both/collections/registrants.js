@@ -143,3 +143,10 @@ Registrants.before.insert(function (userId, doc){
     // for reporting, access control, etc
     doc.createdById = userId;
 });
+
+Registrants.helpers({
+    // Return the Meteor user object related to a registrant
+    createdByUser: function () {
+        return Meteor.users.findOne(this.createdById);
+    }
+});
