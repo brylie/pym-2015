@@ -28,13 +28,12 @@ var requiresUserLogin = function () {
 
 // Make sure user is logged in with registrar role
 var requiresRegistrarAccess = function () {
-    if (!Meteor.user() ||
-        !Meteor.user().roles ||
-        !Meteor.user().roles.registrar)
+    var user = Meteor.user()._id;
+    if (Roles.userIsInRole(user, ['registrar']))
     {
-        this.render('notFound');
-    } else {
         this.next();
+    } else {
+        this.render('notFound');
     }
 };
 
