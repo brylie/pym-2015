@@ -146,7 +146,9 @@ Registrants.before.insert(function (userId, doc){
 
 Registrants.helpers({
     // Return the Meteor user object related to a registrant
-    createdByUser: function () {
-        return Meteor.users.findOne(this.createdById);
+    'createdByUserEmail': function () {
+        var createdByUser = Meteor.users.findOne(this.createdById);
+        var email = createdByUser.emails[0].address;
+        return email;
     }
 });
