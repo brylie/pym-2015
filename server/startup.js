@@ -1,5 +1,6 @@
 Meteor.startup(function () {
-    if (Meteor.users.find({'email': 'registrar@example.com'}).fetch().length === 0) {
+    // If testing registrar doesn't exist
+    if (Meteor.users.find({emails: {$elemMatch: {'address': 'registrar@example.com'}}}).fetch().length === 0) {
         // Create a registrar user object
         var registrarUser = {
             name: "Registrar Test",
