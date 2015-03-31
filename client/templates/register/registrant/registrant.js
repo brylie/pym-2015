@@ -39,6 +39,5 @@ Template.registrantDetails.events({
         // Set the age group reactive variable
         // for price calculations
         ageGroupVar.set(ageGroup);
-        console.log("Age group calculation: " + ageGroupVar.get());
     }
 });
