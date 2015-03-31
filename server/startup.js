@@ -1,5 +1,5 @@
 Meteor.startup(function () {
-    if (Meteor.users.find().fetch().length === 0) {
+    if (Meteor.users.find({'email': 'registrar@example.com'}).fetch().length === 0) {
         // Create a registrar user object
         var registrarUser = {
             name: "Registrar Test",
