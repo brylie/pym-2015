@@ -224,6 +224,12 @@ Registrants.attachSchema(new SimpleSchema({
             options: registrantMeetingOptions
         },
         label: "Registrant Meeting"
+    },
+    'firstTimeAttender': {
+        type: Boolean,
+        optional: true,
+        defaultValue: false,
+        label: "First time attender?"
     }
 }));
 
