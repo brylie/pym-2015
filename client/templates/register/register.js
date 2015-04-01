@@ -22,7 +22,8 @@ Template.register.helpers({
                 ageGroup: ageGroupVar.get(),
                 type: registrationTypeVar.get(),
                 accommodations: accommodationsVar.get(),
-                days: daysVar.get()
+                days: daysVar.get(),
+                firstTimeAttender: firstTimeAttenderVar.get()
             };
         } catch (error) {
             console.log(error.message);
@@ -37,8 +38,5 @@ Template.register.events({
     'change form': function () {
         // Make sure all reactive vars are up to date.
         setReactiveVars();
-
-        // Calculate the fee and set the variable for template helper.
-        setRegistrationFeeVar();
     }
 });
