@@ -60,6 +60,10 @@ setReactiveVars = function () {
     // Set first time attender reactive variable
     var firstTimeAttenderChecked = $('#first-time-attender').is(':checked');
     firstTimeAttenderVar.set(firstTimeAttenderChecked);
+
+    // Set linens reactive var
+    var linensChecked = $('#linens').is(':checked');
+    linensVar.set(linensChecked);
 }
 
 setRegistrationFeeVar = function () {
