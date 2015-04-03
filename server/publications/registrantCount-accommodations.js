@@ -9,16 +9,10 @@ Meteor.publish('campingRegistrantAccommodationCount', function() {
                    Registrants.find({'accommodations': 'camping'}));
 });
 
-Meteor.publish('dormDistantRegistrantAccommodationCount', function() {
+Meteor.publish('dormRegistrantAccommodationCount', function() {
     Counts.publish(this,
-                   'dormDistantRegistrantAccommodationCount',
-                   Registrants.find({'accommodations': 'dorm-distant-bathroom'}));
-});
-
-Meteor.publish('dormProximateRegistrantAccommodationCount', function() {
-    Counts.publish(this,
-                   'dormProximateRegistrantAccommodationCount',
-                   Registrants.find({"accommodations": "dorm-proximate-bathroom"}));
+                   'dormRegistrantAccommodationCount',
+                   Registrants.find({'accommodations': 'dorm'}));
 });
 
 Meteor.publish('semiprivateRegistrantAccommodationCount', function() {
