@@ -23,7 +23,8 @@ Template.register.helpers({
                 type: registrationTypeVar.get(),
                 accommodations: accommodationsVar.get(),
                 days: daysVar.get(),
-                firstTimeAttender: firstTimeAttenderVar.get()
+                firstTimeAttender: firstTimeAttenderVar.get(),
+                linens: linensVar.get()
             };
         } catch (error) {
             console.log(error.message);
