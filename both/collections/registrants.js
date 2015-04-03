@@ -231,6 +231,7 @@ Registrants.attachSchema(new SimpleSchema({
             registration.accommodations = this.field("accommodations").value;
             registration.days =  this.field("days").value;
             registration.firstTimeAttender = this.field("firstTimeAttender").value;
+            registration.linens = this.field("linens").value;
 
             // calculate the registration fee
             // based on the submitted registration
