@@ -215,6 +215,16 @@ Registrants.attachSchema(new SimpleSchema({
         defaultValue: false,
         label: "Will you need linens? ($25 extra)"
     },
+    'specialNeeds': {
+        type: String,
+        optional: true,
+        label: "Tell us about any special needs that we can accommodate.",
+        autoform: {
+            afFieldInput: {
+                type: "textarea"
+            }
+        }
+    },
     'fee' : {
         type: Number,
         label: "Fee",
