@@ -29,6 +29,10 @@ Template.dashboard.helpers({
 
         // return the registrant counts to the template
         return accommodationCounts;
+    },
+    'linensCount': function () {
+        // Return the linens count
+        return linensCount = Counts.get('linensCount');
     }
 });
 
