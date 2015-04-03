@@ -4,9 +4,11 @@
 
         <!-- Only show accommodations if they are relevant -->
         {{# if requiresAccommodations }}
-        {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
-        {{/ if }}
+            <!-- Accommodations -->
+            {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
 
-        <!-- Linens -->
+            <!-- Linens -->
+            {{> afFormGroup name="linens" id="linens" }}
+        {{/ if }}
     </fieldset>
 </template>
