@@ -7,6 +7,7 @@ createReactiveVars = function () {
     daysVar = new ReactiveVar;
     registrationFeeVar = new ReactiveVar;
     firstTimeAttenderVar = new ReactiveVar;
+    linensVar = new ReactiveVar;
 }();
 
 resetReactiveVars = function () {
@@ -16,12 +17,14 @@ resetReactiveVars = function () {
     accommodationsVar.set(undefined);
     daysVar.set(undefined);
     registrationFeeVar.set(undefined);
+    linensVar.set(undefined);
 }
 
 setDaysVar = function () {
-    // Save selected days
-    // as a reactive variable
-    // for fee calculation, etc
+    /*
+    Save selected days as a reactive variable
+    for fee calculation, etc
+    */
 
     // Create placeholder days array
     var daysArray = new Array();
