@@ -39,16 +39,12 @@ Template.dashboard.events({
         var dateNow = moment().format('YYYY-MM-DD');
 
         // Fetch all registrants
-        // TODO: fix this to work with subscription
-        // TODO: determine if it is advisable to have a global registrantsJSON variable
         registrantsJSON = Registrants.find().fetch();
 
         // Flatten Registrants array fields
-        // TODO: can this be done without a global RegistrantsJSON variable
         // TODO: can this be done in a single function, e.g. map?
         flattenFoodChoices();
         flattenDaysChoices();
-        getRegistrantEmails();
 
         // Convert JSON to CSV
         var registrantsCSV= Papa.unparse(registrantsJSON);
@@ -101,22 +97,6 @@ var flattenDaysChoices = function () {
         } else {
             registrantsJSON[count].days = "";
         }
-        count ++;
-    });
-};
-
-var getRegistrantEmails = function () {
-    /*
-    * Takes a registrant object
-    * queries the user email from user ID
-    * gets email address from user object
-    * updates the global registrants JSON
-    */
-    var count = 0;
-    _.each(registrantsJSON, function (registrant) {
-        var user = Meteor.users.findOne(registrant.createdById);
-        var userEmail = user.emails[0].address;
-        registrantsJSON[count].createdByUserEmail = userEmail;
         count ++;
     });
 };
