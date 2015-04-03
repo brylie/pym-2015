@@ -5,6 +5,8 @@
                 <h1>Online Registration Form</h1>
             </div>
             <div class="panel-body">
+                {{> flashMessages }}
+
                 {{#autoForm collection="Registrants" id="registration-form" type="insert"}}
 
                 <!-- first name, last name, age goup, registration type -->
