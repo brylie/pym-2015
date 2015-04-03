@@ -230,6 +230,12 @@ Registrants.attachSchema(new SimpleSchema({
         optional: true,
         defaultValue: false,
         label: "First time attender?"
+    },
+    'linens': {
+        type: Boolean,
+        optional: true,
+        defaultValue: false,
+        label: "Will you need linens? ($25 extra)"
     }
 }));
 
