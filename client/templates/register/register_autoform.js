@@ -5,5 +5,8 @@ AutoForm.addHooks('registration-form', {
 
         // Tell the user the registration was successful
         FlashMessages.sendSuccess("Success! Registration submitted.");
+
+        // Tell user to submit additional registrations if desired
+        FlashMessages.sendInfo("To register an additional person, enter their details below.");
     }
 });
