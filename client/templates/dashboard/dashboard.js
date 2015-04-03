@@ -49,6 +49,9 @@ Template.dashboard.events({
         flattenFoodChoices();
         flattenDaysChoices();
 
+        // Convert linens boolean into yes/no
+        linensYesNo();
+
         // Convert JSON to CSV
         var registrantsCSV= Papa.unparse(registrantsJSON);
 
@@ -99,6 +102,23 @@ var flattenDaysChoices = function () {
             registrantsJSON[count].days = days;
         } else {
             registrantsJSON[count].days = "";
+        }
+        count ++;
+    });
+};
+
+var linensYesNo = function () {
+    /*
+    * Takes a registrant object
+    * converts linens boolean into 'yes' 'no'
+    * updates the global registrants JSON
+    */
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.linens) {
+            registrantsJSON[count].linens = "yes";
+        } else {
+            registrantsJSON[count].linens = "no";
         }
         count ++;
     });
