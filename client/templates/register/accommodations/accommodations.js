@@ -33,47 +33,37 @@ Template.accommodations.helpers({
             case 'child':
                 return [
                     {label: "Camping", value: "camping"},
-                    {label: "Dorm - bathroom in different building", value: "dorm-distant-bathroom"},
-                    {label: "Dorm - bathroom in same building", value: "dorm-proximate-bathroom"},
-                    {label: "Semi-private", value: "semiprivate"},
-                    //{label: "Private", value: "private"}
+                    {label: "Dorm", value: "dorm"},
+                    {label: "Semi-private", value: "semiprivate"}
                 ];
             case 'youth':
                 return [
                     {label: "Camping", value: "camping"},
-                    {label: "Dorm - bathroom in different building", value: "dorm-distant-bathroom"},
-                    {label: "Dorm - bathroom in same building", value: "dorm-proximate-bathroom"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    //{label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"}
                 ];
             case 'teen':
                 return [
                     {label: "Camping", value: "camping"},
-                    {label: "Dorm - bathroom in different building", value: "dorm-distant-bathroom"},
-                    {label: "Dorm - bathroom in same building", value: "dorm-proximate-bathroom"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    //{label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"},
                     {label: "Young Adult Friends", value: "yaf"}
                 ];
             case 'youngAdult':
                 return [
                     {label: "Camping", value: "camping"},
-                    {label: "Dorm - bathroom in different building", value: "dorm-distant-bathroom"},
-                    {label: "Dorm - bathroom in same building", value: "dorm-proximate-bathroom"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    //{label: "Private", value: "private"},
                     {label: "Junior Yearly Meeting", value: "jym"},
                     {label: "Young Adult Friends", value: "yaf"}
                 ];
             case 'adult':
                 return [
                     {label: "Camping", value: "camping"},
-                    {label: "Dorm - bathroom in different building", value: "dorm-distant-bathroom"},
-                    {label: "Dorm - bathroom in same building", value: "dorm-proximate-bathroom"},
+                    {label: "Dorm", value: "dorm"},
                     {label: "Semi-private", value: "semiprivate"},
-                    //{label: "Private", value: "private"},
                     {label: "Young Adult Friends", value: "yaf"}
                 ];
         }
