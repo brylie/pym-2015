@@ -241,16 +241,7 @@ Registrants.before.insert(function (userId, doc){
     //  Attach registration to Meteor user
     // for reporting, access control, etc
     doc.createdById = userId;
+
+    // Add user email address to registration document
+    doc.createdByEmail = Meteor.users.findOne(userId).emails[0].address;
 });
-
-Registrants.helpers({
-    // Return the Meteor user object related to a registrant
-    'createdByUserEmail': function () {
-        var createdByUser = Meteor.users.findOne(this.createdById);
-        var email = createdByUser.emails[0].address;
-        return email;
-    }
-});
-
-
-
