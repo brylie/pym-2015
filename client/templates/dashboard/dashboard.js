@@ -52,6 +52,9 @@ Template.dashboard.events({
         // Convert linens boolean into yes/no
         linensYesNo();
 
+        // Special needs must be present or empty string
+        getSpecialNeeds();
+
         // Convert JSON to CSV
         var registrantsCSV= Papa.unparse(registrantsJSON);
 
@@ -119,6 +122,23 @@ var linensYesNo = function () {
             registrantsJSON[count].linens = "yes";
         } else {
             registrantsJSON[count].linens = "no";
+        }
+        count ++;
+    });
+};
+
+var getSpecialNeeds = function () {
+    /*
+    * Takes a registrant object
+    * gets the special needs; or an empty string
+    * updates the global registrants JSON
+    */
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.specialNeeds) {
+            registrantsJSON[count].specialNeeds = registrant.specialNeeds;
+        } else {
+            registrantsJSON[count].specialNeeds = "";
         }
         count ++;
     });
