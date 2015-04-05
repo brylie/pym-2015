@@ -1,0 +1,5 @@
+ViewController = AppController.extend({
+    data: {
+
+    }
+});
