@@ -43,7 +43,7 @@ var requiresRegistrarAccess = function () {
 };
 
 // User login required for event registration
-Router.onBeforeAction(requiresUserLogin, {only: ['register']});
+Router.onBeforeAction(requiresUserLogin, {only: ['register', 'view']});
 
 // Admin-only access to certain routes
 Router.onBeforeAction(requiresRegistrarAccess, {only: ['dashboard']});
