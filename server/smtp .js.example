@@ -1,9 +1,19 @@
+// Copy the following settings into a file named smtp.js
+// Configure settings as needed
+
 Meteor.startup(function() {
     var username = "xxxxxx.mailgun.org";
     var password = "xxxxxx";
     var server = "smtp.mailgun.org";
     var port = "587"
     
-    process.env.MAIL_FROM = 'registrar@example.com';
+    
+    // Set ENABLE SMTP to true once SMTP settings are correct
+    process.env.ENABLE_SMTP = false;
+    
+   // Set the from address for registration emails
+   process.env.MAIL_FROM = 'registrar@example.com';
+   
+   // URL related to SMTP
    process.env.MAIL_URL = 'smtp://' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '@' + encodeURIComponent(server) + ':' + port;  
 });
