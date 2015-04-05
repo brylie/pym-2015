@@ -14,6 +14,9 @@
             {{#if registrantEmail }}
             <p><strong>Registrant email:</strong></p>
             {{/ if }}
+            {{# if registrantMeeting }}
+            <p><strong>Registrant meeting:</strong> {{ registrantMeeting }}</p>
+            {{/ if }}
             <p><strong>Registration type:</strong> {{ registrationType }}</p>
             <p><strong>Accommodations:</strong> {{ accommodations }}</p>
             {{# if days }}
@@ -21,6 +24,9 @@
             {{/ if }}
             {{# if linens }}
             <p>Linens required.</p>
+            {{/ if }}
+            {{# if foodPreference }}
+            <p><strong>Food preference:</strong> {{ foodPreference }}</p>
             {{/ if }}
             <p><strong>Registration fee:</strong> ${{ fee }}</p>
         </div>
