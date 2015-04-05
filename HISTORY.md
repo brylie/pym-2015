@@ -6,6 +6,7 @@
 * Fixed bug with weekly registrations showing $0 fee
 * Fixed bug with weekly registrations showing $0 fee
 * Reorganized and refactored several functions
+* Updated age groups to match paper registration form
 
 
 2015-04-03
