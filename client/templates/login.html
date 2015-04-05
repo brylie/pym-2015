@@ -1,12 +1,38 @@
 <template name="login">
-    <h1>Sign-in to proceed</h1>
-    <p>To register online for PYM, you must sign-in. Create a new account, if needed.</p>
-    <a href="{{ pathFor 'atSignIn' }}" class="btn btn-success navbar-btn">
-        <i class="fa fa-sign-in"></i>&nbsp;
-        Sign in to <em>existing account</em>
-    </a>
-    <a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary navbar-btn">
-        <i class="fa fa-pencil"></i>&nbsp;
-        Sign up for <em>new account</em>
-    </a>
+    <div class="container">
+
+        <h1>Sign-in to proceed</h1>
+
+
+        <p>To register online for PYM, you must sign-in.</p>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p>Existing account</p>
+                </div>
+                <div class="panel-body">
+                    <p>Sign in below, if you have already created an account on this site.</p>
+                    <a href="{{ pathFor 'atSignIn' }}" class="btn btn-lg btn-success navbar-btn">
+                        <i class="fa fa-sign-in"></i>&nbsp;
+                        Sign in to <em>existing account</em>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p>New account</p>
+                </div>
+                <div class="panel-body">
+                    <p>Create a new account, if you have not previously created a registration account.</p>
+                    <a href="{{ pathFor 'atSignUp' }}" class="btn btn-lg btn-primary navbar-btn">
+                        <i class="fa fa-pencil"></i>&nbsp;
+                        Sign up for <em>new account</em>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </template>
