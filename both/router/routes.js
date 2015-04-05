@@ -13,6 +13,11 @@ Router.route('/dashboard', {
 
 Router.route('/register');
 
+// Route for individuals to review their registration(s)
+Router.route('/view', {
+
+});
+
 
 //Router.route('/registration/:_id', function () {
 //    this.render('registration');
