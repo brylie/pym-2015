@@ -1,3 +1,8 @@
 <template name="view">
-    <p>View template.</p>
+    <h1>My registrant(s).</h1>
+    <ul>
+        {{# each registrants }}
+        {{ first_name }} {{ last_name }}
+        {{/ each }}
+    </ul>
 </template>
