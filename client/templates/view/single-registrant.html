@@ -8,6 +8,9 @@
         <div class="panel-body">
             <h2 class="registrant-panel-name">{{ first_name }} {{ last_name }}</h2>
             <p><strong>Age at time of event:</strong> {{ age }}</p>
+            {{# if specialNeeds }}
+            <p><strong>Special needs:</strong> {{ specialNeeds }}</p>
+            {{/ if }}
             {{#if registrantEmail }}
             <p><strong>Registrant email:</strong></p>
             {{/ if }}
