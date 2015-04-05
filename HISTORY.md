@@ -1,10 +1,12 @@
 2015-04-05
 ----------
-* Adjusted log-in page for more clarity
 * Send email confirmation messages on successful registration
 * Created 'My registrant(s)' page; shows all registrations linked primary email
+* Adjusted log-in page text and layout for more clarity
+* Fixed bug with weekly registrations showing $0 fee
+* Fixed bug with weekly registrations showing $0 fee
 * Reorganized and refactored several functions
-* Fixed bug with weekly registrations showing $0 fee 
+
 
 2015-04-03
 ----------
