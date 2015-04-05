@@ -5,7 +5,7 @@ Meteor.publish('registrants', function () {
 Meteor.publish('myRegistrants', function () {
     // Check if the user is signed in
     if (this.userId) {
-        // return registrations for this user
-        return Registrants.find({'registeredById': this.userId});
+        // return registrations created by this user
+        return Registrants.find({'createdById': this.userId});
     }
 });
