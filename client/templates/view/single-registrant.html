@@ -1,10 +1,22 @@
 <template name="singleRegistrant">
     <div class="panel panel-default">
+<!--
         <div class="panel-heading">
-            <p>{{ first_name }} {{ last_name }}</p>
+
         </div>
+-->
         <div class="panel-body">
-            <p>Info...</p>
+            <h2 class="registrant-panel-name">{{ first_name }} {{ last_name }}</h2>
+            <p><strong>Age:</strong> {{ age }}</p>
+            {{#if registrantEmail }}
+            <p><strong>Registrant email:</strong></p>
+            {{/ if }}
+            <p><strong>Registration type:</strong> {{ registrationType }}</p>
+            <p><strong>Accommodations:</strong> {{ accommodations }}</p>
+            {{# if linens }}
+            <p>Linens required.</p>
+            {{/ if }}
+            <p><strong>Registration fee:</strong> ${{ fee }}</p>
         </div>
     </div>
 </template>
