@@ -4,7 +4,6 @@
 * Created 'My registrant(s)' page; shows all registrations linked primary email
 * Adjusted log-in page text and layout for more clarity
 * Fixed bug with weekly registrations showing $0 fee
-* Fixed bug with weekly registrations showing $0 fee
 * Reorganized and refactored several functions
 * Updated age groups to match paper registration form
 
