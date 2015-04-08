@@ -16,13 +16,9 @@ Template.register.rendered = function () {
             ageGroupSelected = ageGroupVar.get(),
             daysSelected = daysVar.get(),
             registrationTypeSelected = registrationTypeVar.get(),
-            // Placeholder to determine if user has selected one or more days
+            // Placeholder to make sure user selects one or more days
             oneOrMoreDaysSelected,
-            // Placeholders for requirements checks
-            commuterRequirement,
-            dailyReqirement,
-            weeklyReqirement,
-            // overall requirements check placeholder
+            // placeholder to make sure necessary registration information is given
             registrationRequirement;
 
         try {
@@ -42,13 +38,13 @@ Template.register.rendered = function () {
             // Check the requirements for selected registration type
             if (registrationTypeSelected === 'commuter') {
                 // Commuter registration requires one or more day to be selected
-                commuterRequirement = (oneOrMoreDaysSelected);
+                var commuterRequirement = (oneOrMoreDaysSelected);
             } else if (registrationTypeSelected === 'daily') {
                 // Daily registration requires accommodations and one or more days to be selected
-                dailyReqirement = (accommodationsSelected && oneOrMoreDaysSelected);
+                var dailyRequirement = (accommodationsSelected && oneOrMoreDaysSelected);
             } else if (registrationTypeSelected === 'weekly') {
                 // Weekly registration requires accommodations
-                weeklyReqirement = (accommodationsSelected);
+                var weeklyRequirement = (accommodationsSelected);
             }
         }
 
