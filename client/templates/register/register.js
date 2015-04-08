@@ -32,23 +32,22 @@ Template.register.rendered = function () {
             // Check the requirements for selected registration type
             if (registrationTypeSelected === 'commuter') {
                 // Commuter registration requires one or more day to be selected
-                var commuterReqMet = (oneOrMoreDaysSelected);
+                var commuterRequirement = (oneOrMoreDaysSelected);
             } else if (registrationTypeSelected === 'daily') {
                 // Daily registration requires accommodations and one or more days to be selected
-                var dailyReqMet = (accommodationsSelected && oneOrMoreDaysSelected);
+                var dailyReqirement = (accommodationsSelected && oneOrMoreDaysSelected);
             } else if (registrationTypeSelected === 'weekly') {
                 // Weekly registration requires accommodations
-                var weeklyReqMet = (accommodationsSelected);
+                var weeklyReqirement = (accommodationsSelected);
             }
         }
 
         // Make sure one set of registration requirements was met
-        var registrationRequirementsMet = (commuterReqMet || dailyReqMet || weeklyReqMet);
-
+        var registrationRequirement = (commuterRequirement || dailyRequirement || weeklyRequirement);
 
         // Show or hide the 'Register' button
         // based on registration requirements
-        if (registrationRequirementsMet) {
+        if (registrationRequirement) {
             $('button[type="submit"]').show();
         } else {
             $('button[type="submit"]').hide();
