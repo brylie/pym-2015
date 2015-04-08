@@ -76,14 +76,21 @@ Template.register.helpers({
                 accommodations: accommodationsVar.get(),
                 days: daysVar.get(),
                 firstTimeAttender: firstTimeAttenderVar.get(),
-                linens: linensVar.get()
+                linens: linensVar.get(),
+                createdAt: new Date()
             };
         } catch (error) {
             console.log(error.message);
         }
 
         // Calculate the price
-        return calculateRegistrationPrice(registration);
+        try {
+            var registrationPrice = calculateRegistrationPrice(registration);
+        } catch (error) {
+            console.log(error.message);
+        }
+
+        return registrationPrice;
     }
 });
 
