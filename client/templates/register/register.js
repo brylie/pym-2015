@@ -12,19 +12,29 @@ Template.register.rendered = function () {
     // Set up autorun function to show/hide register button
     this.autorun(function () {
         // Get reactive forms to represent form state
-        var accommodationsSelected = accommodationsVar.get();
-        var ageGroupSelected = ageGroupVar.get();
-        var daysSelected = daysVar.get();
+        var accommodationsSelected = accommodationsVar.get(),
+            ageGroupSelected = ageGroupVar.get(),
+            daysSelected = daysVar.get(),
+            registrationTypeSelected = registrationTypeVar.get(),
+            // Placeholder to determine if user has selected one or more days
+            oneOrMoreDaysSelected,
+            // Placeholders for requirements checks
+            commuterRequirement,
+            dailyReqirement,
+            weeklyReqirement,
+            // overall requirements check placeholder
+            registrationRequirement;
+
         try {
             // try to get the length of days selected
             // return true if more than zero
-            var oneOrMoreDaysSelected = (daysSelected.length > 0);
+            oneOrMoreDaysSelected = (daysSelected.length > 0);
         } catch (e) {
             // no days are selected (undefined)
             // so return false
-            var oneOrMoreDaysSelected = false;
+            oneOrMoreDaysSelected = false;
         }
-        var registrationTypeSelected = registrationTypeVar.get();
+
 
         // Check requirements for the three registrant types
         // set true or false for each, depending on form state
@@ -32,18 +42,18 @@ Template.register.rendered = function () {
             // Check the requirements for selected registration type
             if (registrationTypeSelected === 'commuter') {
                 // Commuter registration requires one or more day to be selected
-                var commuterRequirement = (oneOrMoreDaysSelected);
+                commuterRequirement = (oneOrMoreDaysSelected);
             } else if (registrationTypeSelected === 'daily') {
                 // Daily registration requires accommodations and one or more days to be selected
-                var dailyReqirement = (accommodationsSelected && oneOrMoreDaysSelected);
+                dailyReqirement = (accommodationsSelected && oneOrMoreDaysSelected);
             } else if (registrationTypeSelected === 'weekly') {
                 // Weekly registration requires accommodations
-                var weeklyReqirement = (accommodationsSelected);
+                weeklyReqirement = (accommodationsSelected);
             }
         }
 
         // Make sure one set of registration requirements was met
-        var registrationRequirement = (commuterRequirement || dailyRequirement || weeklyRequirement);
+        registrationRequirement = (commuterRequirement || dailyRequirement || weeklyRequirement);
 
         // Show or hide the 'Register' button
         // based on registration requirements
@@ -53,7 +63,8 @@ Template.register.rendered = function () {
             $('button[type="submit"]').hide();
         }
     });
-}
+};
+
 Template.register.helpers({
     'price': function () {
         /*
@@ -62,7 +73,7 @@ Template.register.helpers({
 
         //Set the registration object
         // from current registration details.
-        try{
+        try {
             var registration = {
                 ageGroup: ageGroupVar.get(),
                 type: registrationTypeVar.get(),
