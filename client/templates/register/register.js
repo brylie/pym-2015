@@ -8,6 +8,52 @@ Template.register.rendered = function () {
     $('#age_group').val('');
     $('#registration_type').val('');
     $('#accommodations').val('');
+
+    // Set up autorun function to show/hide register button
+    this.autorun(function () {
+        // Get reactive forms to represent form state
+        var accommodationsSelected = accommodationsVar.get();
+        var ageGroupSelected = ageGroupVar.get();
+        var daysSelected = daysVar.get();
+        try {
+            // try to get the length of days selected
+            // return true if more than zero
+            var oneOrMoreDaysSelected = (daysSelected.length > 0);
+        } catch (e) {
+            // no days are selected (undefined)
+            // so return false
+            var oneOrMoreDaysSelected = false;
+        }
+        var registrationTypeSelected = registrationTypeVar.get();
+
+        // Check requirements for the three registrant types
+        // set true or false for each, depending on form state
+        if (ageGroupSelected) {
+            // Check the requirements for selected registration type
+            if (registrationTypeSelected === 'commuter') {
+                // Commuter registration requires one or more day to be selected
+                var commuterReqMet = (oneOrMoreDaysSelected);
+            } else if (registrationTypeSelected === 'daily') {
+                // Daily registration requires accommodations and one or more days to be selected
+                var dailyReqMet = (accommodationsSelected && oneOrMoreDaysSelected);
+            } else if (registrationTypeSelected === 'weekly') {
+                // Weekly registration requires accommodations
+                var weeklyReqMet = (accommodationsSelected);
+            }
+        }
+
+        // Make sure one set of registration requirements was met
+        var registrationRequirementsMet = (commuterReqMet || dailyReqMet || weeklyReqMet);
+
+
+        // Show or hide the 'Register' button
+        // based on registration requirements
+        if (registrationRequirementsMet) {
+            $('button[type="submit"]').show();
+        } else {
+            $('button[type="submit"]').hide();
+        }
+    });
 }
 Template.register.helpers({
     'price': function () {
