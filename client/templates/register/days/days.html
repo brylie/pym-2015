@@ -1,9 +1,11 @@
 <template name="days">
     {{# if afFieldValueIs name="registrationType" value="commuter"}}
     {{> afFormGroup name="days" }}
+    <p class="help-block">If you have a more complex schedule, send an email to the registrars.</p>
     {{/ if }}
 
     {{# if afFieldValueIs name="registrationType" value="daily"}}
     {{> afFormGroup name="days" }}
+    <p class="help-block">If you have a more complex schedule, send an email to the registrars.</p>
     {{/ if }}
 </template>
