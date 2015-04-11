@@ -32,6 +32,11 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
+     'gradeInSchool': {
+        type: String,
+        label: "Grade in school this year",
+        max: 200
+    },
     'registrationType': {
         type: String,
         allowedValues: [
