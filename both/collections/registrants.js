@@ -123,14 +123,10 @@ Registrants.attachSchema(new SimpleSchema({
         label: "Registrant E-mail address",
         optional: true
     },
-    registrantMeeting: {
+    'registrantAffiliation': {
         type: String,
         optional: true,
-        autoform: {
-            type: "select",
-            options: registrantMeetingOptions
-        },
-        label: "Registrant Meeting"
+        label: "Affiliated Quaker meeting, woship group, or organization"
     },
     'firstTimeAttender': {
         type: Boolean,
