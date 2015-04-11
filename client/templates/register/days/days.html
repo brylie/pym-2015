@@ -1,4 +1,5 @@
 <template name="days">
+    <!-- TODO: combine these both into a single if statement, if possible. -->
     {{# if afFieldValueIs name="registrationType" value="commuter"}}
     {{> afFormGroup name="days" }}
     <p class="help-block">If you have a more complex schedule, send an email to the registrars.</p>
