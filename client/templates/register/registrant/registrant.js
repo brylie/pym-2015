@@ -6,6 +6,32 @@ Template.registrantDetails.helpers({
             {label: "Daily", value: "daily"},
             {label: "Full Week", value: "weekly"}
         ];
+    },
+    /*
+    Determine if registrant is school aged
+    by checking age group
+    return true if age group is child, youth, or teen
+    */
+    'schoolAgeGroup': function () {
+        var ageGroup = ageGroupVar.get();
+
+        // look at the value of age group
+        switch (ageGroup) {
+                // if child, youth or teen
+                // return true
+            case 'child':
+                return true;
+                break;
+            case 'youth':
+                return true;
+                break;
+            case 'teen':
+                return true;
+                break;
+            default:
+                return false;
+                break;
+        };
     }
 });
 
