@@ -18,7 +18,7 @@ resetReactiveVars = function () {
     daysVar.set(undefined);
     registrationFeeVar.set(undefined);
     linensVar.set(undefined);
-}
+};
 
 setDaysVar = function () {
     /*
@@ -37,16 +37,29 @@ setDaysVar = function () {
     // add days to reactive variable
     // used for price calculations
     daysVar.set(daysArray);
-}
+};
+
+setAgeGroupVar = function () {
+    /*
+     Set the age group reactive variable
+     calculated based on the value of the age field
+     making sure value of age is not not empty string
+    */
+    var age = $("#age").val();
+
+    // Make sure age has been set
+    if (age !== '') {
+        var ageGroup = calculateAgeGroup(age);
+        ageGroupVar.set(ageGroup);
+    };
+};
 
 setReactiveVars = function () {
+    // Reset all reactive variables to undefined
     resetReactiveVars();
 
     // Set the age group reactive variable
-    // calculated based on the value of the age field
-    var age = $("#age").val();
-    var ageGroup = calculateAgeGroup(age);
-    ageGroupVar.set(ageGroup);
+    setAgeGroupVar();
 
     // Set the registration type reactive variable
     registrationTypeVar.set($('#registration_type').val());
