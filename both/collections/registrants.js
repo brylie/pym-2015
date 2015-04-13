@@ -35,7 +35,8 @@ Registrants.attachSchema(new SimpleSchema({
      'gradeInSchool': {
         type: String,
         label: "Grade in school this year",
-        max: 200
+        max: 200,
+        optional: true
     },
     'registrationType': {
         type: String,
