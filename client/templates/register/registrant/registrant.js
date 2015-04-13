@@ -14,24 +14,28 @@ Template.registrantDetails.helpers({
     */
     'schoolAgeGroup': function () {
         var ageGroup = ageGroupVar.get();
-
-        // look at the value of age group
-        switch (ageGroup) {
-                // if child, youth or teen
-                // return true
-            case 'child':
-                return true;
-                break;
-            case 'youth':
-                return true;
-                break;
-            case 'teen':
-                return true;
-                break;
-            default:
-                return false;
-                break;
-        };
+        console.log('School age group?', ageGroup);
+        if (ageGroup) {
+            // look at the value of age group
+            switch (ageGroup) {
+                    // if child, youth or teen
+                    // return true
+                case 'child':
+                    return true;
+                    break;
+                case 'youth':
+                    return true;
+                    break;
+                case 'teen':
+                    return true;
+                    break;
+                default:
+                    return false;
+                    break;
+            };
+        } else {
+            return false;
+        }
     }
 });
 
