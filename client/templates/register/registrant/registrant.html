@@ -22,11 +22,8 @@
         {{> afFormGroup name="age" id="age"}}
 
         <!-- grade in school -->
-        <!-- show only if shool age group selected -->
-        {{# if schoolAgeGroup }}
         {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
-        <p class="help-block">Enter grade number, 'home schooled', 'kindergarten', etc.</p>
-        {{/ if }}
+        <p class="help-block">If applicable, enter grade number, 'home schooled', 'kindergarten', etc.</p>
 
         <!-- first time attender -->
         {{> afFormGroup name="firstTimeAttender" id="first-time-attender"}}
