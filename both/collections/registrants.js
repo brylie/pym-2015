@@ -162,7 +162,8 @@ Registrants.attachSchema(new SimpleSchema({
 
             // get values from submitted registration and
             // set attributes on the registration object
-            registration.ageGroup = this.field("ageGroup").value;
+            registration.age = this.field("age").value;
+            registration.ageGroup = calculateAgeGroup(registration.age);
             registration.type = this.field("registrationType").value;
             registration.accommodations = this.field("accommodations").value;
             registration.days =  this.field("days").value;
