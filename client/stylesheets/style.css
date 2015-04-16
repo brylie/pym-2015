@@ -1,6 +1,9 @@
 body {
     padding-top: 2em;
 }
+.help-block {
+    color: #333;
+}
 .registrant-panel-name {
     margin-top: 0 !important;
 }
