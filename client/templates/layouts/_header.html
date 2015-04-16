@@ -12,11 +12,13 @@
         </button>
         <a class="navbar-brand" href="{{pathFor 'home'}}">PYM 2015 Online Registration</a>
       </div>
-
       <div class="collapse navbar-collapse" id="main-nav">
-          <ul class="nav navbar-nav navbar-left">
+          <div class="nav navbar-nav navbar-left">
               <a href="{{ pathFor 'register' }}" class="btn btn-success navbar-btn">Register for PYM</a>
-          </ul>
+              {{#if currentUser }}
+              {{> userToolbar }}
+              {{/ if }}
+          </div>
         {{#if currentUser}}
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
