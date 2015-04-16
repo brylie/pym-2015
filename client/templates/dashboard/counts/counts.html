@@ -1,0 +1,23 @@
+<template name="dashboardCounts">
+    <ul class="list-group col-md-3">
+        {{# with registrantCounts }}
+        <li class="list-group-item">Children <span class="badge">{{ child }}</span></li>
+        <li class="list-group-item">Youth <span class="badge">{{ youth }}</span></li>
+        <li class="list-group-item">Teens <span class="badge">{{ teen }}</span></li>
+        <li class="list-group-item">Young Adults <span class="badge">{{ youngAdult }}</span></li>
+        <li class="list-group-item">Adults <span class="badge">{{ adult }}</span></li>
+        {{/ with }}
+    </ul>
+    <ul class="list-group col-md-3">
+        {{# with accommodationCounts }}
+        <li class="list-group-item">Camping <span class="badge">{{ camping }}</span></li>
+        <li class="list-group-item">Dorm<span class="badge">{{ dorm }}</span></li>
+        <li class="list-group-item">Semi-private <span class="badge">{{ semiprivate }}</span></li>
+        <li class="list-group-item">YAF Area <span class="badge">{{ yaf }}</span></li>
+        <li class="list-group-item">JYM Area <span class="badge">{{ jym }}</span></li>
+        {{/ with }}
+    </ul>
+    <ul class="list-group col-md-3">
+        <li class="list-group-item">Linens <span class="badge">{{ linensCount }}</span></li>
+    </ul>
+</template>
