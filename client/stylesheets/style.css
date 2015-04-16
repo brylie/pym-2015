@@ -4,8 +4,8 @@ body {
 .help-block {
     color: #333;
 }
-#registration-form {
-    margin-top: 3em !important; /* prevent navbar overlap */
+#content {
+    margin-top: 3em;
 }
 @media (min-width: 33em) {
     #registration-form {
