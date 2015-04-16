@@ -4,6 +4,12 @@ Template.dashboardCounts.created = function () {
     this.subscribe('dormRegistrantAccommodationCount');
     this.subscribe('yafRegistrantAccommodationCount');
     this.subscribe('jymRegistrantAccommodationCount');
+    this.subscribe('childRegistrantCount');
+    this.subscribe('youthRegistrantCount');
+    this.subscribe('teenRegistrantCount');
+    this.subscribe('youngAdultRegistrantCount');
+    this.subscribe('adultRegistrantCount');
+    this.subscribe("linensCount");
 };
 
 Template.dashboardCounts.helpers({
