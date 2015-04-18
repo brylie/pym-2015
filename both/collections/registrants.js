@@ -151,6 +151,11 @@ Registrants.attachSchema(new SimpleSchema({
             }
         }
     },
+    'carbonTax': {
+        type: Number,
+        label: "Voluntary carbon tax ($USD)",
+        optional: true
+    },
     'fee' : {
         type: Number,
         label: "Fee",
