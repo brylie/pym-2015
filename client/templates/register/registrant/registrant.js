@@ -14,7 +14,7 @@ Template.registrantDetails.helpers({
     */
     'schoolAgeGroup': function () {
         var ageGroup = ageGroupVar.get();
-        console.log('School age group?', ageGroup);
+
         if (ageGroup) {
             // look at the value of age group
             switch (ageGroup) {
