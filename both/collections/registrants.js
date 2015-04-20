@@ -174,6 +174,7 @@ Registrants.attachSchema(new SimpleSchema({
             registration.days =  this.field("days").value;
             registration.firstTimeAttender = this.field("firstTimeAttender").value;
             registration.linens = this.field("linens").value;
+            registration.carbonTax = this.field("carbonTax").value;
 
             // calculate the registration fee
             // based on the submitted registration
