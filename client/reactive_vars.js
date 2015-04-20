@@ -8,6 +8,7 @@ createReactiveVars = function () {
     registrationFeeVar = new ReactiveVar;
     firstTimeAttenderVar = new ReactiveVar;
     linensVar = new ReactiveVar;
+    carbonTaxVar = new ReactiveVar;
 }();
 
 resetReactiveVars = function () {
@@ -18,6 +19,7 @@ resetReactiveVars = function () {
     daysVar.set(undefined);
     registrationFeeVar.set(undefined);
     linensVar.set(undefined);
+    carbonTaxVar.set(undefined);
 };
 
 setDaysVar = function () {
@@ -54,6 +56,17 @@ setAgeGroupVar = function () {
     };
 };
 
+setCarbonTaxVar = function () {
+    // Get the value of the carbon tax input
+    var carbonTaxInputValue = $('#carbon-tax').val();
+
+    // If the value is not empty
+    if (carbonTaxInputValue !== "") {
+        // Set the carbon tax reactive variable to the form input value
+        carbonTaxVar.set(parseInt(carbonTaxInputValue));
+    }
+};
+
 setReactiveVars = function () {
     // Reset all reactive variables to undefined
     resetReactiveVars();
@@ -77,6 +90,10 @@ setReactiveVars = function () {
     // Set linens reactive var
     var linensChecked = $('#linens').is(':checked');
     linensVar.set(linensChecked);
+
+    // Set the carbon tax reactive variable
+    setCarbonTaxVar();
+
 }
 
 setRegistrationFeeVar = function () {
