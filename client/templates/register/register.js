@@ -8,6 +8,7 @@ Template.register.rendered = function () {
     $('#age').val('');
     $('#registration_type').val('');
     $('#accommodations').val('');
+    $('#carbon-tax').val('');
 };
 
 Template.register.helpers({
@@ -26,7 +27,8 @@ Template.register.helpers({
                 days: daysVar.get(),
                 firstTimeAttender: firstTimeAttenderVar.get(),
                 linens: linensVar.get(),
-                createdAt: new Date()
+                createdAt: new Date(),
+                carbonTax: carbonTaxVar.get()
             };
         } catch (error) {
             console.log(error.message);
@@ -46,6 +48,9 @@ Template.register.helpers({
 Template.register.events({
     'change form': function () {
         // Make sure all reactive vars are up to date.
+        setReactiveVars();
+    },
+    'keyup #carbon-tax': function () {
         setReactiveVars();
     }
 });
