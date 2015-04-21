@@ -1,7 +1,6 @@
 AutoForm.addHooks('registration-form', {
     onSuccess: function(operation, resultId, template) {
-        // Make sure all reactive vars are up to date.
-        resetReactiveVars();
+        Router.go('/view');
 
         // Tell the user the registration was successful
         FlashMessages.sendSuccess('<i class="fa fa-check"></i> Registration success!');
@@ -11,5 +10,8 @@ AutoForm.addHooks('registration-form', {
 
         // Send confirmation email
         Meteor.call('sendConfirmationEmail', resultId);
+
+        // Make sure all reactive vars are up to date.
+        resetReactiveVars();
     }
 });
