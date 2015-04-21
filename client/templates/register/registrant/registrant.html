@@ -23,8 +23,6 @@
 
         <!-- grade in school -->
         {{# if schoolAgeGroup }}
-        {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
-        <p class="help-block">Please enter grade number, 'home schooled', 'kindergarten', etc.</p>
         <div class="alert alert-warning">
             <p>Note, you will need to provide a
                 <a href="http://www.pacificyearlymeeting.org/wordpress/wp-content/uploads/2015/04/2015_Childrens_Prog_Parent_Consent_and_Medical_Form.pdf">
@@ -33,6 +31,8 @@
                  for this registrant.
             </p>
         </div>
+        {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
+        <p class="help-block">Please enter grade number, 'home schooled', 'kindergarten', etc.</p>
         {{/ if }}
 
         <!-- first time attender -->
