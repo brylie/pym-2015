@@ -5,8 +5,10 @@
 
     {{> _header}}
 
-    <div class="container" id="content">
+    <div id="content" class="container" >
+        {{> flashMessages }}
         {{> yield}}
+        {{> _footer}}
     </div>
-     {{> _footer}}
+
 </template>
