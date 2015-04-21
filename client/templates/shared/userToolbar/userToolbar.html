@@ -1,7 +1,16 @@
 <template name="userToolbar">
     {{# if userHasRegistrants }}
-        <a class='btn btn-info navbar-btn' href="/view">
-            View my registration(s)
-        </a>
+    <a class='btn btn-info navbar-btn' href="/view">
+        View my registration(s)
+    </a>
+    <a class='btn btn-success navbar-btn' href="/register">
+        Register another person
+    </a>
+    {{ else }}
+    {{# if isNotActiveRoute regex='register'}}
+    <a class='btn btn-success navbar-btn' href="/register">
+        Register now
+    </a>
+    {{/ if }}
     {{/ if }}
 </template>

@@ -2,8 +2,8 @@ Template.registrantDetails.helpers({
     'registrationTypeOptions': function () {
         // registration types used on the registration form
         return [
-            {label: "Commuter", value: "commuter"},
-            {label: "Daily", value: "daily"},
+            {label: "Commuter (sleeping elsewhere)", value: "commuter"},
+            {label: "Daily (staying overnight)", value: "daily"},
             {label: "Full Week", value: "weekly"}
         ];
     },
