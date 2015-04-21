@@ -14,9 +14,10 @@
       </div>
       <div class="collapse navbar-collapse" id="main-nav">
           <div class="nav navbar-nav navbar-left">
-              <a href="{{ pathFor 'register' }}" class="btn btn-success navbar-btn">Register for PYM</a>
               {{#if currentUser }}
               {{> userToolbar }}
+              {{ else }}
+              <a href="{{ pathFor 'register' }}" class="btn btn-success navbar-btn">Sign in and register for PYM</a>
               {{/ if }}
           </div>
         {{#if currentUser}}
