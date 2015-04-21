@@ -36,7 +36,6 @@ expected assistance, payable to <strong>Pacific Yearly Meeting</strong>.</p>\
 <p>Berkeley Registration Team<br />\
 2151 Vine St.<br />\
 Berkeley, CA., 94709</p>';
->>>>>>> origin/master
 
             Email.send({
                 from: from,
