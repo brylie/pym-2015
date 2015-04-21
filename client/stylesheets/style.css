@@ -1,11 +1,18 @@
 body {
     padding-top: 2em; /* prevent navbar overlap */
+    font-size: 1em;
+}
+html {
+    font-size: 1em;
 }
 .help-block {
     color: #333;
 }
-#content {
-    margin-top: 3em;
+.panel {
+    margin: 1em;
+}
+.panel-heading {
+    margin-top: 0px !important;
 }
 @media (min-width: 33em) {
     #registration-form {
