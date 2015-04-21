@@ -1,14 +1,12 @@
 <template name="singleRegistrant">
     <div class="panel panel-default">
-<!--
         <div class="panel-heading">
-
+            <h3>{{ first_name }} {{ last_name }}</h3>
         </div>
--->
         <div class="panel-body">
-            <h2 class="registrant-panel-name">{{ first_name }} {{ last_name }}</h2>
+
             {{# if firstTimeAttender }}
-                <p>First time attender!</p>
+            <p>First time attender!</p>
             {{/ if }}
             <p><strong>Age at time of event:</strong> {{ age }}</p>
             {{# if specialNeeds }}
