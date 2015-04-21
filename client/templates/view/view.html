@@ -1,6 +1,6 @@
 <template name="view">
-    <h2>My registrant(s).</h2>
-
+    <h2 class="page-header">My registrant(s).</h2>
+    {{> finishedRegistering }}
     {{# each registrants }}
     {{> singleRegistrant }}
     {{/ each }}
