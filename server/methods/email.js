@@ -30,8 +30,14 @@ please write a check for at least 25% of the total for all persons \
 (100% if you are claiming the early registration discount), minus \
 expected assistance, payable to <strong>Pacific Yearly Meeting</strong>.</p>\
 <p>Note your family email address (where you received this email), for identification.</p>\
-<p>For each person under age 18, enclose both the \
-<a href="http://www.pacificyearlymeeting.org/wordpress/wp-content/uploads/2015/04/2015_Childrens_Prog_Parent_Consent_and_Medical_Form.pdf">parental permission and medical release forms</a>.</p>\
+<p>For each person under age 18, enclose either: \
+<ul>\
+<li><a href="http://www.pacificyearlymeeting.org/wordpress/wp-content/uploads/2015/04/2015_Childrens_Prog_Parent_Consent_and_Medical_Form.pdf">Children\'s \
+program parental permission and medical release forms</a>, or</li>\
+    <li><a href="http://www.pacificyearlymeeting.org/wordpress/wp-content/uploads/2015/04/2015_JYM_Parent_Permission_and_Medical.pdf">JYM program \
+parental permission and medical release forms</a></li>\
+</ul>\
+    </p>\
 <p>Mail all registration items to:</p>\
 <p>Berkeley Registration Team<br />\
 2151 Vine St.<br />\
