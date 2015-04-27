@@ -1,3 +1,13 @@
 AccountsTemplates.configureRoute('signIn', {layoutTemplate: 'appLayout'});
 AccountsTemplates.configureRoute('signUp', {layoutTemplate: 'appLayout'});
 AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'});
+AccountsTemplates.configureRoute('resetPwd', {
+    layoutTemplate: 'appLayout',
+    path: 'reset-password'
+});
+
+AccountsTemplates.configure({
+    // Behaviour
+    // confirmPassword: true,
+    showForgotPasswordLink: true
+});
