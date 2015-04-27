@@ -1,4 +1,5 @@
 Meteor.startup(function() {
+    Accounts.emailTemplates.siteName = "PYM Online Registration";
 
     Meteor.Mailgun.config({
         username: 'postmaster@domain.com',
