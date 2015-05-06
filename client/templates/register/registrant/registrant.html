@@ -37,9 +37,6 @@
         {{> afFormGroup name="postalAddress" id="postal-address" }}
         <p class="help-block">You only need to enter your family's address for the first person registering.</p>
 
-        <!-- first time attender -->
-        {{> afFormGroup name="firstTimeAttender" id="first-time-attender"}}
-
         <!-- meeting -->
         {{> afFormGroup name="registrantAffiliation" id="registrant-affiliation" }}
         <p class="help-block">
@@ -49,5 +46,9 @@
 
         <!-- Registration type -->
         {{> afFormGroup name="registrationType" id="registration_type" options=registrationTypeOptions}}
+
+        <!-- first time attender -->
+        {{> afFormGroup name="firstTimeAttender" id="first-time-attender"}}
+
     </fieldset>
 </template>
