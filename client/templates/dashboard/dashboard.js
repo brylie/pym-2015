@@ -20,9 +20,11 @@ Template.dashboard.events({
         // Convert linens boolean into yes/no
         linensYesNo();
 
-        // Special needs must be present or empty string
+        // Special needs, postal address, and telephone must be present or empty string
         getSpecialNeeds();
-
+        getPostalAddress();
+        getTelephone();
+        
         // Convert JSON to CSV
         var registrantsCSV= Papa.unparse(registrantsJSON);
 
@@ -107,6 +109,40 @@ var getSpecialNeeds = function () {
             registrantsJSON[count].specialNeeds = registrant.specialNeeds;
         } else {
             registrantsJSON[count].specialNeeds = "";
+        }
+        count ++;
+    });
+};
+
+var getPostalAddress = function () {
+    /*
+    * Takes a registrant object
+    * gets the postal or sets an empty string
+    * updates the global registrants JSON
+    */
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.postalAddress) {
+            registrantsJSON[count].postalAddress = registrant.postalAddress;
+        } else {
+            registrantsJSON[count].postalAddress = "";
+        }
+        count ++;
+    });
+};
+
+var getTelephone = function () {
+    /*
+    * Takes a registrant object
+    * gets the telephone or sets an empty string
+    * updates the global registrants JSON
+    */
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.telephone) {
+            registrantsJSON[count].telephone = registrant.telephone;
+        } else {
+            registrantsJSON[count].telephone = "";
         }
         count ++;
     });
