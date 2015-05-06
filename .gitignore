@@ -1,4 +1,4 @@
 .meteor/local
 .meteor/meteorite
 mup.json
-/server/smtp.js
+server/smtp.js
