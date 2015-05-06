@@ -41,7 +41,7 @@ Registrants.attachSchema(new SimpleSchema({
     'postalAddress': {
         type: String,
         optional: true,
-        label: "Enter your primary postal address",
+        label: "Primary postal address",
         autoform: {
             afFieldInput: {
                 type: "textarea"
