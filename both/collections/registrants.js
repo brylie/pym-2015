@@ -48,6 +48,12 @@ Registrants.attachSchema(new SimpleSchema({
             }
         }
     },
+    'telephone': {
+       type: String,
+       optional: true,
+       label: "Primary telephone number",
+       max: 20
+   },
     'registrationType': {
         type: String,
         allowedValues: [
