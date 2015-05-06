@@ -38,6 +38,16 @@ Registrants.attachSchema(new SimpleSchema({
         label: "Grade in school this year",
         max: 200
     },
+    'postalAddress': {
+        type: String,
+        optional: true,
+        label: "Enter your primary postal address",
+        autoform: {
+            afFieldInput: {
+                type: "textarea"
+            }
+        }
+    },
     'registrationType': {
         type: String,
         allowedValues: [
