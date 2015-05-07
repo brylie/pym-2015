@@ -143,7 +143,7 @@ Registrants.attachSchema(new SimpleSchema({
     'registrantAffiliation': {
         type: String,
         optional: true,
-        label: "Affiliated Quaker meeting, woship group, or organization"
+        label: "Affiliated Quaker meeting, worship group, or organization"
     },
     'firstTimeAttender': {
         type: Boolean,
