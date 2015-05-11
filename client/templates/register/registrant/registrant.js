@@ -4,7 +4,7 @@ Template.registrantDetails.helpers({
         return [
             {label: "Commuter (sleeping elsewhere)", value: "commuter"},
             {label: "Daily (staying overnight)", value: "daily"},
-            {label: "Full Week", value: "weekly"}
+            {label: "Full Week (staying overnight all nights)", value: "weekly"}
         ];
     },
     /*
@@ -47,7 +47,7 @@ Template.registrantDetails.events({
         resetReactiveVars();
 
         // Clear the accommodations selection
-        $("#accommodations").val("");
+        //$("#accommodations").val("");
 
         // Clear all day checkboxes
         $('input[name="days"]').each(function() {
