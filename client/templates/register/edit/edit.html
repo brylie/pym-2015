@@ -1,5 +1,31 @@
 <template name="editRegistration">
-    <h2>Edit registration.</h2>
-    <p>Edit the registration using the following form.</p>
-   {{> quickForm collection="Registrations" doc=getRegistration id="updateRegistrationForm" type="update"}}
+    <div class="page-header"><h1>Edit registration</h1></div>
+    {{#autoForm collection="Registrants" id="registration-form" type="update" doc=this }}
+
+    <!-- first name, last name, age goup, registration type -->
+    {{> registrantDetails }}
+
+    <!-- dynamic accommodations form, based on registration type -->
+    {{> accommodations }}
+
+    <!-- conditionally display days selection -->
+    {{> days }}
+
+    <!-- food preference -->
+    {{> afFormGroup name="foodPreference" id="food_preference" }}
+    <span class="help-block">Select any dietary needs/choices.</span>
+
+    <!-- carbon tax  -->
+    {{> afFormGroup name="carbonTax" id="carbon-tax" }}
+    <p class="help-block">If you would like to add a voluntary carbon fee or tax on your travel to & from Walker Creek, enter a whole dollar amount ($USD). <a href="http://www.pacificyearlymeeting.org/2015/documents/pym-committee-reports/unity-with-nature/carbon-tax/" target="_blank">Click here for more information</a>.</p>
+
+    <!-- TODO: hide button if no 'price' has been calculated. I.e. invalid registration. -->
+
+    <button type="submit" class="btn btn-lg btn-primary">
+        Save changes {{#if price }}<span class="badge">$ {{ price }}</span> {{/if}}
+    </button>
+
+    <!--{{> finishedRegistering }}-->
+
+    {{/autoForm}}
 </template>
