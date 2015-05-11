@@ -13,6 +13,10 @@ Router.route('/dashboard', {
 
 Router.route('/register');
 
+Router.route('/edit/:_id', {
+    name: 'editRegistration'
+});
+
 // Route for individuals to review their registration(s)
 Router.route('/view', {
 
@@ -46,4 +50,4 @@ var requiresRegistrarAccess = function () {
 Router.onBeforeAction(requiresUserLogin, {only: ['register', 'view']});
 
 // Admin-only access to certain routes
-Router.onBeforeAction(requiresRegistrarAccess, {only: ['dashboard']});
+Router.onBeforeAction(requiresRegistrarAccess, {only: ['dashboard', 'editRegistration']});
