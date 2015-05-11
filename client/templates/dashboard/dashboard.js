@@ -20,13 +20,14 @@ Template.dashboard.events({
         // Convert linens boolean into yes/no
         linensYesNo();
 
-        // Special needs, postal address, and telephone must be present or empty string
+        // Special needs, postal address, carbon tax, and telephone must be present or empty string
         getSpecialNeeds();
         getPostalAddress();
         getTelephone();
-        
+        getCarbonTax();
+
         // Convert JSON to CSV
-        var registrantsCSV= Papa.unparse(registrantsJSON);
+        var registrantsCSV= Papa.unparse(registrantsJSON, {quotes: true});
 
         // Add registrants to binary blob for downloading
         var registrantsBLOB = new Blob([registrantsCSV], {type: "text/csv"});
@@ -143,6 +144,23 @@ var getTelephone = function () {
             registrantsJSON[count].telephone = registrant.telephone;
         } else {
             registrantsJSON[count].telephone = "";
+        }
+        count ++;
+    });
+};
+
+var getCarbonTax = function () {
+    /*
+    * Takes a registrant object
+    * gets the carbon tax; or an empty string
+    * updates the global registrants JSON
+    */
+    var count = 0;
+    _.each(registrantsJSON, function (registrant) {
+        if (registrant.carbonTax) {
+            registrantsJSON[count].carbonTax = registrant.carbonTax;
+        } else {
+            registrantsJSON[count].carbonTax = "";
         }
         count ++;
     });
