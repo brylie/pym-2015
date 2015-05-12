@@ -47,7 +47,7 @@ Template.dashboard.events({
         "specialNeeds",
         "carbonTax",
         "fee",
-        "createdAt"
+        "createdAt",
         "_id",
         "createdByEmail"
       ],
