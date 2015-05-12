@@ -1,5 +1,12 @@
 Registrants = new Meteor.Collection("registrants");
 
+Registrants.allow({
+    // User must be logged in to register
+    insert: function (userId, doc) {
+        return !! userId;
+    }
+});
+
 Registrants.attachSchema(new SimpleSchema({
     'first_name' : {
         type: String,
@@ -32,7 +39,7 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
-     'gradeInSchool': {
+    'gradeInSchool': {
         type: String,
         optional: true,
         label: "Grade in school this year",
@@ -49,11 +56,11 @@ Registrants.attachSchema(new SimpleSchema({
         }
     },
     'telephone': {
-       type: String,
-       optional: true,
-       label: "Primary telephone number",
-       max: 20
-   },
+        type: String,
+        optional: true,
+        label: "Primary telephone number",
+        max: 20
+    },
     'registrationType': {
         type: String,
         allowedValues: [
