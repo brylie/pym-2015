@@ -1,5 +1,13 @@
 Meteor.publish('registrants', function () {
-    return Registrants.find();
+    var user = this.userId;
+
+    // Make sure the user is a registrar
+    if (Roles.userIsInRole(user, ['registrar']))
+    {
+        return Registrants.find();
+    } else {
+        return [];
+    }
 });
 
 // Registrations for a given user
