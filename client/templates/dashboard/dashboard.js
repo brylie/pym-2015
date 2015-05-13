@@ -28,7 +28,7 @@ Template.dashboard.events({
       "carbonTax",
       "registrantAffiliation"
     ];
-    _.each(optionalFields, eusureFieldHasValue);
+    _.each(optionalFields, ensureFieldHasValue);
 
     // Convert JSON to CSV
     // making sure to set field order
