@@ -25,6 +25,7 @@ Template.dashboard.events({
     getPostalAddress();
     getTelephone();
     getCarbonTax();
+    getAffiliation();
 
     // Convert JSON to CSV
     // re-order fields
@@ -38,6 +39,7 @@ Template.dashboard.events({
         "registrantEmail",
         "postalAddress",
         "telephone",
+        "registrantAffiliation",
         "firstTimeAttender",
         "registrationType",
         "accommodations",
@@ -169,6 +171,23 @@ var getTelephone = function () {
       registrantsJSON[count].telephone = registrant.telephone;
     } else {
       registrantsJSON[count].telephone = "";
+    }
+    count ++;
+  });
+};
+
+var getAffiliation = function () {
+  /*
+  * Takes a registrant object
+  * gets the affiliation; or an empty string
+  * updates the global registrants JSON
+  */
+  var count = 0;
+  _.each(registrantsJSON, function (registrant) {
+    if (registrant['registrantAffiliation']) {
+      registrantsJSON[count]['registrantAffiliation'] = registrant['registrantAffiliation'];
+    } else {
+      registrantsJSON[count]['registrantAffiliation'] = "";
     }
     count ++;
   });
