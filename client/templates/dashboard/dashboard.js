@@ -17,8 +17,9 @@ Template.dashboard.events({
     flattenFoodChoices();
     flattenDaysChoices();
 
-    // Convert linens boolean into yes/no
-    linensYesNo();
+    // Convert boolean values into yes/no
+    booleanToYesNo("linens");
+    booleanToYesNo("firstTimeAttender");
 
     // Special needs, postal address, carbon tax, and telephone must be present or empty string
     getSpecialNeeds();
@@ -108,18 +109,18 @@ var flattenDaysChoices = function () {
   });
 };
 
-var linensYesNo = function () {
+var booleanToYesNo = function (field) {
   /*
-  * Takes a registrant object
-  * converts linens boolean into 'yes' 'no'
+  * Takes a registrant object field
+  * converts boolean value into 'yes' 'no'
   * updates the global registrants JSON
   */
   var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.linens) {
-      registrantsJSON[count].linens = "yes";
+    if (registrant[field]) {
+      registrantsJSON[count][field] = "yes";
     } else {
-      registrantsJSON[count].linens = "no";
+      registrantsJSON[count][field] = "no";
     }
     count ++;
   });
