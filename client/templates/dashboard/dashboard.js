@@ -21,13 +21,12 @@ Template.dashboard.events({
     booleanToYesNo("linens");
     booleanToYesNo("firstTimeAttender");
 
-    // Ensure that all optional values are set for export
-    // setting to empty string if not submitted
-    setValueOrEmptyString("specialNeeds");
-    setValueOrEmptyString("postalAddress");
-    setValueOrEmptyString("telephone");
-    setValueOrEmptyString("carbonTax");
-    setValueOrEmptyString("registrantAffiliation");
+    // Ensure that all field values are set for export
+    ensureFieldHasValue("specialNeeds");
+    ensureFieldHasValue("postalAddress");
+    ensureFieldHasValue("telephone");
+    ensureFieldHasValue("carbonTax");
+    ensureFieldHasValue("registrant");
 
 
     // Convert JSON to CSV
@@ -42,7 +41,7 @@ Template.dashboard.events({
         "registrantEmail",
         "postalAddress",
         "telephone",
-        "registrantAffiliation",
+        "registrant",
         "firstTimeAttender",
         "registrationType",
         "accommodations",
@@ -128,7 +127,7 @@ var booleanToYesNo = function (field) {
   });
 };
 
-var setValueOrEmptyString = function (field) {
+var ensureFieldHasValue = function (field) {
   /*
   * Takes a registrant object, looks at a given field
   * If the field is undefined, sets the value to an empty string
