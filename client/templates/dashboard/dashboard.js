@@ -30,6 +30,9 @@ Template.dashboard.events({
     ];
     _.each(optionalFields, ensureFieldHasValue);
 
+    var dateFields = ["createdAt"];
+    _.each(dateFields, unixToISO);
+
     // Convert JSON to CSV
     // making sure to set field order
     var registrantsCSV = Papa.unparse({
@@ -117,4 +120,21 @@ var ensureFieldHasValue = function (field) {
       registrant[field] = "";
     }
   });
+};
+
+var unixToISO = function (field) {
+  /*
+  * Takes a registrant object
+  * Converts a date field from Unix format to ISO 8601
+  */
+  _.each(registrantsJSON, function (registrant) {
+    // Get the registration date, using moment
+    var registrationDate = moment(registrant[field]);
+
+    // Convert the registration date to ISO format
+    var isoDate = registrationDate.format();
+
+    // Update the registrant field with ISO date
+    registrant[field] = isoDate;
+  })
 };
