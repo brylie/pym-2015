@@ -63,12 +63,13 @@ Template.dashboard.events({
     var registrantsBLOB = new Blob([registrantsCSV], {type: "text/csv"});
 
     // Download the file
-    saveAs(registrantsBLOB, "pym2015-registrants-asOf-" + dateNow + ".csv");
+    saveAs(registrantsBLOB, "pym2015-registrants-export-" + dateNow + ".csv");
   }
 });
 
 Template.dashboardRegistrant.events({
   'click .deleteRegistration': function () {
+    // Make sure the user wants to delete the registration
     if (confirm("Delete this registration?")) {
       Registrants.remove(this._id);
     }
@@ -95,14 +96,12 @@ var booleanToYesNo = function (field) {
   * Takes a registrant object
   * converts boolean field value into 'yes' 'no'
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
     if (registrant[field]) {
-      registrantsJSON[count][field] = "yes";
+      registrant[field] = "yes";
     } else {
-      registrantsJSON[count][field] = "no";
+      registrant[field] = "no";
     }
-    count ++;
   });
 };
 
