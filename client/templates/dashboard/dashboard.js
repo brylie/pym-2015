@@ -12,10 +12,9 @@ Template.dashboard.events({
     // Fetch all registrants
     registrantsJSON = Registrants.find().fetch();
 
-    // Flatten Registrants array fields
-    // TODO: can this be done in a single function, e.g. map?
-    flattenFoodChoices();
-    flattenDaysChoices();
+    // Flatten registrants array fields to string
+    flattenArray("foodPreference");
+    flattenArray("days");
 
     // Convert boolean values into yes/no
     booleanToYesNo("linens");
@@ -74,47 +73,25 @@ Template.dashboardRegistrant.events({
   }
 });
 
-var flattenFoodChoices = function () {
+var flattenArray = function (field) {
   /*
   * Takes a registrant object
-  * flattens the food choices array
-  * updates the global registrants JSON
+  * If value is present, flattens array to comma delimited string
+  * Otherwise sets to empty string
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.foodPreference) {
-      var foodPreference = registrant.foodPreference.join(", ");
-      registrantsJSON[count].foodPreference = foodPreference;
+    if (registrant[field]) {
+      registrant[field] = registrant[field].join(", ");
     } else {
-      registrantsJSON[count].foodPreference = "";
+      registrant[field] = "";
     }
-    count ++;
-  });
-};
-
-var flattenDaysChoices = function () {
-  /*
-  * Takes a registrant object
-  * flattens the days array
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.days) {
-      var days = registrant.days.join(", ");
-      registrantsJSON[count].days = days;
-    } else {
-      registrantsJSON[count].days = "";
-    }
-    count ++;
   });
 };
 
 var booleanToYesNo = function (field) {
   /*
-  * Takes a registrant object field
-  * converts boolean value into 'yes' 'no'
-  * updates the global registrants JSON
+  * Takes a registrant object
+  * converts boolean field value into 'yes' 'no'
   */
   var count = 0;
   _.each(registrantsJSON, function (registrant) {
