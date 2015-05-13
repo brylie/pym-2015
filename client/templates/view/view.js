@@ -1,4 +1,4 @@
-Template.view.helpers({
+Template.registrantsView.helpers({
     'registrants': function () {
         return Registrants.find();
     }
