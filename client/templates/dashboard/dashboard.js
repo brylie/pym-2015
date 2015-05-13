@@ -12,24 +12,26 @@ Template.dashboard.events({
     // Fetch all registrants
     registrantsJSON = Registrants.find().fetch();
 
-    // Flatten registrants array fields to string
-    flattenArray("foodPreference");
-    flattenArray("days");
+    // Flatten registrant array fields to strings
+    var arrayFields = ["foodPreference", "days"]
+    _.each(arrayFields, flattenArray);
 
     // Convert boolean values into yes/no
-    booleanToYesNo("linens");
-    booleanToYesNo("firstTimeAttender");
+    var booleanFields = ["linens", "firstTimeAttender"];
+    _.each(booleanFields, booleanToYesNo);
 
-    // Ensure that all field values are set for export
-    ensureFieldHasValue("specialNeeds");
-    ensureFieldHasValue("postalAddress");
-    ensureFieldHasValue("telephone");
-    ensureFieldHasValue("carbonTax");
-    ensureFieldHasValue("registrant");
-
+    // Ensure that all optional fields have values for export
+    var optionalFields = [
+      "specialNeeds",
+      "postalAddress",
+      "telephone",
+      "carbonTax",
+      "registrantAffiliation"
+    ];
+    _.each(optionalFields, eusureFieldHasValue);
 
     // Convert JSON to CSV
-    // re-order fields
+    // making sure to set field order
     var registrantsCSV = Papa.unparse({
       quotes: true,
       fields: [
@@ -40,7 +42,7 @@ Template.dashboard.events({
         "registrantEmail",
         "postalAddress",
         "telephone",
-        "registrant",
+        "registrantAffiliation",
         "firstTimeAttender",
         "registrationType",
         "accommodations",
