@@ -21,12 +21,14 @@ Template.dashboard.events({
     booleanToYesNo("linens");
     booleanToYesNo("firstTimeAttender");
 
-    // Special needs, postal address, carbon tax, and telephone must be present or empty string
-    getSpecialNeeds();
-    getPostalAddress();
-    getTelephone();
-    getCarbonTax();
-    getAffiliation();
+    // Ensure that all optional values are set for export
+    // setting to empty string if not submitted
+    setValueOrEmptyString("specialNeeds");
+    setValueOrEmptyString("postalAddress");
+    setValueOrEmptyString("telephone");
+    setValueOrEmptyString("carbonTax");
+    setValueOrEmptyString("registrantAffiliation");
+
 
     // Convert JSON to CSV
     // re-order fields
@@ -126,87 +128,16 @@ var booleanToYesNo = function (field) {
   });
 };
 
-var getSpecialNeeds = function () {
+var setValueOrEmptyString = function (field) {
   /*
-  * Takes a registrant object
-  * gets the special needs; or an empty string
-  * updates the global registrants JSON
+  * Takes a registrant object, looks at a given field
+  * If the field is undefined, sets the value to an empty string
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.specialNeeds) {
-      registrantsJSON[count].specialNeeds = registrant.specialNeeds;
-    } else {
-      registrantsJSON[count].specialNeeds = "";
+    // If the field is undefined
+    if (!registrant[field]) {
+      // Set the field to an empty string
+      registrant[field] = "";
     }
-    count ++;
-  });
-};
-
-var getPostalAddress = function () {
-  /*
-  * Takes a registrant object
-  * gets the postal or sets an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.postalAddress) {
-      registrantsJSON[count].postalAddress = registrant.postalAddress;
-    } else {
-      registrantsJSON[count].postalAddress = "";
-    }
-    count ++;
-  });
-};
-
-var getTelephone = function () {
-  /*
-  * Takes a registrant object
-  * gets the telephone or sets an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.telephone) {
-      registrantsJSON[count].telephone = registrant.telephone;
-    } else {
-      registrantsJSON[count].telephone = "";
-    }
-    count ++;
-  });
-};
-
-var getAffiliation = function () {
-  /*
-  * Takes a registrant object
-  * gets the affiliation; or an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant['registrantAffiliation']) {
-      registrantsJSON[count]['registrantAffiliation'] = registrant['registrantAffiliation'];
-    } else {
-      registrantsJSON[count]['registrantAffiliation'] = "";
-    }
-    count ++;
-  });
-};
-
-var getCarbonTax = function () {
-  /*
-  * Takes a registrant object
-  * gets the carbon tax; or an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.carbonTax) {
-      registrantsJSON[count].carbonTax = registrant.carbonTax;
-    } else {
-      registrantsJSON[count].carbonTax = "";
-    }
-    count ++;
   });
 };
