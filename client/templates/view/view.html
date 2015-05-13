@@ -1,8 +1,9 @@
-<template name="view">
-    <h2 class="page-header">My registrant(s).</h2>
-    {{> finishedRegistering }}
+<template name="registrantsView">
+  <h2 class="page-header">My registrant(s).</h2>
+  {{> finishedRegistering }}
+  <div class="row registrants">
     {{# each registrants }}
     {{> singleRegistrant }}
     {{/ each }}
-
+  </div>
 </template>

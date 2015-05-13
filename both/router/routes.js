@@ -19,7 +19,7 @@ Router.route('/edit/:_id', {
 
 // Route for individuals to review their registration(s)
 Router.route('/view', {
-
+  name: "registrantsView"
 });
 
 
