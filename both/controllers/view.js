@@ -1,4 +1,4 @@
-ViewController = AppController.extend({
+RegistrantsViewController = AppController.extend({
     subscriptions: function() {
         // Subscribe to user registrations
         return this.subscribe('myRegistrants');

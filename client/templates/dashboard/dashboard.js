@@ -12,22 +12,29 @@ Template.dashboard.events({
     // Fetch all registrants
     registrantsJSON = Registrants.find().fetch();
 
-    // Flatten Registrants array fields
-    // TODO: can this be done in a single function, e.g. map?
-    flattenFoodChoices();
-    flattenDaysChoices();
+    // Flatten registrant array fields to strings
+    var arrayFields = ["foodPreference", "days"]
+    _.each(arrayFields, flattenArray);
 
-    // Convert linens boolean into yes/no
-    linensYesNo();
+    // Convert boolean values into yes/no
+    var booleanFields = ["linens", "firstTimeAttender"];
+    _.each(booleanFields, booleanToYesNo);
 
-    // Special needs, postal address, carbon tax, and telephone must be present or empty string
-    getSpecialNeeds();
-    getPostalAddress();
-    getTelephone();
-    getCarbonTax();
+    // Ensure that all optional fields have values for export
+    var optionalFields = [
+      "specialNeeds",
+      "postalAddress",
+      "telephone",
+      "carbonTax",
+      "registrantAffiliation"
+    ];
+    _.each(optionalFields, ensureFieldHasValue);
+
+    var dateFields = ["createdAt"];
+    _.each(dateFields, unixToISO);
 
     // Convert JSON to CSV
-    // re-order fields
+    // making sure to set field order
     var registrantsCSV = Papa.unparse({
       quotes: true,
       fields: [
@@ -38,6 +45,7 @@ Template.dashboard.events({
         "registrantEmail",
         "postalAddress",
         "telephone",
+        "registrantAffiliation",
         "firstTimeAttender",
         "registrationType",
         "accommodations",
@@ -58,135 +66,75 @@ Template.dashboard.events({
     var registrantsBLOB = new Blob([registrantsCSV], {type: "text/csv"});
 
     // Download the file
-    saveAs(registrantsBLOB, "pym2015-registrants-asOf-" + dateNow + ".csv");
+    saveAs(registrantsBLOB, "pym2015-registrants-export-" + dateNow + ".csv");
   }
 });
 
 Template.dashboardRegistrant.events({
   'click .deleteRegistration': function () {
+    // Make sure the user wants to delete the registration
     if (confirm("Delete this registration?")) {
       Registrants.remove(this._id);
     }
   }
 });
 
-var flattenFoodChoices = function () {
+var flattenArray = function (field) {
   /*
   * Takes a registrant object
-  * flattens the food choices array
-  * updates the global registrants JSON
+  * If value is present, flattens array to comma delimited string
+  * Otherwise sets to empty string
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.foodPreference) {
-      var foodPreference = registrant.foodPreference.join(", ");
-      registrantsJSON[count].foodPreference = foodPreference;
+    if (registrant[field]) {
+      registrant[field] = registrant[field].join(", ");
     } else {
-      registrantsJSON[count].foodPreference = "";
+      registrant[field] = "";
     }
-    count ++;
   });
 };
 
-var flattenDaysChoices = function () {
+var booleanToYesNo = function (field) {
   /*
   * Takes a registrant object
-  * flattens the days array
-  * updates the global registrants JSON
+  * converts boolean field value into 'yes' 'no'
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.days) {
-      var days = registrant.days.join(", ");
-      registrantsJSON[count].days = days;
+    if (registrant[field]) {
+      registrant[field] = "yes";
     } else {
-      registrantsJSON[count].days = "";
+      registrant[field] = "no";
     }
-    count ++;
   });
 };
 
-var linensYesNo = function () {
+var ensureFieldHasValue = function (field) {
   /*
-  * Takes a registrant object
-  * converts linens boolean into 'yes' 'no'
-  * updates the global registrants JSON
+  * Takes a registrant object, looks at a given field
+  * If the field is undefined, sets the value to an empty string
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.linens) {
-      registrantsJSON[count].linens = "yes";
-    } else {
-      registrantsJSON[count].linens = "no";
+    // If the field is undefined
+    if (!registrant[field]) {
+      // Set the field to an empty string
+      registrant[field] = "";
     }
-    count ++;
   });
 };
 
-var getSpecialNeeds = function () {
+var unixToISO = function (field) {
   /*
   * Takes a registrant object
-  * gets the special needs; or an empty string
-  * updates the global registrants JSON
+  * Converts a date field from Unix format to ISO 8601
   */
-  var count = 0;
   _.each(registrantsJSON, function (registrant) {
-    if (registrant.specialNeeds) {
-      registrantsJSON[count].specialNeeds = registrant.specialNeeds;
-    } else {
-      registrantsJSON[count].specialNeeds = "";
-    }
-    count ++;
-  });
-};
+    // Get the registration date, using moment
+    var registrationDate = moment(registrant[field]);
 
-var getPostalAddress = function () {
-  /*
-  * Takes a registrant object
-  * gets the postal or sets an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.postalAddress) {
-      registrantsJSON[count].postalAddress = registrant.postalAddress;
-    } else {
-      registrantsJSON[count].postalAddress = "";
-    }
-    count ++;
-  });
-};
+    // Convert the registration date to ISO format
+    var isoDate = registrationDate.format();
 
-var getTelephone = function () {
-  /*
-  * Takes a registrant object
-  * gets the telephone or sets an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.telephone) {
-      registrantsJSON[count].telephone = registrant.telephone;
-    } else {
-      registrantsJSON[count].telephone = "";
-    }
-    count ++;
-  });
-};
-
-var getCarbonTax = function () {
-  /*
-  * Takes a registrant object
-  * gets the carbon tax; or an empty string
-  * updates the global registrants JSON
-  */
-  var count = 0;
-  _.each(registrantsJSON, function (registrant) {
-    if (registrant.carbonTax) {
-      registrantsJSON[count].carbonTax = registrant.carbonTax;
-    } else {
-      registrantsJSON[count].carbonTax = "";
-    }
-    count ++;
-  });
+    // Update the registrant field with ISO date
+    registrant[field] = isoDate;
+  })
 };
