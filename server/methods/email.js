@@ -37,6 +37,12 @@ program parental permission and medical release forms</a>, or</li>\
     <li><a href="http://www.pacificyearlymeeting.org/wordpress/wp-content/uploads/2015/04/2015_JYM_Parent_Permission_and_Medical.pdf">JYM program \
 parental permission and medical release forms</a></li>\
 </ul>\
+<p>\
+If you need financial assistance, please submit the \
+<a href="http://www.pacificyearlymeeting.org/wordpress/wp-content/uploads/2015/05/PYM2015_Attendance_Assistance_Reqst_Form-2015-04-01.pdf">\
+PYM 2015 Attendance Assistance Request Form\
+</a>.\
+            </p>\
     </p>\
 <p>Mail all registration items to:</p>\
 <p>Berkeley Registration Team<br />\
