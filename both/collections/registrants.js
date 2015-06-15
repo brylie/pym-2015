@@ -66,7 +66,8 @@ Registrants.attachSchema(new SimpleSchema({
         allowedValues: [
             'commuter',
             'daily',
-            'weekly'
+            'weekly',
+            'cancelled'
         ]
     },
     'accommodations': {
