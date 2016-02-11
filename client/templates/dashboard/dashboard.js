@@ -1,6 +1,13 @@
+Template.dashboard.created = function () {
+  // Get reference to template instance
+  const instance = this;
+
+  instance.subscribe('registrants');
+};
+
 Template.dashboard.helpers({
   'registrants': function () {
-    return Registrants.find();
+    return Registrants.find().fetch();
   }
 });
 
