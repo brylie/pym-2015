@@ -26,7 +26,8 @@ Template.dashboard.events({
       "postalAddress",
       "telephone",
       "carbonTax",
-      "registrantAffiliation"
+      "registrantAffiliation",
+      "grade"
     ];
     _.each(optionalFields, ensureFieldHasValue);
 
@@ -42,6 +43,7 @@ Template.dashboard.events({
         "first_name",
         "age",
         "ageGroup",
+        "grade",
         "registrantEmail",
         "postalAddress",
         "telephone",
