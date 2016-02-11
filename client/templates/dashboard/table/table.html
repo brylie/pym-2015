@@ -1,0 +1,22 @@
+<template name="dashboardRegistrantTable">
+  <table class="table table-hover table-bordered table-striped">
+      <thead>
+          <th>Created By</th>
+          <th>Full Name</th>
+          <th>Age</th>
+          <th>Registration Type</th>
+          <th>Accommodations</th>
+          <th>Days</th>
+          <th>Food Choice(s)</th>
+          <th>Fee</th>
+          <th>Edit</th>
+          <th>Cancel</th>
+          <th>Delete</th>
+      </thead>
+      <tbody>
+          {{# each registrants }}
+          {{> dashboardRegistrant }}
+          {{/ each }}
+      </tbody>
+  </table>
+</template>
