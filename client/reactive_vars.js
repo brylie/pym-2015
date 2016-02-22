@@ -9,6 +9,7 @@ createReactiveVars = function () {
     firstTimeAttenderVar = new ReactiveVar;
     linensVar = new ReactiveVar;
     carbonTaxVar = new ReactiveVar;
+    donationVar = new ReactiveVar;
 }();
 
 resetReactiveVars = function () {
@@ -20,6 +21,7 @@ resetReactiveVars = function () {
     registrationFeeVar.set(undefined);
     linensVar.set(undefined);
     carbonTaxVar.set(undefined);
+    donationVar.set(undefined);
 };
 
 setDaysVar = function () {
@@ -67,6 +69,17 @@ setCarbonTaxVar = function () {
     }
 };
 
+setDonationVar = function () {
+    // Get the value of the donation input
+    var donationInputValue = $('#donation').val();
+
+    // If the value is not empty
+    if (donationInputValue !== "") {
+        // Set the donation reactive variable to the form input value
+        donationVar.set(parseInt(donationInputValue));
+    }
+};
+
 setReactiveVars = function () {
     // Reset all reactive variables to undefined
     resetReactiveVars();
@@ -93,6 +106,9 @@ setReactiveVars = function () {
 
     // Set the carbon tax reactive variable
     setCarbonTaxVar();
+
+    // Set the donation reactive variable
+    setDonationVar();
 
 }
 
