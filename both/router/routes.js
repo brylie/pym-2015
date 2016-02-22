@@ -27,13 +27,13 @@ var requiresUserLogin = function () {
 
 // Make sure user is logged in with registrar role
 var requiresRegistrarAccess = function () {
-    var user = Meteor.user()._id;
-    if (Roles.userIsInRole(user, ['registrar']))
-    {
-        this.next();
-    } else {
-        this.render('notFound');
-    }
+  const userId = Meteor.userId();
+
+  if (Roles.userIsInRole(userId, 'registrar')) {
+    this.next();
+  } else {
+    this.render('notFound');
+  }
 };
 
 // User login required for event registration
