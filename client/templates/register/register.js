@@ -28,7 +28,8 @@ Template.register.helpers({
                 firstTimeAttender: firstTimeAttenderVar.get(),
                 linens: linensVar.get(),
                 createdAt: new Date(),
-                carbonTax: carbonTaxVar.get()
+                carbonTax: carbonTaxVar.get(),
+                donation: donationVar.get()
             };
         } catch (error) {
             console.log(error.message);
