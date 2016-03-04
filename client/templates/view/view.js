@@ -8,6 +8,10 @@ Template.registrantsView.onCreated(function () {
 
 Template.registrantsView.helpers({
   'registrants': function () {
-    return Registrants.find();
+    const currentUserId = Meteor.userId();
+
+    if (currentUserId) {
+      return Registrants.find({'createdById': currentUserId});
+    }
   }
 });
