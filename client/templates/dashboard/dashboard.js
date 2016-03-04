@@ -1,6 +1,13 @@
+Template.dashboard.created = function () {
+  // Get reference to template instance
+  const instance = this;
+
+  instance.subscribe('registrants');
+};
+
 Template.dashboard.helpers({
   'registrants': function () {
-    return Registrants.find();
+    return Registrants.find().fetch();
   }
 });
 
@@ -26,7 +33,8 @@ Template.dashboard.events({
       "postalAddress",
       "telephone",
       "carbonTax",
-      "registrantAffiliation"
+      "registrantAffiliation",
+      "grade"
     ];
     _.each(optionalFields, ensureFieldHasValue);
 
@@ -42,6 +50,7 @@ Template.dashboard.events({
         "first_name",
         "age",
         "ageGroup",
+        "grade",
         "registrantEmail",
         "postalAddress",
         "telephone",
