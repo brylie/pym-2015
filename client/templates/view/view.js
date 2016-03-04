@@ -7,7 +7,7 @@ Template.registrantsView.onCreated(function () {
 });
 
 Template.registrantsView.helpers({
-    'registrants': function () {
-        return Registrants.find();
-    }
+  'registrants': function () {
+    return Registrants.find();
+  }
 });
