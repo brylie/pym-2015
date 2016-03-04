@@ -29,7 +29,7 @@
         {{> afFormGroup name="age" id="age"}}
 
         <!-- grade in school -->
-        {{# if schoolAgeGroup }}
+        {{# if registrantAgeIsBelow 20 }}
         <div class="alert alert-warning">
             <p>Note, you will need to provide a
                     <strong>parental consent and medical form</strong>
