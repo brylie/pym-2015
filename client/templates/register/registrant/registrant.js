@@ -7,36 +7,6 @@ Template.registrantDetails.helpers({
             {label: "Full Week (staying overnight all nights)", value: "weekly"}
         ];
     },
-    /*
-    Determine if registrant is school aged
-    by checking age group
-    return true if age group is child, youth, or teen
-    */
-    'schoolAgeGroup': function () {
-        var ageGroup = ageGroupVar.get();
-
-        if (ageGroup) {
-            // look at the value of age group
-            switch (ageGroup) {
-                    // if child, youth or teen
-                    // return true
-                case 'child':
-                    return true;
-                    break;
-                case 'youth':
-                    return true;
-                    break;
-                case 'teen':
-                    return true;
-                    break;
-                default:
-                    return false;
-                    break;
-            };
-        } else {
-            return false;
-        }
-    },
     "registrantAgeIsBelow": function (ageThreshold) {
       // Get current age value from form
       let age = AutoForm.getFieldValue("age")
