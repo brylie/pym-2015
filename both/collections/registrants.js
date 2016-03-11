@@ -216,6 +216,7 @@ Registrants.attachSchema(new SimpleSchema({
     },
     'fee' : {
         type: Number,
+        decimal: true,
         label: "Fee",
         optional: true,
         autoValue: function (doc) {
