@@ -29,7 +29,7 @@
             {{# if foodPreference }}
             <p><strong>Food preference:</strong> {{ foodPreference }}</p>
             {{/ if }}
-            <p><strong>Registration fee:</strong> ${{ fee }}</p>
+            <p><strong>Registration fee:</strong> {{ formatMoney fee }}</p>
         </div>
     </div>
 </template>
