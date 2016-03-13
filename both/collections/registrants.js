@@ -214,6 +214,11 @@ Registrants.attachSchema(new SimpleSchema({
         label: "Voluntary carbon tax ($USD)",
         optional: true
     },
+    'donation': {
+        type: Number,
+        label: "Optional donation ($USD)",
+        optional: true
+    },
     'fee' : {
         type: Number,
         decimal: true,
