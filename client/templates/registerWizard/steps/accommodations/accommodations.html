@@ -1,5 +1,5 @@
 <template name="wizardAccommodations">
-  {{#autoForm id="wizard-accommodations" schema=step.schema data=step.data }}
+  {{#autoForm id="wizard-accommodations" schema=step.schema }}
 
   <!-- Registration type -->
   {{> afFormGroup name="registrationType" id="registration-type" options=registrationTypeOptions }}
@@ -32,7 +32,7 @@
   <!-- Food -->
   {{> afFormGroup name="foodPreference" id="food-preference" }}
 
-  <!-- Special needs -->  
+  <!-- Special needs -->
   {{> afFormGroup name="specialNeeds" id="special-needs" }}
 
   {{> wizardButtons}}
