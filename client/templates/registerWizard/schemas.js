@@ -24,6 +24,11 @@ WizardSchemas.registrant = new SimpleSchema({
       max: 115,
       min: 0
   },
+  'registrantAffiliation': {
+      type: String,
+      optional: true,
+      label: "Affiliated Quaker meeting, worship group, or organization"
+  },
   'grade': {
     type: String,
     optional: true,
