@@ -29,7 +29,7 @@ WizardSchemas.registrant = new SimpleSchema({
       optional: true,
       label: "Affiliated Quaker meeting, worship group, or organization"
   },
-  'grade': {
+  'gradeInSchool': {
     type: String,
     optional: true,
     label: "School grade in Fall",
