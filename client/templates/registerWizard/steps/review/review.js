@@ -54,5 +54,24 @@ Template.wizardReview.helpers({
     if (registration.firstTimeAttender) {
       return firstTimeAttenderDiscount;
     }
+  },
+  'halfDayDiscount': function () {
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Get registration from template instance
+    const registration = instance.registration;
+
+    // Get registration days
+    const days = registration.days;
+
+    // Check if there are any days
+    if (days) {
+      // If so, count the number of discount days
+      const discountDays = countDiscountDays(days);
+
+      // Return the calculated half day discount
+      return discountDays * halfDayDiscountAmount;
+    }
   }
 });
