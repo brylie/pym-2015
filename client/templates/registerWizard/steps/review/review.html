@@ -67,6 +67,10 @@
     <dd>{{ formatMoney carbonTax }}</dd>
     <dt>Donation</dt>
     <dd>{{ formatMoney donation }}</dd>
+    {{# if firstTimeAttenderDiscount }}
+    <dt>First time attender</dt>
+    <dd>- {{ formatMoney firstTimeAttenderDiscount }}</dd>
+    {{/ if }}
     <dt>Total</dt>
     <dd><strong>{{ formatMoney 300 }}</strong></dd>
   </dl>
