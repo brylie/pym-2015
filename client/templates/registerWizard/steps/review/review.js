@@ -73,5 +73,21 @@ Template.wizardReview.helpers({
       // Return the calculated half day discount
       return discountDays * halfDayDiscountAmount;
     }
+  },
+  'registrationFee': function () {
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Get registration from template instance
+    const registration = instance.registration;
+
+    // Adjust attributes of registration data to match accommodations fee function
+    registration.type = registration.registrationType;
+    registration.ageGroup = calculateAgeGroup(registration.age);
+
+    // Calculate registration fee
+    const registrationFee = calculateRegistrationPrice(registration);
+
+    return registrationFee;
   }
 });
