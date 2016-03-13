@@ -2,7 +2,22 @@
   {{#autoForm id="wizard-accommodations" schema=step.schema data=step.data }}
 
   <!-- Registration type -->
-  {{> afFormGroup name="registrationType" id="registration_type" options=registrationTypeOptions}}
+  {{> afFormGroup name="registrationType" id="registration-type" options=registrationTypeOptions }}
 
-  {{/ autoform}}
+  {{# if requiresAccommodations }}
+  <fieldset>
+    <!-- Only show accommodations if they are relevant -->
+
+    <!-- Accommodations -->
+    {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+
+    <!-- Linens -->
+    {{> afFormGroup name="linens" id="linens" }}
+
+  </fieldset>
+  {{/ if }}
+
+  {{> wizardButtons}}
+
+  {{/ autoForm}}
 </template>
