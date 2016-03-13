@@ -1,6 +1,37 @@
 <template name="wizardReview">
-  <p>Review. {{ test }}</p>
-  {{#autoForm id="wizard-contributions" schema=step.schema data=step.data }}
+  <h2>Review details</h2>
+  {{# with registration }}
+
+  <h3>Registrant</h3>
+  {{ first_name }} {{ last_name }} {{ age }} {{ registrantAffiliation }}
+
+  {{# if firstTimeAttender }}
+  <p>First time attender.</p>
+  {{/ if }}
+
+  {{ postalAddress }}
+  {{ telephone }}
+  {{ registrantEmail }}
+
+  {{ registrationType }}
+  <ul>
+  {{# each day in days }}
+  <li>{{ day }}</li>
+  {{/ each }}
+  </ul>
+
+  {{ formatMoney carbonTax }}
+
+  {{ formatMoney donation }}
+  <ul>
+  {{# each preference in foodPreference }}
+  <li>{{ preference }}</li>
+  {{/ each }}
+  </ul>
+  {{ specialNeeds }}
+  {{/ with }}
+
+  {{#autoForm id="wizard-contributions" schema=step.schema }}
 
   {{> wizardButtons}}
   {{/ autoForm }}
