@@ -19,6 +19,13 @@ Template.registerWizard.helpers({
         schema: WizardSchemas.accommodations,
         template: "wizardAccommodations",
         formId: "wizard-accommodations"
+      },
+      {
+        id: 'contributions',
+        title: 'Contributions',
+        schema: WizardSchemas.contributions,
+        template: "wizardContributions",
+        formId: "wizard-contributions"
       }
     ]
   }
