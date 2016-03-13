@@ -29,5 +29,17 @@ Template.wizardReview.helpers({
     const accommodationsFee = calculateAccommodationsFee(registration);
 
     return accommodationsFee;
+  },
+  'firstTimeAttenderDiscount': function () {
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Get registration
+    const registration = instance.registration;
+
+    // Calculate first time attender discount
+    if (registration.firstTimeAttender) {
+      return firstTimeAttenderDiscount;
+    }
   }
 });
