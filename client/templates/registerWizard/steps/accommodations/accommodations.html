@@ -1,5 +1,5 @@
 <template name="wizardAccommodations">
-  {{#autoForm id="wizard-accommodations" schema=step.schema }}
+  {{#autoForm id="wizard-accommodations" schema=step.schema doc=step.data }}
 
   <!-- Registration type -->
   {{> afFormGroup name="registrationType" id="registration-type" options=registrationTypeOptions }}
