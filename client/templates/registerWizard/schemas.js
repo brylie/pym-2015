@@ -198,3 +198,17 @@ WizardSchemas.accommodations = new SimpleSchema({
       }
   }
 });
+
+// Contributions
+WizardSchemas.contributions = new SimpleSchema({
+  'carbonTax': {
+      type: Number,
+      label: "Voluntary carbon tax ($USD)",
+      optional: true
+  },
+  'donation': {
+      type: Number,
+      label: "Optional donation ($USD)",
+      optional: true
+  }
+});
