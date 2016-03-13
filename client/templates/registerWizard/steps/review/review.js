@@ -68,10 +68,10 @@ Template.wizardReview.helpers({
     // Check if there are any days
     if (days) {
       // If so, count the number of discount days
-      const discountDays = countDiscountDays(days);
+      const discountDaysDiscount = calculateDiscountDaysDiscount(registration);
 
       // Return the calculated half day discount
-      return discountDays * halfDayDiscountAmount;
+      return discountDaysDiscount;
     }
   },
   'subtotal': function () {
