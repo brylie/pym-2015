@@ -74,6 +74,31 @@ Template.wizardReview.helpers({
       return discountDays * halfDayDiscountAmount;
     }
   },
+  'lateFee': function () {
+    // Check if current date is past registration deadline
+    if (moment().utc() > moment(lateRegistrationBegins).utc()) {
+      // If so, calculate late fee
+
+      // Get reference to template instance
+      const instance = Template.instance();
+
+      // Get registration from template instance
+      const registration = instance.registration;
+
+      // Adjust attributes of registration data to match accommodations fee function
+      registration.type = registration.registrationType;
+      registration.ageGroup = calculateAgeGroup(registration.age);
+
+      // Calculate registration fee
+      const registrationSubtotal = calculateRegistrationSubtotal(registration);
+
+      // Calculate late fee
+      const lateFee = registrationSubtotal * earlyDiscountOrLateFeePercentage;
+
+      return lateFee;
+    }
+
+  },
   'registrationFee': function () {
     // Get reference to template instance
     const instance = Template.instance();
