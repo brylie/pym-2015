@@ -8,6 +8,10 @@ Router.route('/dashboard', {
 
 Router.route('/register');
 
+Router.route('/wizard/:step?', {
+  name: 'registerWizard'
+});
+
 Router.route('/edit/:_id', {
     name: 'editRegistration'
 });
