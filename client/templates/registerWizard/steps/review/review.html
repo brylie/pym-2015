@@ -1,0 +1,7 @@
+<template name="wizardReview">
+  <p>Review. {{ test }}</p>
+  {{#autoForm id="wizard-contributions" schema=step.schema data=step.data }}
+
+  {{> wizardButtons}}
+  {{/ autoForm }}
+</template>
