@@ -26,6 +26,12 @@ Template.registerWizard.helpers({
         schema: WizardSchemas.contributions,
         template: "wizardContributions",
         formId: "wizard-contributions"
+      },
+      {
+        id: 'reivew',
+        title: 'Review',
+        template: "wizardReview",
+        formId: "wizard-review"
       }
     ]
   }
