@@ -30,8 +30,7 @@ Template.registerWizard.helpers({
       {
         id: 'reivew',
         title: 'Review',
-        template: "wizardReview",
-        formId: "wizard-review"
+        template: "wizardReview"
       }
     ]
   }
