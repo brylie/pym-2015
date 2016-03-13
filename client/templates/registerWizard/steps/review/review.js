@@ -6,6 +6,13 @@ Template.wizardReview.onCreated(function () {
   instance.registration = instance.data.wizard.mergedData();
 });
 
+Template.wizardReview.events({
+  'click .wizard-back-button': function (event, instance) {
+    // Go to previous wizard step
+    instance.data.wizard.previous();
+  }
+});
+
 Template.wizardReview.helpers({
   'registration': function () {
     // Get reference to template instance
