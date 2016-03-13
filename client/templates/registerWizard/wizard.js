@@ -4,7 +4,9 @@ Template.registerWizard.helpers({
       {
         id: 'registrant',
         title: 'Registrant',
-        schema: WizardSchemas.registrant
+        schema: WizardSchemas.registrant,
+        template: "wizardRegistrant",
+        formId: "wizard-registrant"
       },
       {
         id: 'contact',
