@@ -3,32 +3,66 @@
   {{# with registration }}
 
   <h3>Registrant</h3>
-  {{ first_name }} {{ last_name }} {{ age }} {{ registrantAffiliation }}
+  <dl class="dl-horizontal">
+    <dt>Name</dt>
+    <dd>{{ first_name }} {{ last_name }}</dd>
+    <dt>Age</dt>
+    <dd>{{ age }}</dd>
+    <dt>Affiliation</dt>
+    <dd>{{ registrantAffiliation }}</dd>
+    {{# if firstTimeAttender }}
+    <dt>First PYM?</dt>
+    <dd>yes</dd>
+    {{/ if }}
+  </dl>
 
-  {{# if firstTimeAttender }}
-  <p>First time attender.</p>
-  {{/ if }}
+  <h3>Contact</h3>
+  <dl class="dl-horizontal">
+    <dt>Postal address</dt>
+    <dd><address>{{ postalAddress }}</address></dd>
+    <dt>Telephone</dt>
+    <dd>{{ telephone }}</dd>
+    <dt>Email</dt>
+    <dd>{{ registrantEmail }}</dd>
+  </dl>
 
-  {{ postalAddress }}
-  {{ telephone }}
-  {{ registrantEmail }}
+  <h3>Accommodations</h3>
+  <dl class="dl-horizontal">
+    <dt>Registration type</dt>
+    <dd class="text-capitalize">{{ registrationType }}</dd>
+    {{# if linens }}
+    <dt>Linens</dt>
+    <dd>requested</dd>
+    {{/ if }}
+    {{# if days }}
+    <dt>Days</dt>
+    <dd>
+      <ul class="list-inline">
+      {{# each day in days }}
+      <li>{{ day }}</li>
+      {{/ each }}
+      </ul>
+    </dd>
+    {{/ if }}
+    <dt>Food preferences</dt>
+    <dd>
+      <ul class="list-inline">
+      {{# each preference in foodPreference }}
+      <li class="text-capitalize">{{ preference }}</li>
+      {{/ each }}
+      </ul>
+    </dd>
+    <dt>Special needs</dt>
+    <dd>{{ specialNeeds }}</dd>
+  </dl>
 
-  {{ registrationType }}
-  <ul>
-  {{# each day in days }}
-  <li>{{ day }}</li>
-  {{/ each }}
-  </ul>
-
-  {{ formatMoney carbonTax }}
-
-  {{ formatMoney donation }}
-  <ul>
-  {{# each preference in foodPreference }}
-  <li>{{ preference }}</li>
-  {{/ each }}
-  </ul>
-  {{ specialNeeds }}
+  <h3>Contributions</h3>
+  <dl class="dl-horizontal">
+    <dt>Carbon tax</dt>
+    <dd>{{ formatMoney carbonTax }}</dd>
+    <dt>Donation</dt>
+    <dd>{{ formatMoney donation }}</dd>
+  </dl>
   {{/ with }}
 
   {{#autoForm id="wizard-contributions" schema=step.schema }}
