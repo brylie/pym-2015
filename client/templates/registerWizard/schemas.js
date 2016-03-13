@@ -65,3 +65,30 @@ WizardSchemas.registrant = new SimpleSchema({
     }
   }
 });
+
+
+// Contact
+WizardSchemas.contact = new SimpleSchema({
+  'postalAddress': {
+      type: String,
+      optional: true,
+      label: "Primary postal address",
+      autoform: {
+          afFieldInput: {
+              type: "textarea"
+          }
+      }
+  },
+  'telephone': {
+      type: String,
+      optional: true,
+      label: "Primary telephone number",
+      max: 20
+  },
+  'registrantEmail': {
+      type: String,
+      regEx: SimpleSchema.RegEx.Email,
+      label: "Registrant E-mail address",
+      optional: true
+  }
+});
