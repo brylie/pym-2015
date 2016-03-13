@@ -30,6 +30,19 @@ Template.wizardReview.helpers({
 
     return accommodationsFee;
   },
+  'linensFee': function () {
+    // Get reference to template instance
+    const instance = Template.instance();
+
+    // Get linens value from registration
+    const linens = registration.linens;
+
+    // If linens are needed
+    if (linens) {
+      // Get linens fee
+      return linensFee;
+    }
+  },
   'firstTimeAttenderDiscount': function () {
     // Get reference to template instance
     const instance = Template.instance();
