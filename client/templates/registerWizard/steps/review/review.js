@@ -34,12 +34,12 @@ Template.wizardReview.helpers({
     // Get reference to template instance
     const instance = Template.instance();
 
-    // Get linens value from registration
-    const linens = registration.linens;
+    // Get registration from template instance
+    const registration = instance.registration;
 
-    // If linens are needed
-    if (linens) {
-      // Get linens fee
+    // Check if linens are needed
+    if (registration.linens) {
+      // If so, return linens fee
       return linensFee;
     }
   },
