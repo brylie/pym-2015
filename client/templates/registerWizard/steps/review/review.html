@@ -71,6 +71,10 @@
     <dd>{{ formatMoney carbonTax }}</dd>
     <dt>Donation</dt>
     <dd>{{ formatMoney donation }}</dd>
+    {{# if halfDayDiscount }}
+    <dt>Half-day(s)</dt>
+    <dd>- {{ formatMoney halfDayDiscount }}</dd>
+    {{/ if }}
     {{# if firstTimeAttenderDiscount }}
     <dt>First time attendee</dt>
     <dd>- {{ formatMoney firstTimeAttenderDiscount }}</dd>
