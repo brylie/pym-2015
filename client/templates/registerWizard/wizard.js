@@ -12,6 +12,13 @@ Template.registerWizard.helpers({
         id: 'contact',
         title: 'Contact',
         schema: WizardSchemas.contact
+      },
+      {
+        id: 'accommodations',
+        title: 'Accommodations',
+        schema: WizardSchemas.accommodations,
+        template: "wizardAccommodations",
+        formId: "wizard-accommodations"
       }
     ]
   }
