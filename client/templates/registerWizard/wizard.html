@@ -1,3 +1,8 @@
 <template name="registerWizard">
-  {{> wizard id="register-wizard" steps=steps}}
+  <div style="margin-top: 2em"><!-- TODO: fix top menu overlap -->
+    {{> wizard
+      id="register-wizard"
+      steps=steps
+    }}
+  </div>
 </template>
