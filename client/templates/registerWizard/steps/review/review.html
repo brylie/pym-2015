@@ -67,14 +67,17 @@
     <dt>Linens</dt>
     <dd>{{ formatMoney linensFee }}</dd>
     {{/ if }}
-    <dt>Carbon tax</dt>
-    <dd>{{ formatMoney carbonTax }}</dd>
-    <dt>Donation</dt>
-    <dd>{{ formatMoney donation }}</dd>
     {{# if halfDayDiscount }}
     <dt>Half-day(s)</dt>
     <dd>- {{ formatMoney halfDayDiscount }}</dd>
     {{/ if }}
+    <dt>Subtotal</dt>
+    <dd>{{ formatMoney subtotal }}</dd>
+    <br />
+    <dt>Carbon tax</dt>
+    <dd>{{ formatMoney carbonTax }}</dd>
+    <dt>Donation</dt>
+    <dd>{{ formatMoney donation }}</dd>
     {{# if firstTimeAttenderDiscount }}
     <dt>First time attendee</dt>
     <dd>- {{ formatMoney firstTimeAttenderDiscount }}</dd>
