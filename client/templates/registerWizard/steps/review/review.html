@@ -98,10 +98,9 @@
     <dt>Total</dt>
     <dd><strong>{{ formatMoney registrationFee }}</strong></dd>
   </dl>
+
+  <button class="wizard-back-button btn btn-default" type="button">Back</button>
+  <button class="wizard-submit-button btn btn-default" type="submit">Finish registration</button>
+
   {{/ with }}
-
-  {{#autoForm id="wizard-contributions" schema=step.schema }}
-
-  {{> wizardButtons}}
-  {{/ autoForm }}
 </template>
