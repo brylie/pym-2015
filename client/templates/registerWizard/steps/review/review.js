@@ -10,6 +10,27 @@ Template.wizardReview.events({
   'click .wizard-back-button': function (event, instance) {
     // Go to previous wizard step
     instance.data.wizard.previous();
+  },
+  'click .wizard-submit-button': function (event, instance) {
+    // Get form data form previous wizard steps
+    const registration = instance.data.wizard.mergedData();
+
+    // Insert registrant into Registrants collection
+    Registrants.insert(registration, function (error, id) {
+      if (!error) {
+        // Redirect user to 'My Registrants' page
+        Router.go('/view');
+
+        // Tell the user the registration was successful
+        FlashMessages.sendSuccess('<i class="fa fa-check"></i> Registration success!');
+
+        // Tell user to submit additional registrations if desired
+        FlashMessages.sendInfo('<i class="fa fa-user"></i> Registering another person? Click "Register another person" above.');
+
+        // Send confirmation email
+        //Meteor.call('sendConfirmationEmail', resultId);
+      }
+    });
   }
 });
 
