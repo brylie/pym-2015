@@ -97,3 +97,104 @@ WizardSchemas.contact = new SimpleSchema({
       optional: true
   }
 });
+
+// Accommodations
+WizardSchemas.accommodations = new SimpleSchema({
+  'registrationType': {
+      type: String,
+      allowedValues: [
+          'commuter',
+          'daily',
+          'weekly',
+          'cancelled'
+      ]
+  },
+  'accommodations': {
+      type: String,
+      allowedValues: [
+          'camping',
+          'dorm',
+          'semiprivate',
+          'private',
+          'jym',
+          'yaf'
+      ],
+      optional: true,
+      custom: function () {
+          // Required if registration is daily or weekly
+          if ( !this.isSet
+              &&
+              (
+              this.field('registrationType').value === "daily"
+              ||
+              this.field('registrationType').value === "weekly")
+             ) {
+              return "required";
+          }
+      }
+  },
+  days: {
+      type: [String],
+      optional: true,
+      autoform: {
+          type: "select-checkbox-inline",
+          options: function () {
+              return [
+                  {label: "Monday", value: "Monday"},
+                  {label: "Tuesday", value: "Tuesday"},
+                  {label: "Wednesday", value: "Wednesday"},
+                  {label: "Thursday", value: "Thursday"},
+                  {label: "Friday", value: "Friday"},
+                  {label: "Saturday", value: "Saturday"}
+              ];
+          }
+      }
+  },
+  foodPreference: {
+      type: [String],
+      optional: true,
+      autoform: {
+          type: "select-checkbox-inline",
+          allowedValues: [
+              'Omnivore',
+              'Vegetarian',
+              'Vegan',
+              'Gluten-free',
+              'Dairy-free',
+              'Sugar-free',
+              'Soy-free',
+              'Raw vegetables',
+              'Low-salt'
+          ],
+          options: function () {
+              return [
+                  {label: "Omnivore", value: "Omnivore"},
+                  {label: "Vegetarian", value: "Vegetarian"},
+                  {label: "Vegan", value: "Vegan"},
+                  {label: "Gluten-free", value: "Gluten-free"},
+                  {label: "Dairy-free", value: "Dairy-free"},
+                  {label: "Sugar-free", value: "Sugar-free"},
+                  {label: "Soy-free", value: "Soy-free"},
+                  {label: "Raw vegetables", value: "Raw vegetables"},
+                  {label: "Low-salt", value: "Low-salt"}
+              ];
+          }
+      }
+  },
+  'linens': {
+      type: Boolean,
+      optional: true,
+      defaultValue: false,
+      label: "Will you need linens? ($25 extra)"
+  },
+  'specialNeeds': {
+      type: String,
+      optional: true,
+      label: "Tell us about any special needs that we can accommodate.",
+      autoform: {
+          afFieldInput: {
+              type: "textarea"
+          }
+      }
+  }
+});
