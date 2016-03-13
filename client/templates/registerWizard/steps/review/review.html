@@ -81,18 +81,14 @@
 
     <dt>Subtotal</dt>
     <dd>{{ formatMoney subtotal }}</dd>
-    
+
     <br />
 
-    {{# if carbonTax }}
     <dt>Carbon tax</dt>
     <dd>{{ formatMoney carbonTax }}</dd>
-    {{/ if }}
 
-    {{# if donation }}
     <dt>Donation</dt>
     <dd>{{ formatMoney donation }}</dd>
-    {{/ if }}
 
     {{# if lateFee }}
     <dt>Late fee</dt>
