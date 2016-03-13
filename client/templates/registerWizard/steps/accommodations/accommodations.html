@@ -1,0 +1,8 @@
+<template name="wizardRegistrant">
+  {{#autoForm id="wizard-registrant" schema=step.schema data=step.data }}
+
+  <!-- Registration type -->
+  {{> afFormGroup name="registrationType" id="registration_type" options=registrationTypeOptions}}
+
+  {{/ autoform}}
+</template>
