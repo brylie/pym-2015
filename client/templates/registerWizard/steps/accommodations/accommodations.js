@@ -31,5 +31,16 @@ Template.wizardAccommodations.helpers({
       {label: "Junior Yearly Meeting", value: "jym"},
       {label: "Young Adult Friends", value: "yaf"}
     ];
+  },
+  'dailyOvernightOptions': function () {
+    var options = [
+      {'label': 'Monday', 'value': 'Monday'},
+      {'label': 'Tuesday', 'value': 'Tuesday'},
+      {'label': 'Wednesday', 'value': 'Wednesday'},
+      {'label': 'Thursday', 'value': 'Thursday'},
+      {'label': 'Friday', 'value': 'Friday'},
+    ];
+
+    return options;
   }
 });
