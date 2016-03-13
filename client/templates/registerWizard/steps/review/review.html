@@ -66,6 +66,16 @@
   </dl>
   {{/ with }}
 
+  <h3>Registration fee</h3>
+  <dl class="dl-horizontal">
+    <dt>Accommodations</dt>
+    <dd>{{ formatMoney 100 }}</dd>
+    <dt>Donation(s)</dt>
+    <dd>{{ formatMoney 200 }}</dd>
+    <dt>Total</dt>
+    <dd><strong>{{ formatMoney 300 }}</strong></dd>
+  </dl>
+
   {{#autoForm id="wizard-contributions" schema=step.schema }}
 
   {{> wizardButtons}}
