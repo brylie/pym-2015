@@ -190,7 +190,7 @@ WizardSchemas.accommodations = new SimpleSchema({
   'specialNeeds': {
       type: String,
       optional: true,
-      label: "Tell us about any special needs that we can accommodate.",
+      label: "Tell us about any special needs that we can accommodate",
       autoform: {
           afFieldInput: {
               type: "textarea"
