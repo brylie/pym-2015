@@ -79,6 +79,10 @@
     <dt>First time attendee</dt>
     <dd>- {{ formatMoney firstTimeAttenderDiscount }}</dd>
     {{/ if }}
+    {{# if lateFee }}
+    <dt>Late fee</dt>
+    <dd>{{ formatMoney lateFee }}</dd>
+    {{/ if }}
     <dt>Total</dt>
     <dd><strong>{{ formatMoney registrationFee }}</strong></dd>
   </dl>
