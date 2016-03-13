@@ -1,0 +1,21 @@
+<template name="wizardContributions">
+  {{#autoForm id="wizard-contributions" schema=step.schema data=step.data }}
+
+  <!-- carbon tax  -->
+  {{> afFormGroup name="carbonTax" id="carbon-tax" }}
+  <p class="help-block">
+    If you would like to add a voluntary carbon fee or tax on your travel to & from PYM,
+    enter a whole dollar amount ($USD).&nbsp;
+    <a
+    href="http://www.pacificyearlymeeting.org/2015/documents/pym-committee-reports/unity-with-nature/carbon-tax/"
+    target="_blank">Click here for more information</a>.
+  </p>
+
+  <!-- PYM donation  -->
+  {{> afFormGroup name="donation" id="donation" }}
+  <p class="help-block">Enter an optional donation to further support PYM scholarships, etc.</p>
+
+  {{> wizardButtons}}
+
+  {{/ autoForm }}
+</template>
