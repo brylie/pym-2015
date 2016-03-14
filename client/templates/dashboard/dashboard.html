@@ -1,21 +1,23 @@
 <template name="dashboard">
-  <section class="content-header">
-    <h1>Registrar Dashboard</h1>
-  </section>
-  <section class="content">
-    <div class="row">
-        {{> dashboardCounts }}
-    </div>
-    <div class="row">
+  <div class="container">
+    <section class="content-header">
+      <h1>Registrar Dashboard</h1>
+    </section>
+    <section class="content">
+      <div class="row">
+          {{> dashboardCounts }}
+      </div>
+      <div class="row">
 
-        <button class="btn btn-lg btn-primary"  id="download-csv">
-            <i class="fa fa-cloud-download"></i>&nbsp;
-            Download as CSV
-        </button>
+          <button class="btn btn-lg btn-primary"  id="download-csv">
+              <i class="fa fa-cloud-download"></i>&nbsp;
+              Download as CSV
+          </button>
 
-    </div>
-    <div class="row">
-      {{> dashboardRegistrantTable registrants=registrants }}
-    </div>
-  </section>
+      </div>
+      <div class="row">
+        {{> dashboardRegistrantTable registrants=registrants }}
+      </div>
+    </section> <!-- /.content -->
+  </div> <!-- /.container -->
 </template>
