@@ -50,6 +50,7 @@ Template.dashboardChartsAgeGroup.onRendered(function () {
       ageGroupChart.addCategoryAxis("x", "ageGroup");
       const yAxis = ageGroupChart.addMeasureAxis("y", "count");
       yAxis.tickFormat = "d";
+      yAxis.title = "Count";
       ageGroupChart.addSeries(null, dimple.plot.bar);
       ageGroupChart.draw();
     }
