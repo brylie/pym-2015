@@ -3,38 +3,18 @@
     <div class="box box-primary">
       <div class="box-body">
         <div class="row">
-          <div class="col-xs-12">
-            <ul class="list-group col-md-4">
-                {{# with ageGroupCounts }}
-                <li class="list-group-item">Children <span class="badge">{{ child }}</span></li>
-                <li class="list-group-item">Youth <span class="badge">{{ youth }}</span></li>
-                <li class="list-group-item">Teens <span class="badge">{{ teen }}</span></li>
-                <li class="list-group-item">Young Adults <span class="badge">{{ youngAdult }}</span></li>
-                <li class="list-group-item">Adults <span class="badge">{{ adult }}</span></li>
-                {{/ with }}
-            </ul>
-
-            <ul class="list-group col-md-4">
-                {{# with accommodationCounts }}
-                <li class="list-group-item">Camping <span class="badge">{{ camping }}</span></li>
-                <li class="list-group-item">Dorm<span class="badge">{{ dorm }}</span></li>
-                <li class="list-group-item">Semi-private <span class="badge">{{ semiprivate }}</span></li>
-                <li class="list-group-item">YAF Area <span class="badge">{{ yaf }}</span></li>
-                <li class="list-group-item">JYM Area <span class="badge">{{ jym }}</span></li>
-                {{/ with }}
-            </ul>
-
-            <ul class="list-group col-md-4">
-                <li class="list-group-item">Linens <span class="badge">{{ linensCount }}</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
           <div class="list-group col-md-6">
             {{> dashboardChartsAgeGroup }}
           </div>
           <div class="list-group col-md-6">
             {{> dashboardChartsAccommodations }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="list-group col-md-4">
+                <li class="list-group-item">Linens <span class="badge">{{ linensCount }}</span></li>
+            </ul>
           </div>
         </div>
       </div>
