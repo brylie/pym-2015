@@ -7,7 +7,7 @@ Template.dashboardLayout.rendered = function () {
 
   // Add skin-blue sidebar-mini classes to body
   body.addClass(function () {
-    var bodyClasses = "skin-blue-light sidebar-mini";
+    var bodyClasses = "layout-top-nav skin-blue-light sidebar-mini";
 
     return bodyClasses;
   });
