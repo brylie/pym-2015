@@ -5,12 +5,17 @@ Template.dashboardChartsAgeGroup.onCreated(function () {
   this.subscribe('youngAdultRegistrantCount');
   this.subscribe('adultRegistrantCount');
 });
+
 Template.dashboardChartsAgeGroup.onRendered(function () {
+
   // Get reference to template instance
   const instance = this;
 
   instance.autorun(function () {
     if (instance.subscriptionsReady()){
+      // Clear previous SVG in case of reactive update
+      d3.selectAll("#chartContainer svg").remove();
+
       // Create an empty counts object
       const ageGroupData = {};
 
