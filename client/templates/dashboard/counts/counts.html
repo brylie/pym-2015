@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-xs-12">
             <ul class="list-group col-md-4">
-                {{# with registrantCounts }}
+                {{# with ageGroupCounts }}
                 <li class="list-group-item">Children <span class="badge">{{ child }}</span></li>
                 <li class="list-group-item">Youth <span class="badge">{{ youth }}</span></li>
                 <li class="list-group-item">Teens <span class="badge">{{ teen }}</span></li>
@@ -27,6 +27,11 @@
             <ul class="list-group col-md-4">
                 <li class="list-group-item">Linens <span class="badge">{{ linensCount }}</span></li>
             </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="list-group col-md-4">
+            {{> dashboardChartsAgeGroup ageGroupCounts=ageGroupCounts}}
           </div>
         </div>
       </div>
