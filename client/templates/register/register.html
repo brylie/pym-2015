@@ -19,10 +19,14 @@
     {{> afFormGroup name="carbonTax" id="carbon-tax" }}
     <p class="help-block">If you would like to add a voluntary carbon fee or tax on your travel to & from Walker Creek, enter a whole dollar amount ($USD). <a href="http://www.pacificyearlymeeting.org/2015/documents/pym-committee-reports/unity-with-nature/carbon-tax/" target="_blank">Click here for more information</a>.</p>
 
+    <!-- carbon tax  -->
+    {{> afFormGroup name="donation" id="donation" }}
+    <p class="help-block">Enter an optional donation to further support PYM scholarships, etc.</p>
+
     <!-- TODO: hide button if no 'price' has been calculated. I.e. invalid registration. -->
 
     <button type="submit" class="btn btn-lg btn-primary">
-        Register {{#if price }}<span class="badge">$ {{ price }}</span> {{/if}}
+        Register {{#if price }}<span class="badge">{{ formatMoney price }}</span> {{/if}}
     </button>
 
     {{> finishedRegistering }}
