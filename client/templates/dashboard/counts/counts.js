@@ -13,19 +13,19 @@ Template.dashboardCounts.created = function () {
 };
 
 Template.dashboardCounts.helpers({
-    'registrantCounts': function () {
+    'ageGroupCounts': function () {
         // Create an empty counts object
-        var registrantCounts = {};
+        var ageGroupCounts = {};
 
         // Get the values for each count
-        registrantCounts.child = Counts.get('childRegistrantCount');
-        registrantCounts.youth = Counts.get('youthRegistrantCount');
-        registrantCounts.teen = Counts.get('teenRegistrantCount');
-        registrantCounts.youngAdult = Counts.get('youngAdultRegistrantCount');
-        registrantCounts.adult = Counts.get('adultRegistrantCount');
+        ageGroupCounts.child = Counts.get('childRegistrantCount');
+        ageGroupCounts.youth = Counts.get('youthRegistrantCount');
+        ageGroupCounts.teen = Counts.get('teenRegistrantCount');
+        ageGroupCounts.youngAdult = Counts.get('youngAdultRegistrantCount');
+        ageGroupCounts.adult = Counts.get('adultRegistrantCount');
 
         // return the registrant counts to the template
-        return registrantCounts;
+        return ageGroupCounts;
     },
     'accommodationCounts': function () {
         // Create an empty counts object
