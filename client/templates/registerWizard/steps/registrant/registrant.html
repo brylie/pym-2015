@@ -1,0 +1,43 @@
+<template name="wizardRegistrant">
+  {{#autoForm id="wizard-registrant" schema=step.schema doc=step.data }}
+
+  <!-- Basic personal information -->
+  <!-- first name -->
+  {{> afFormGroup name="first_name" id="first-name" }}
+
+  <!-- last name -->
+  {{> afFormGroup name="last_name" id="last-name" }}
+
+  <!-- Age -->
+  {{> afFormGroup name="age" id="age"}}
+
+  <!-- grade in school -->
+  {{# if registrantAgeIsBelow 18 }}
+  <div class="alert alert-warning">
+      <p>Note, you will need to provide a
+              <strong>parental consent and medical form</strong>
+           for this registrant.
+      </p>
+  </div>
+  {{/ if }}
+
+  {{# if registrantAgeIsBelow 21 }}
+  {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
+  <p class="help-block">Please enter grade number, 'home schooled', 'kindergarten', etc.</p>
+  {{/ if }}
+
+  <!-- meeting -->
+  {{> afFormGroup name="registrantAffiliation" id="registrant-affiliation" }}
+  <p class="help-block">
+      Enter a meeting, worship group, or other Quaker organization with which you are affiliated.
+      This will appear on your name badge.
+  </p>
+
+  <!-- first time attender -->
+  {{> afFormGroup name="firstTimeAttender" id="first-time-attender"}}
+
+
+  {{> wizardButtons}}
+
+  {{/autoForm}}
+</template>

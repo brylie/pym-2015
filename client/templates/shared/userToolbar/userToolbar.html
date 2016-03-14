@@ -3,12 +3,12 @@
     <a class='btn btn-info navbar-btn' href="/view">
         View my registration(s)
     </a>
-    <a class='btn btn-success navbar-btn' href="/register">
+    <a class='btn btn-success navbar-btn' href="{{ pathFor 'registerWizard' }}">
         Register another person
     </a>
     {{ else }}
-    {{# if isNotActiveRoute regex='register'}}
-    <a class='btn btn-success navbar-btn' href="/register">
+    {{# if isNotActiveRoute regex='registerWizard'}}
+    <a class='btn btn-success navbar-btn' href="{{ pathFor 'registerWizard' }}">
         Register now
     </a>
     {{/ if }}

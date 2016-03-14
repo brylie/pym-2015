@@ -1,0 +1,106 @@
+<template name="wizardReview">
+  <h2>Review details</h2>
+  <p class="lead">Please review registrant details and finish the registration.</p>
+  {{# with registration }}
+
+  <h3>Registrant</h3>
+  <dl class="dl-horizontal">
+    <dt>Name</dt>
+    <dd>{{ first_name }} {{ last_name }}</dd>
+    <dt>Age</dt>
+    <dd>{{ age }}</dd>
+    <dt>Affiliation</dt>
+    <dd>{{ registrantAffiliation }}</dd>
+    {{# if firstTimeAttender }}
+    <dt>First PYM?</dt>
+    <dd>yes</dd>
+    {{/ if }}
+  </dl>
+
+  <h3>Contact</h3>
+  <dl class="dl-horizontal">
+    <dt>Postal address</dt>
+    <dd><address>{{ postalAddress }}</address></dd>
+    <dt>Telephone</dt>
+    <dd>{{ telephone }}</dd>
+    <dt>Email</dt>
+    <dd>{{ registrantEmail }}</dd>
+  </dl>
+
+  <h3>Accommodations</h3>
+  <dl class="dl-horizontal">
+    <dt>Registration type</dt>
+    <dd class="text-capitalize">{{ registrationType }}</dd>
+    {{# if linens }}
+    <dt>Linens</dt>
+    <dd>requested</dd>
+    {{/ if }}
+    {{# if days }}
+    <dt>Days</dt>
+    <dd>
+      <ul class="list-inline">
+      {{# each day in days }}
+      <li>{{ day }}</li>
+      {{/ each }}
+      </ul>
+    </dd>
+    {{/ if }}
+    <dt>Food preferences</dt>
+    <dd>
+      <ul class="list-inline">
+      {{# each preference in foodPreference }}
+      <li class="text-capitalize">{{ preference }}</li>
+      {{/ each }}
+      </ul>
+    </dd>
+    {{# if specialNeeds }}
+    <dt>Special needs</dt>
+    <dd>{{ specialNeeds }}</dd>
+    {{/ if }}
+  </dl>
+
+  <h3>Registration fee</h3>
+  <dl class="dl-horizontal">
+    <dt>Accommodations</dt>
+    <dd>{{ formatMoney accommodationsFee }}</dd>
+
+    {{# if linensFee }}
+    <dt>Linens</dt>
+    <dd>{{ formatMoney linensFee }}</dd>
+    {{/ if }}
+
+    {{# if halfDayDiscount }}
+    <dt>Half-day(s)</dt>
+    <dd>- {{ formatMoney halfDayDiscount }}</dd>
+    {{/ if }}
+
+    {{# if firstTimeAttenderDiscount }}
+    <dt>First time attendee</dt>
+    <dd>- {{ formatMoney firstTimeAttenderDiscount }}</dd>
+    {{/ if }}
+
+    <dt>Subtotal</dt>
+    <dd>{{ formatMoney subtotal }}</dd>
+
+    <br />
+
+    <dt>Carbon tax</dt>
+    <dd>{{ formatMoney carbonTax }}</dd>
+
+    <dt>Donation</dt>
+    <dd>{{ formatMoney donation }}</dd>
+
+    {{# if lateFee }}
+    <dt>Late fee</dt>
+    <dd>{{ formatMoney lateFee }}</dd>
+    {{/ if }}
+
+    <dt>Total</dt>
+    <dd><strong>{{ formatMoney registrationFee }}</strong></dd>
+  </dl>
+
+  <button class="wizard-back-button btn btn-default" type="button">Back</button>
+  <button class="wizard-submit-button btn btn-success" type="submit">Finish registration</button>
+
+  {{/ with }}
+</template>
