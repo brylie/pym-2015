@@ -29,6 +29,7 @@ chrismbeckett:fontawesome4@4.2.2
 cmather:handlebars-server@2.0.0
 coffeescript@1.0.11
 cunneen:mailgun@0.9.1
+d3js:d3@3.5.8
 dburles:collection-helpers@1.0.4
 dburles:factory@0.4.2
 ddp@1.2.2

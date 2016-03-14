@@ -2,8 +2,9 @@ Router.route('/', {
     name: 'home'
 });
 
-Router.route('/dashboard', {
-
+Router.route('/dashboard', function () {
+  this.layout("dashboardLayout");
+  this.render("dashboard");
 });
 
 Router.route('/register');

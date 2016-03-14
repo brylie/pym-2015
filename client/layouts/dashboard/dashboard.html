@@ -1,0 +1,9 @@
+<template name="dashboardLayout">
+  <div class="wrapper">
+    {{> dashboardLayoutHeader }}
+    <div class="content-wrapper">
+      {{> flashMessages}}
+      {{> yield }}
+    </div>
+  </div>
+</template>
