@@ -1,0 +1,41 @@
+<template name="wizardAccommodations">
+  {{#autoForm id="wizard-accommodations" schema=step.schema doc=step.data }}
+
+  <!-- Registration type -->
+  {{> afFormGroup name="registrationType" id="registration-type" options=registrationTypeOptions }}
+
+  <!-- TODO: combine these both into a single if statement, if possible. -->
+  {{# if afFieldValueIs name="registrationType" value="commuter"}}
+  {{> afFormGroup name="days" }}
+  <p class="help-block">If you have a more complex schedule, send an email to the registrars.</p>
+  {{/ if }}
+
+  {{# if afFieldValueIs name="registrationType" value="daily" }}
+  {{> afFormGroup name="days" options=dailyOvernightOptions label="Nights" }}
+  <p class="help-block">Select the nights you will be staying at PYM.</p>
+  <p class="help-block">If you have a more complex schedule, send an email to the registrars.</p>
+  {{/ if }}
+
+  {{# if requiresAccommodations }}
+  <fieldset>
+    <!-- Only show accommodations if they are relevant -->
+
+    <!-- Accommodations -->
+    {{> afFormGroup name="accommodations" id="accommodations" options=accommodationsOptions }}
+
+    <!-- Linens -->
+    {{> afFormGroup name="linens" id="linens" }}
+
+  </fieldset>
+  {{/ if }}
+
+  <!-- Food -->
+  {{> afFormGroup name="foodPreference" id="food-preference" }}
+
+  <!-- Special needs -->
+  {{> afFormGroup name="specialNeeds" id="special-needs" }}
+
+  {{> wizardButtons}}
+
+  {{/ autoForm}}
+</template>

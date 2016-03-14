@@ -1,0 +1,13 @@
+<template name="registerWizard">
+  <div style="margin-top: 2em"><!-- TODO: fix top menu overlap -->
+    {{> wizard
+      id="register-wizard"
+      steps=steps
+      stepsTemplate="wizardSteps"
+      buttonClasses="btn btn-default"
+      confirmButton="Finish registration"
+      route="registerWizard"
+      clearOnDestroy=true
+    }}
+  </div>
+</template>

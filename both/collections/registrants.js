@@ -39,7 +39,7 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
-    'grade': {
+    'gradeInSchool': {
       type: String,
       optional: true,
       label: "School grade in Fall",

@@ -17,7 +17,7 @@
               {{#if currentUser }}
               {{> userToolbar }}
               {{ else }}
-              <a href="{{ pathFor 'register' }}" class="btn btn-success navbar-btn">Sign in and register for PYM</a>
+              <a href="{{ pathFor 'registerWizard' }}" class="btn btn-success navbar-btn">Sign in and register for PYM</a>
               {{/ if }}
           </div>
         {{#if currentUser}}

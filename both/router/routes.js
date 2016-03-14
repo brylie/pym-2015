@@ -9,6 +9,10 @@ Router.route('/dashboard', function () {
 
 Router.route('/register');
 
+Router.route('/wizard/:step?', {
+  name: 'registerWizard'
+});
+
 Router.route('/edit/:_id', {
     name: 'editRegistration'
 });
@@ -38,7 +42,7 @@ var requiresRegistrarAccess = function () {
 };
 
 // User login required for event registration
-Router.onBeforeAction(requiresUserLogin, {only: ['register', 'view']});
+Router.onBeforeAction(requiresUserLogin, {only: ['register', 'registerWizard', 'view']});
 
 // Admin-only access to certain routes
 Router.onBeforeAction(requiresRegistrarAccess, {only: ['dashboard', 'editRegistration']});
