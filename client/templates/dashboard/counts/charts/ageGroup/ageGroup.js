@@ -14,7 +14,7 @@ Template.dashboardChartsAgeGroup.onRendered(function () {
   instance.autorun(function () {
     if (instance.subscriptionsReady()){
       // Clear previous SVG in case of reactive update
-      d3.selectAll("#chartContainer svg").remove();
+      d3.selectAll("#ageGroupChartContainer svg").remove();
 
       // Create an empty counts object
       const ageGroupData = {};
@@ -68,7 +68,7 @@ Template.dashboardChartsAgeGroup.onRendered(function () {
       }
 
       // Get reference to template svg placeholder
-      const svg = dimple.newSvg("#chartContainer", "100%", "100%");
+      const svg = dimple.newSvg("#ageGroupChartContainer", "100%", "100%");
 
       // Construct a dimple chart
       const ageGroupChart = new dimple.chart(svg, parsedAgeGroupData);
