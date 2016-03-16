@@ -69,25 +69,26 @@ Template.dashboardChartsAccommodations.onRendered(function () {
 
       // Construct a dimple chart
       const ageGroupChart = new dimple.chart(svg, parsedAccommodationsData);
-      ageGroupChart.setBounds("7%", "5%", "90%", "80%")
+      ageGroupChart.setBounds("20%", "5%", "75%", "65%")
 
       // Add x and y axis values to chart
-      const xAxis = ageGroupChart.addCategoryAxis("x", "accommodationType");
-      const yAxis = ageGroupChart.addMeasureAxis("y", "count");
+      const xAxis = ageGroupChart.addMeasureAxis("x", "count");
+      const yAxis = ageGroupChart.addCategoryAxis("y", "accommodationType");
 
       // Adjust y axis settings
 
       // Show only integer tick marks
-      yAxis.tickFormat = "d";
+      xAxis.tickFormat = "d";
 
       // Capitalize the y axis label
-      yAxis.title = "Count";
+      xAxis.title = "Count";
+      yAxis.title = "Accommodations";
 
       // Remove grid lines from chart
-      yAxis.showGridlines = false;
+      xAxis.showGridlines = false;
 
       // Set tick marks to value calculated above
-      yAxis.ticks = numberOfTickMarks;
+      xAxis.ticks = numberOfTickMarks;
 
       // Render the bar plot
       ageGroupChart.addSeries(null, dimple.plot.bar);
