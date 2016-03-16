@@ -53,3 +53,4 @@ ecmascript
 d3js:d3
 forwarder:autoform-wizard
 forwarder:autoform-wizard-iron-router
+twbs:bootstrap
