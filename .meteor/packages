@@ -7,7 +7,6 @@
 iron:router
 accounts-base
 accounts-password
-chrismbeckett:fontawesome4
 aldeed:collection2
 aldeed:autoform
 insecure
@@ -54,3 +53,4 @@ d3js:d3
 forwarder:autoform-wizard
 forwarder:autoform-wizard-iron-router
 twbs:bootstrap
+fortawesome:fontawesome
