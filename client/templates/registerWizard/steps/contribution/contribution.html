@@ -1,6 +1,10 @@
 <template name="wizardContributions">
   {{#autoForm id="wizard-contributions" schema=step.schema doc=step.data }}
 
+  <!-- PYM donation  -->
+  {{> afFormGroup name="donation" id="donation" }}
+  <p class="help-block">Enter an optional donation to further support PYM scholarships, etc.</p>
+
   <!-- carbon tax  -->
   {{> afFormGroup name="carbonTax" id="carbon-tax" }}
   <p class="help-block">
@@ -10,10 +14,6 @@
     href="http://www.pacificyearlymeeting.org/2015/documents/pym-committee-reports/unity-with-nature/carbon-tax/"
     target="_blank">Click here for more information</a>.
   </p>
-
-  <!-- PYM donation  -->
-  {{> afFormGroup name="donation" id="donation" }}
-  <p class="help-block">Enter an optional donation to further support PYM scholarships, etc.</p>
 
   {{> wizardButtons}}
 
