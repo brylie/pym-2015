@@ -1,6 +1,13 @@
 <template name="dashboardRegistrantTable">
-  <table class="table table-hover table-bordered table-striped">
-      <thead>
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Registrants</h3>
+    </div>
+    <div class="box-body no-padding">
+      <table
+        id="registrants-table"
+        class="table table-hover table-bordered table-striped table-condensed">
+        <thead>
           <th>Created By</th>
           <th>Full Name</th>
           <th>Age</th>
@@ -12,11 +19,13 @@
           <th>Edit</th>
           <th>Cancel</th>
           <th>Delete</th>
-      </thead>
-      <tbody>
+        </thead>
+        <tbody>
           {{# each registrants }}
           {{> dashboardRegistrant }}
           {{/ each }}
-      </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
