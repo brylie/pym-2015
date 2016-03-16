@@ -1,6 +1,5 @@
-body {
-    padding-top: 2em; /* prevent navbar overlap */
-    font-size: 1em;
+#content {
+    padding-top: 3em; /* prevent navbar overlap */
 }
 html {
     font-size: 1em;
