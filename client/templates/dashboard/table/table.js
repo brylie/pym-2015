@@ -11,7 +11,7 @@ Template.dashboardRegistrantTable.events({
     _.each(arrayFields, flattenArray);
 
     // Convert boolean values into yes/no
-    var booleanFields = ["linens", "firstTimeAttender"];
+    var booleanFields = ["linens"];
     _.each(booleanFields, booleanToYesNo);
 
     // Ensure that all optional fields have values for export
@@ -42,7 +42,6 @@ Template.dashboardRegistrantTable.events({
         "postalAddress",
         "telephone",
         "registrantAffiliation",
-        "firstTimeAttender",
         "registrationType",
         "accommodations",
         "days",
