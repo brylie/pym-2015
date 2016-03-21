@@ -106,8 +106,3 @@ setReactiveVars = function () {
     setDonationVar();
 
 }
-
-setRegistrationFeeVar = function () {
-    // Create this function if necessary
-    // e.g. if calculating financial aid, donations, etc
-}
