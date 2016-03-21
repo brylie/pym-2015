@@ -6,7 +6,6 @@ createReactiveVars = function () {
     accommodationsVar = new ReactiveVar;
     daysVar = new ReactiveVar;
     registrationFeeVar = new ReactiveVar;
-    firstTimeAttenderVar = new ReactiveVar;
     linensVar = new ReactiveVar;
     carbonTaxVar = new ReactiveVar;
     donationVar = new ReactiveVar;
@@ -95,10 +94,6 @@ setReactiveVars = function () {
 
     // Set the days reactive variable
     setDaysVar();
-
-    // Set first time attender reactive variable
-    var firstTimeAttenderChecked = $('#first-time-attender').is(':checked');
-    firstTimeAttenderVar.set(firstTimeAttenderChecked);
 
     // Set linens reactive var
     var linensChecked = $('#linens').is(':checked');
