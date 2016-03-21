@@ -61,7 +61,7 @@ Template.dashboardRegistrantTable.events({
     var registrantsBLOB = new Blob([registrantsCSV], {type: "text/csv"});
 
     // Download the file
-    saveAs(registrantsBLOB, "pym2015-registrants-export-" + dateNow + ".csv");
+    saveAs(registrantsBLOB, "pym-registrants-export-" + dateNow + ".csv");
   }
 });
 
