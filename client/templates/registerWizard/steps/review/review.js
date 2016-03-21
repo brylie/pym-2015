@@ -71,18 +71,6 @@ Template.wizardReview.helpers({
       return linensFee;
     }
   },
-  'firstTimeAttenderDiscount': function () {
-    // Get reference to template instance
-    const instance = Template.instance();
-
-    // Get registration
-    const registration = instance.registration;
-
-    // Calculate first time attender discount
-    if (registration.firstTimeAttender) {
-      return firstTimeAttenderDiscount;
-    }
-  },
   'halfDayDiscount': function () {
     // Get reference to template instance
     const instance = Template.instance();

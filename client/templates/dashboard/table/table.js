@@ -11,7 +11,7 @@ Template.dashboardRegistrantTable.events({
     _.each(arrayFields, flattenArray);
 
     // Convert boolean values into yes/no
-    var booleanFields = ["linens", "firstTimeAttender"];
+    var booleanFields = ["linens"];
     _.each(booleanFields, booleanToYesNo);
 
     // Ensure that all optional fields have values for export
@@ -42,7 +42,6 @@ Template.dashboardRegistrantTable.events({
         "postalAddress",
         "telephone",
         "registrantAffiliation",
-        "firstTimeAttender",
         "registrationType",
         "accommodations",
         "days",
@@ -62,7 +61,7 @@ Template.dashboardRegistrantTable.events({
     var registrantsBLOB = new Blob([registrantsCSV], {type: "text/csv"});
 
     // Download the file
-    saveAs(registrantsBLOB, "pym2015-registrants-export-" + dateNow + ".csv");
+    saveAs(registrantsBLOB, "pym-registrants-export-" + dateNow + ".csv");
   }
 });
 

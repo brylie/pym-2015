@@ -11,10 +11,6 @@
     <dd>{{ age }}</dd>
     <dt>Affiliation</dt>
     <dd>{{ registrantAffiliation }}</dd>
-    {{# if firstTimeAttender }}
-    <dt>First PYM?</dt>
-    <dd>yes</dd>
-    {{/ if }}
   </dl>
 
   <h3>Contact</h3>
@@ -72,11 +68,6 @@
     {{# if halfDayDiscount }}
     <dt>Half-day(s)</dt>
     <dd>- {{ formatMoney halfDayDiscount }}</dd>
-    {{/ if }}
-
-    {{# if firstTimeAttenderDiscount }}
-    <dt>First time attendee</dt>
-    <dd>- {{ formatMoney firstTimeAttenderDiscount }}</dd>
     {{/ if }}
 
     <dt>Subtotal</dt>
