@@ -187,12 +187,6 @@ Registrants.attachSchema(new SimpleSchema({
         optional: true,
         label: "Affiliated Quaker meeting, worship group, or organization"
     },
-    'firstTimeAttender': {
-        type: Boolean,
-        optional: true,
-        defaultValue: false,
-        label: "First time attender?"
-    },
     'linens': {
         type: Boolean,
         optional: true,
