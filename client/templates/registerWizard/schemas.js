@@ -12,12 +12,6 @@ WizardSchemas.registrant = new SimpleSchema({
       label: "Last Name",
       max: 200
   },
-  'firstTimeAttender': {
-      type: Boolean,
-      optional: true,
-      defaultValue: false,
-      label: "First time attender?"
-  },
   'age': {
       label: "Age at time of event",
       type: Number,
