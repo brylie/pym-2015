@@ -4,7 +4,7 @@ Template.wizardAccommodations.helpers({
     * Determine if registration type requires accommodations.
     * If accommodations are required, return true.
     */
-    // // Get current age value from form
+    // Get current registration type from form
     let registrationType = AutoForm.getFieldValue("registrationType");
 
     // If daily or weekly, return true, otherwise return false
@@ -34,11 +34,11 @@ Template.wizardAccommodations.helpers({
   },
   'dailyOvernightOptions': function () {
     var options = [
-      {'label': 'Monday', 'value': 'Monday'},
-      {'label': 'Tuesday', 'value': 'Tuesday'},
-      {'label': 'Wednesday', 'value': 'Wednesday'},
-      {'label': 'Thursday', 'value': 'Thursday'},
       {'label': 'Friday', 'value': 'Friday'},
+      {'label': 'Saturday', 'value': 'Saturday'},
+      {'label': 'Sunday', 'value': 'Sunday'},
+      {'label': 'Monday', 'value': 'Monday'},
+      {'label': 'Tuesday', 'value': 'Tuesday'}
     ];
 
     return options;
