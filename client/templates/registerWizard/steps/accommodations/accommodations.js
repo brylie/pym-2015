@@ -27,9 +27,7 @@ Template.wizardAccommodations.helpers({
     return [
       {label: "Camping", value: "camping"},
       {label: "Dorm", value: "dorm"},
-      {label: "Semi-private", value: "semiprivate"},
-      {label: "Junior Yearly Meeting", value: "jym"},
-      {label: "Young Adult Friends", value: "yaf"}
+      {label: "Semi-private", value: "semiprivate"}
     ];
   },
   'dailyOvernightOptions': function () {
