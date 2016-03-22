@@ -109,9 +109,7 @@ WizardSchemas.accommodations = new SimpleSchema({
           'camping',
           'dorm',
           'semiprivate',
-          'private',
-          'jym',
-          'yaf'
+          'private'
       ],
       optional: true,
       custom: function () {
