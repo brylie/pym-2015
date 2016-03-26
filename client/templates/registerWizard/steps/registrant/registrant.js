@@ -20,5 +20,11 @@ Template.wizardRegistrant.helpers({
       // Compare current value versus desired age range
       return (lowerAge <= age) && (age <= upperAge);
     }
+  },
+  "yesNoOptions": function () {
+    return [
+      {label: "Yes", value: true},
+      {label: "No", value: false}
+    ];
   }
 });
