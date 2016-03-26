@@ -28,6 +28,11 @@ WizardSchemas.registrant = new SimpleSchema({
     label: "Junior Yearly Meeting",
     optional: true
   },
+  'yafProgram': {
+    type: String,
+    label: "Young Adult Friends",
+    optional: true
+  },
   'gradeInSchool': {
     type: String,
     optional: true,
