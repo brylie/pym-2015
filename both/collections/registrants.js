@@ -43,6 +43,10 @@ Registrants.attachSchema(new SimpleSchema({
       type: String,
       optional: true
     },
+    'yafProgram': {
+      type: String,
+      optional: true
+    },
     'gradeInSchool': {
       type: String,
       optional: true,
