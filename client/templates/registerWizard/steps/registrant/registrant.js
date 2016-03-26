@@ -23,8 +23,8 @@ Template.wizardRegistrant.helpers({
   },
   "yesNoOptions": function () {
     return [
-      {label: "Yes", value: true},
-      {label: "No", value: false}
+      {label: "Yes", value: "yes"},
+      {label: "No", value: "no"}
     ];
   }
 });
