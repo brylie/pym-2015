@@ -39,6 +39,9 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
+    'jymProgram': {
+      type: Boolean
+    },
     'gradeInSchool': {
       type: String,
       optional: true,
