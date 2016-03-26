@@ -11,7 +11,6 @@
   <!-- Age -->
   {{> afFormGroup name="age" id="age"}}
 
-  <!-- grade in school -->
   {{# if registrantAgeIsBelow 18 }}
   <div class="alert alert-warning">
       <p>Note, you will need to provide a
@@ -21,6 +20,13 @@
   </div>
   {{/ if }}
 
+    <!-- JYM program -->
+  {{# if registrantAgeIsBelow 21 }}
+  {{> afFormGroup name="jymProgram" id="jym-program" type="select-radio-inline" options=yesNoOptions }}
+  <p class="help-block">Will this registrant participate in the Junior Yearly Meeting program?</p>
+  {{/ if }}
+
+  <!-- grade in school -->
   {{# if registrantAgeIsBelow 21 }}
   {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
   <p class="help-block">Please enter grade number, 'home schooled', 'kindergarten', etc.</p>
