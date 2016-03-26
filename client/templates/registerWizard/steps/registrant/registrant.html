@@ -20,7 +20,7 @@
   </div>
   {{/ if }}
 
-    <!-- JYM program -->
+  <!-- JYM program -->
   {{# if registrantAgeIsBelow 21 }}
   {{> afFormGroup name="jymProgram" id="jym-program" type="select-radio-inline" options=yesNoOptions }}
   <p class="help-block">Will this registrant participate in the Junior Yearly Meeting program?</p>
@@ -30,6 +30,12 @@
   {{# if registrantAgeIsBelow 21 }}
   {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
   <p class="help-block">Please enter grade number, 'home schooled', 'kindergarten', etc.</p>
+  {{/ if }}
+
+  <!-- YAF program -->
+  {{# if registrantAgeIsBetween 18 35 }}
+  {{> afFormGroup name="yafProgram" id="yaf-program" type="select-radio-inline" options=yesNoOptions }}
+  <p class="help-block">Will this registrant participate in the Young Adult Friends program?</p>
   {{/ if }}
 
   <!-- meeting -->
