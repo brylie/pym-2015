@@ -2,8 +2,6 @@ Template.dashboardChartsAccommodations.onCreated(function () {
   this.subscribe('campingRegistrantAccommodationCount');
   this.subscribe('semiprivateRegistrantAccommodationCount');
   this.subscribe('dormRegistrantAccommodationCount');
-  this.subscribe('yafRegistrantAccommodationCount');
-  this.subscribe('jymRegistrantAccommodationCount');
 });
 
 Template.dashboardChartsAccommodations.onRendered(function () {
@@ -23,8 +21,6 @@ Template.dashboardChartsAccommodations.onRendered(function () {
       accommodationCounts.camping = Counts.get('campingRegistrantAccommodationCount');
       accommodationCounts.dorm = Counts.get('dormRegistrantAccommodationCount');
       accommodationCounts.semiprivate = Counts.get('semiprivateRegistrantAccommodationCount');
-      accommodationCounts.yaf = Counts.get('yafRegistrantAccommodationCount');
-      accommodationCounts.jym = Counts.get('jymRegistrantAccommodationCount');
 
       // Get all accommodations types
       const accommodationsKeys = _.keys(accommodationCounts);
