@@ -40,31 +40,25 @@ Template.accommodations.helpers({
                 return [
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
-                    {label: "Semi-private", value: "semiprivate"},
-                    {label: "Junior Yearly Meeting", value: "jym"}
+                    {label: "Semi-private", value: "semiprivate"}
                 ];
             case 'teen':
                 return [
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
-                    {label: "Semi-private", value: "semiprivate"},
-                    {label: "Junior Yearly Meeting", value: "jym"},
-                    {label: "Young Adult Friends", value: "yaf"}
+                    {label: "Semi-private", value: "semiprivate"}
                 ];
             case 'youngAdult':
                 return [
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
-                    {label: "Semi-private", value: "semiprivate"},
-                    {label: "Junior Yearly Meeting", value: "jym"},
-                    {label: "Young Adult Friends", value: "yaf"}
+                    {label: "Semi-private", value: "semiprivate"}
                 ];
             case 'adult':
                 return [
                     {label: "Camping", value: "camping"},
                     {label: "Dorm", value: "dorm"},
-                    {label: "Semi-private", value: "semiprivate"},
-                    {label: "Young Adult Friends", value: "yaf"}
+                    {label: "Semi-private", value: "semiprivate"}
                 ];
         }
     }

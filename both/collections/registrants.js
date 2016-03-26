@@ -39,6 +39,14 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
+    'jymProgram': {
+      type: String,
+      optional: true
+    },
+    'yafProgram': {
+      type: String,
+      optional: true
+    },
     'gradeInSchool': {
       type: String,
       optional: true,
@@ -109,10 +117,7 @@ Registrants.attachSchema(new SimpleSchema({
         allowedValues: [
             'camping',
             'dorm',
-            'semiprivate',
-            'private',
-            'jym',
-            'yaf'
+            'semiprivate'
         ],
         optional: true,
         custom: function () {
@@ -136,11 +141,11 @@ Registrants.attachSchema(new SimpleSchema({
             options: function () {
                 return [
                   {label: "Friday", value: "Friday"},
-                  {label: "Saturday", value: "Saturday"}
+                  {label: "Saturday", value: "Saturday"},
                   {label: "Sunday", value: "Sunday"},
                   {label: "Monday", value: "Monday"},
                   {label: "Tuesday", value: "Tuesday"},
-                  {label: "Wednesday", value: "Wednesday"}            
+                  {label: "Wednesday", value: "Wednesday"}
                 ];
             }
         }

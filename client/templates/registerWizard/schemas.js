@@ -23,6 +23,16 @@ WizardSchemas.registrant = new SimpleSchema({
       optional: true,
       label: "Affiliated Quaker meeting, worship group, or organization"
   },
+  'jymProgram': {
+    type: String,
+    label: "Junior Yearly Meeting",
+    optional: true
+  },
+  'yafProgram': {
+    type: String,
+    label: "Young Adult Friends",
+    optional: true
+  },
   'gradeInSchool': {
     type: String,
     optional: true,
@@ -109,9 +119,7 @@ WizardSchemas.accommodations = new SimpleSchema({
           'camping',
           'dorm',
           'semiprivate',
-          'private',
-          'jym',
-          'yaf'
+          'private'
       ],
       optional: true,
       custom: function () {
