@@ -11,7 +11,7 @@ Template.dashboardRegistrantTable.events({
     _.each(arrayFields, flattenArray);
 
     // Convert boolean values into yes/no
-    var booleanFields = ["linens"];
+    var booleanFields = ["linens", "jymProgram"];
     _.each(booleanFields, booleanToYesNo);
 
     // Ensure that all optional fields have values for export
