@@ -9,6 +9,10 @@
     <dd>{{ first_name }} {{ last_name }}</dd>
     <dt>Age</dt>
     <dd>{{ age }}</dd>
+    {{# if jymProgram }}
+    <dt>JYM program</dt>
+    <dd>{{ jymProgram }}</dd>
+    {{/ if }}
     {{# if registrantAffiliation }}
     <dt>Affiliation</dt>
     <dd>{{ registrantAffiliation }}</dd>
