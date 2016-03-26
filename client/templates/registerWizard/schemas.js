@@ -24,7 +24,7 @@ WizardSchemas.registrant = new SimpleSchema({
       label: "Affiliated Quaker meeting, worship group, or organization"
   },
   'jymProgram': {
-    type: Boolean,
+    type: String,
     label: "Junior Yearly Meeting",
     optional: true
   },
