@@ -39,6 +39,10 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
+    'childrenProgram': {
+      type: String,
+      optional: true
+    },
     'jymProgram': {
       type: String,
       optional: true
