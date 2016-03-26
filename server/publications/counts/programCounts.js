@@ -1,4 +1,14 @@
 /*
+Count the number or Children's program registrants.
+*/
+Meteor.publish('childrenProgramCount', function() {
+  Counts.publish(this,
+    'childrenProgramCount',
+    Registrants.find({ childrenProgram: "yes"})
+  );
+});
+
+/*
 Count the number or Junior Yearly Meeting registrants.
 */
 Meteor.publish('jymCount', function() {
