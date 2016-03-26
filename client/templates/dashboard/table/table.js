@@ -95,6 +95,7 @@ Template.dashboardRegistrantTable.events({
         "first_name",
         "age",
         "ageGroup",
+        "childrenProgram",
         "jymProgram",
         "yafProgram",
         "gradeInSchool",
