@@ -13,30 +13,30 @@
         <a class="navbar-brand" href="{{pathFor 'home'}}">PYM Online Registration</a>
       </div>
       <div class="collapse navbar-collapse" id="main-nav">
-          <div class="nav navbar-nav navbar-left">
-              {{#if currentUser }}
-              {{> userToolbar }}
-              {{ else }}
-              <a href="{{ pathFor 'registerWizard' }}" class="btn btn-success navbar-btn">Sign in and register for PYM</a>
-              {{/ if }}
-          </div>
-        {{#if currentUser}}
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-user"></i> {{ currentUser.profile.name }} <i class="fa fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#" data-action="logout"><i class="fa fa-lock"></i> Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        {{/if}}
+        <div class="nav navbar-nav navbar-left">
+            {{#if currentUser }}
+            {{> userToolbar }}
+            {{ else }}
+            <a href="{{ pathFor 'registerWizard' }}" class="btn btn-success navbar-btn">Sign in and register for PYM</a>
+            {{/ if }}
+        </div>
 
         <ul class="nav navbar-nav navbar-right">
-            {{# if isInRole 'registrar' }}
-          <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}"><i class="fa fa-gear"></i> Dashboard</a></li>
-            {{/ if }}
+          {{# if isInRole 'registrar' }}
+            <li
+              class="{{ isActiveRoute regex='dashboard' }}">
+              <a href="{{ pathFor 'dashboard' }}"><i class="fa fa-gear"></i>&nbsp;
+               Dashboard
+             </a>
+           </li>
+          {{/ if }}
+          {{#if currentUser}}
+            <button
+              id="sign-out-button"
+              class="btn btn-default navbar-btn">
+              Sign out
+            </button>
+          {{/if}}
         </ul>
       </div>
 
