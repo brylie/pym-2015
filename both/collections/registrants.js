@@ -109,8 +109,7 @@ Registrants.attachSchema(new SimpleSchema({
         allowedValues: [
             'camping',
             'dorm',
-            'semiprivate',
-            'private'
+            'semiprivate'
         ],
         optional: true,
         custom: function () {
@@ -134,7 +133,7 @@ Registrants.attachSchema(new SimpleSchema({
             options: function () {
                 return [
                   {label: "Friday", value: "Friday"},
-                  {label: "Saturday", value: "Saturday"}
+                  {label: "Saturday", value: "Saturday"},
                   {label: "Sunday", value: "Sunday"},
                   {label: "Monday", value: "Monday"},
                   {label: "Tuesday", value: "Tuesday"},
