@@ -5,16 +5,6 @@ Template.dashboardRegistrantTable.onCreated(function () {
   // Field types that need special formatting
   instance.arrayFields = ["foodPreference", "days"];
   instance.booleanFields = ["linens"];
-  instance.optionalFields = [
-    "specialNeeds",
-    "postalAddress",
-    "telephone",
-    "carbonTax",
-    "registrantAffiliation",
-    "gradeInSchool",
-    "jymProgram",
-    "yafProgram"
-  ];
   instance.dateFields = ["createdAt"];
 
   // Set up instance functions
@@ -53,22 +43,6 @@ Template.dashboardRegistrantTable.onCreated(function () {
     return registrant;
   };
 
-  instance.ensureOptionalFieldsHaveValues = function (registrant) {
-    /*
-    * Takes a registrant object, looks at a given field
-    * If the field is undefined, sets the value to an empty string
-    */
-    _.each(instance.optionalFields, function (field) {
-      // If the field is undefined
-      if (!registrant[field]) {
-        // Set the field to an empty string
-        registrant[field] = "";
-      }
-    });
-
-    return registrant;
-  };
-
   instance.unixToISO = function (registrant) {
     /*
     * Takes a registrant object
@@ -94,9 +68,6 @@ Template.dashboardRegistrantTable.onCreated(function () {
 
     // Convert boolean values into yes/no
     registrantsJSON = _.map(registrantsJSON, instance.booleanFieldsToYesNo);
-
-    // Ensure that all optional fields have values for export
-    registrantsJSON = _.map(registrantsJSON, instance.ensureOptionalFieldsHaveValues);
 
     // Adjust unix times to ISO
     registrantsJSON = _.map(registrantsJSON, instance.unixToISO);
@@ -138,6 +109,7 @@ Template.dashboardRegistrantTable.events({
         "foodPreference",
         "specialNeeds",
         "carbonTax",
+        "donation",
         "fee",
         "createdAt",
         "_id",
