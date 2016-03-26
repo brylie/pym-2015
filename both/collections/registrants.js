@@ -40,7 +40,8 @@ Registrants.attachSchema(new SimpleSchema({
         }
     },
     'jymProgram': {
-      type: Boolean
+      type: Boolean,
+      optional: true
     },
     'gradeInSchool': {
       type: String,
