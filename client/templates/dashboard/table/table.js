@@ -12,7 +12,8 @@ Template.dashboardRegistrantTable.onCreated(function () {
     "carbonTax",
     "registrantAffiliation",
     "gradeInSchool",
-    "jymProgram"
+    "jymProgram",
+    "yafProgram"
   ];
   instance.dateFields = ["createdAt"];
 
@@ -124,6 +125,7 @@ Template.dashboardRegistrantTable.events({
         "age",
         "ageGroup",
         "jymProgram",
+        "yafProgram",
         "gradeInSchool",
         "registrantEmail",
         "postalAddress",
