@@ -23,6 +23,11 @@ WizardSchemas.registrant = new SimpleSchema({
       optional: true,
       label: "Affiliated Quaker meeting, worship group, or organization"
   },
+  'jymProgram': {
+    type: Boolean,
+    label: "Junior Yearly Meeting",
+    optional: true
+  },
   'gradeInSchool': {
     type: String,
     optional: true,
