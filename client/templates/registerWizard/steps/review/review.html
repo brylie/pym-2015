@@ -37,6 +37,10 @@
   <dl class="dl-horizontal">
     <dt>Registration type</dt>
     <dd class="text-capitalize">{{ registrationType }}</dd>
+    {{# if accommodations }}
+    <dt>Accommodations</dt>
+    <dd>{{ accommodations }}</dd>
+    {{/ if }}
     {{# if linens }}
     <dt>Linens</dt>
     <dd>requested</dd>
