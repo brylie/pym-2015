@@ -41,11 +41,29 @@ Registrants.attachSchema(new SimpleSchema({
     },
     'childrenProgram': {
       type: String,
-      optional: true
+      optional: true,
+      autoValue: function () {
+        // Get registrant age
+        const registrantAge = this.field("age").value;
+
+        // Registrants younger than 13 automatically in children's program
+        if (registrantAge < 13) {
+          return "yes";
+        }
+      }
     },
     'jymProgram': {
       type: String,
-      optional: true
+      optional: true,
+      autoValue: function () {
+        // Get registrant age
+        const registrantAge = this.field("age").value;
+
+        // Registrants between 14 and 17 automatically in teen program
+        if (registrantAge > 13 && registrantAge < 18) {
+          return "yes";
+        }
+      }
     },
     'yafProgram': {
       type: String,
