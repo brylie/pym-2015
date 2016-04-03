@@ -1,3 +1,28 @@
+Template.wizardRegistrant.events({
+  "change #children-program": function (event, instance) {
+    const childrenProgramSelection = event.target.value;
+
+    if (childrenProgramSelection === "yes") {
+      // Set JYM program value to "No"
+      $("[name=jymProgram]").val(["no"]);
+    } else if (childrenProgramSelection === "no") {
+      // Set JYM program value to "Yes"
+      $("[name=jymProgram]").val(["yes"]);
+    }
+  },
+  "change #jym-program": function (event, instance) {
+    const jymProgramSelection = event.target.value;
+
+    if (jymProgramSelection === "yes") {
+      // Set Children's program value to "No"
+      $("[name=childrenProgram]").val(["no"]);;
+    } else if (jymProgramSelection === "no") {
+      // Set Children's program value to "Yes"
+      $("[name=childrenProgram]").val(["yes"]);
+    }
+  }
+});
+
 Template.wizardRegistrant.helpers({
   "registrantAgeIs": function (age) {
     // Get current age value from form
