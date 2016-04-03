@@ -1,4 +1,13 @@
 Template.wizardRegistrant.helpers({
+  "registrantAgeIs": function (age) {
+    // Get current age value from form
+    let registrantAge = AutoForm.getFieldValue("age")
+
+    if (age) {
+      // Compare current value versus desired age threshold
+      return registrantAge === age;
+    }
+  },
   "registrantAgeIsBelow": function (ageThreshold) {
     // Get current age value from form
     let age = AutoForm.getFieldValue("age")
