@@ -4,7 +4,7 @@ Template.dashboardRegistrantTable.onCreated(function () {
 
   // Field types that need special formatting
   instance.arrayFields = ["foodPreference", "days"];
-  instance.booleanFields = ["linens"];
+  instance.booleanFields = ["linens", "firstTimeAttender"];
   instance.dateFields = ["createdAt"];
 
   // Set up instance functions
