@@ -39,6 +39,12 @@ Registrants.attachSchema(new SimpleSchema({
             return calculateAgeGroup(this.field("age").value);
         }
     },
+    'firstTimeAttender': {
+        type: Boolean,
+        optional: true,
+        defaultValue: false,
+        label: "First time attender?"
+    },
     'childrenProgram': {
       type: String,
       optional: true,
