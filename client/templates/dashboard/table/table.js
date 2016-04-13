@@ -103,6 +103,7 @@ Template.dashboardRegistrantTable.events({
         "postalAddress",
         "telephone",
         "registrantAffiliation",
+        "firstTimeAttender",
         "registrationType",
         "accommodations",
         "days",
