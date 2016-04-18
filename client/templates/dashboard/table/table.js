@@ -8,6 +8,22 @@ Template.dashboardRegistrantTable.onCreated(function () {
   instance.dateFields = ["createdAt"];
 
   // Set up instance functions
+  instance.calculateFeeValues = function (registrant) {
+    /* Calculate registration fee values:
+     - accommodations fee
+     - discount
+     - subtotal
+     - total
+     */
+    registrant.accommodationsFee = registrant.calculateAccommodationsFee();
+    registrant.linensFee = registrant.calculateLinensFee();
+    registrant.discount = registrant.calculateDiscount();
+    registrant.subtotal = registrant.calculateSubtotal();
+    registrant.total = registrant.calculateTotal();
+
+    return registrant;
+  };
+
 
   instance.flattenArrayFields = function (registrant) {
     /*
@@ -63,6 +79,9 @@ Template.dashboardRegistrantTable.onCreated(function () {
   };
 
   instance.ensureFieldFormatting = function (registrantsJSON) {
+    // Calculate registration fees
+    registrantsJSON = _.map(registrantsJSON, instance.calculateFeeValues);
+    
     // Flatten registrant array fields to strings
     registrantsJSON = _.map(registrantsJSON, instance.flattenArrayFields);
 
@@ -110,9 +129,13 @@ Template.dashboardRegistrantTable.events({
         "linens",
         "foodPreference",
         "specialNeeds",
+        "accommodationsFee",
+        "linensFee",
+        "discount",
+        "subtotal",
         "carbonTax",
         "donation",
-        "fee",
+        "total",
         "createdAt",
         "_id",
         "createdByEmail"
