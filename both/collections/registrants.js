@@ -305,5 +305,14 @@ Registrants.helpers({
     const subtotal = calculateRegistrationSubtotal(registration);
 
     return subtotal;
+  },
+  calculateTotal: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate total for this registration
+    const total = calculateRegistrationPrice(registration);
+
+    return total;
   }
 });
