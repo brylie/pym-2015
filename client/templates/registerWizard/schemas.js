@@ -47,7 +47,7 @@ WizardSchemas.registrant = new SimpleSchema({
   'gradeInSchool': {
     type: String,
     optional: true,
-    label: "School grade",
+    label: "School grade this year",
     allowedValues: [
       "K",
       "1",
