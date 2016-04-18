@@ -302,9 +302,9 @@ Registrants.helpers({
     const registration = this;
 
     // Calculate linens fee for this registration
-    const linensFee = calculateLinensFee(registration);
+    const registrationLinensFee = calculateLinensFee(registration);
 
-    return linensFee;
+    return registrationLinensFee;
   },
   calculateDiscount: function () {
     // Get reference to current registration
