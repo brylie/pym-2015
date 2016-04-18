@@ -50,7 +50,7 @@ Template.wizardReview.helpers({
     const registration = instance.registration;
 
     // Adjust attributes of registration data to match accommodations fee function
-    registration.type = registration.registrationType;
+    registration.registrationType = registration.registrationType;
     registration.ageGroup = calculateAgeGroup(registration.age);
 
     // Calculate accommodations fee
@@ -98,7 +98,7 @@ Template.wizardReview.helpers({
     const registration = instance.registration;
 
     // Adjust attributes of registration data to match accommodations fee function
-    registration.type = registration.registrationType;
+    registration.registrationType = registration.registrationType;
     registration.ageGroup = calculateAgeGroup(registration.age);
 
     // Calculate registration fee
@@ -118,7 +118,7 @@ Template.wizardReview.helpers({
       const registration = instance.registration;
 
       // Adjust attributes of registration data to match accommodations fee function
-      registration.type = registration.registrationType;
+      registration.registrationType = registration.registrationType;
       registration.ageGroup = calculateAgeGroup(registration.age);
 
       // Calculate registration fee
@@ -139,7 +139,7 @@ Template.wizardReview.helpers({
     const registration = instance.registration;
 
     // Adjust attributes of registration data to match accommodations fee function
-    registration.type = registration.registrationType;
+    registration.registrationType = registration.registrationType;
     registration.ageGroup = calculateAgeGroup(registration.age);
 
     // Calculate registration fee
