@@ -286,3 +286,15 @@ Registrants.before.insert(function (userId, doc){
     // Add user email address to registration document
     doc.createdByEmail = Meteor.users.findOne(userId).emails[0].address;
 });
+
+Registrants.helpers({
+  calculateAccommodationsFee: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate subtotal for this registration
+    const accommodationsFee = calculateAccommodationsFee(registration);
+
+    return accommodationsFee;
+  }
+});
