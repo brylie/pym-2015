@@ -260,7 +260,7 @@ Registrants.attachSchema(new SimpleSchema({
             // set attributes on the registration object
             registration.age = this.field("age").value;
             registration.ageGroup = calculateAgeGroup(registration.age);
-            registration.type = this.field("registrationType").value;
+            registration.registrationType = this.field("registrationType").value;
             registration.accommodations = this.field("accommodations").value;
             registration.days =  this.field("days").value;
             registration.firstTimeAttender = this.field("firstTimeAttender").value;
@@ -285,4 +285,52 @@ Registrants.before.insert(function (userId, doc){
 
     // Add user email address to registration document
     doc.createdByEmail = Meteor.users.findOne(userId).emails[0].address;
+});
+
+Registrants.helpers({
+  calculateAccommodationsFee: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate accommodations fee for this registration
+    const accommodationsFee = calculateAccommodationsFee(registration);
+
+    return accommodationsFee;
+  },
+  calculateLinensFee: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate linens fee for this registration
+    const linensFee = calculateLinensFee(registration);
+
+    return linensFee;
+  },
+  calculateDiscount: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate discount for this registration
+    const discount = calculateDiscountDaysDiscount(registration);
+
+    return discount;
+  },
+  calculateSubtotal: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate subtotal for this registration
+    const subtotal = calculateRegistrationSubtotal(registration);
+
+    return subtotal;
+  },
+  calculateTotal: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate total for this registration
+    const total = calculateRegistrationPrice(registration);
+
+    return total;
+  }
 });
