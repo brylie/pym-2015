@@ -292,9 +292,18 @@ Registrants.helpers({
     // Get reference to current registration
     const registration = this;
 
-    // Calculate subtotal for this registration
+    // Calculate accommodations fee for this registration
     const accommodationsFee = calculateAccommodationsFee(registration);
 
     return accommodationsFee;
+  },
+  calculateSubtotal: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate subtotal for this registration
+    const subtotal = calculateRegistrationSubtotal(registration);
+
+    return subtotal;
   }
 });
