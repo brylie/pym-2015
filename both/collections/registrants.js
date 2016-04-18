@@ -297,6 +297,15 @@ Registrants.helpers({
 
     return accommodationsFee;
   },
+  calculateLinensFee: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate linens fee for this registration
+    const linensFee = calculateLinensFee(registration);
+
+    return linensFee;
+  },
   calculateDiscount: function () {
     // Get reference to current registration
     const registration = this;
