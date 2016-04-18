@@ -297,6 +297,15 @@ Registrants.helpers({
 
     return accommodationsFee;
   },
+  calculateDiscount: function () {
+    // Get reference to current registration
+    const registration = this;
+
+    // Calculate discount for this registration
+    const discount = calculateDiscountDaysDiscount(registration);
+
+    return discount;
+  },
   calculateSubtotal: function () {
     // Get reference to current registration
     const registration = this;
