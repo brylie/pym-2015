@@ -17,9 +17,9 @@ Template.editRegistration.rendered = function () {
 };
 
 Template.editRegistration.events({
-    'change form': function() {
-      setReactiveVars();
-    }
+  'change form': function() {
+    setReactiveVars();
+  }
 });
 
 Template.editRegistration.helpers({
