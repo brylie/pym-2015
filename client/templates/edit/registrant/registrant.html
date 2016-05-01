@@ -38,6 +38,17 @@
         </div>
         {{/ if }}
 
+        <!-- 13 year old registrants can choose children's or teen program -->
+        {{# if registrantAgeIs 13 }}
+        <!-- Children's program -->
+        {{> afFormGroup name="childrenProgram" id="children-program" type="select-radio-inline" options=yesNoOptions }}
+        <p class="help-block">Will this registrant participate in Children's program?</p>
+
+        <!-- JYM program -->
+        {{> afFormGroup name="jymProgram" id="jym-program" type="select-radio-inline" options=yesNoOptions }}
+        <p class="help-block">Will this registrant participate in the Junior Yearly Meeting program?</p>
+        {{/ if }}
+
         {{# if registrantAgeIsBelow 21 }}
         {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
         {{/ if }}
