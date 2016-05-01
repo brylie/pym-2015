@@ -53,6 +53,12 @@
         {{> afFormGroup name="gradeInSchool" id="grade-in-school"}}
         {{/ if }}
 
+        <!-- YAF program -->
+        {{# if registrantAgeIsEqualToOrAbove 18 }}
+        {{> afFormGroup name="yafProgram" id="yaf-program" type="select-radio-inline" options=yesNoOptions }}
+        <p class="help-block">Will this registrant participate in the Young Adult Friends program?</p>
+        {{/ if }}
+
         <!-- meeting -->
         {{> afFormGroup name="registrantAffiliation" id="registrant-affiliation" }}
         <p class="help-block">
