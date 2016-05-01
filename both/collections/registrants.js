@@ -78,7 +78,7 @@ Registrants.attachSchema(new SimpleSchema({
     'gradeInSchool': {
       type: String,
       optional: true,
-      label: "School grade in Fall",
+      label: "School grade",
       allowedValues: [
         "K",
         "1",
