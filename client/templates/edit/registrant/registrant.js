@@ -49,9 +49,6 @@ Template.registrantDetails.events({
 
         resetReactiveVars();
 
-        // Clear the accommodations selection
-        //$("#accommodations").val("");
-
         // Clear all day checkboxes
         $('input[name="days"]').each(function() {
             // make sure day is not checked
@@ -64,10 +61,6 @@ Template.registrantDetails.events({
 
         // Calculate the age group based on the age value
         var ageGroup = calculateAgeGroup(ageValue);
-
-        // Reset the accommodations selection
-        // as accommodations depend on age group
-        $("#accommodations").val("");
 
         // Set the age group reactive variable
         // for price calculations
