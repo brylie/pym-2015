@@ -1,6 +1,6 @@
 <template name="editRegistration">
     <div class="page-header"><h1>Edit registration</h1></div>
-    {{#autoForm collection="Registrants" id="registration-form" type="update" doc=registrant }}
+    {{#autoForm collection="Registrants" id="edit-registration-form" type="update" doc=registrant }}
 
     <!-- first name, last name, age goup, registration type -->
     {{> registrantDetails }}
