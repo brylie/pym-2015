@@ -13,19 +13,18 @@
 
     <!-- food preference -->
     {{> afFormGroup name="foodPreference" id="food_preference" }}
-    <span class="help-block">Select any dietary needs/choices.</span>
+
+    <!-- donation  -->
+    {{> afFormGroup name="donation" id="donation" }}
 
     <!-- carbon tax  -->
     {{> afFormGroup name="carbonTax" id="carbon-tax" }}
-    <p class="help-block">If you would like to add a voluntary carbon fee or tax on your travel to & from Walker Creek, enter a whole dollar amount ($USD). <a href="http://www.pacificyearlymeeting.org/2015/documents/pym-committee-reports/unity-with-nature/carbon-tax/" target="_blank">Click here for more information</a>.</p>
 
     <!-- TODO: hide button if no 'price' has been calculated. I.e. invalid registration. -->
 
     <button type="submit" class="btn btn-lg btn-primary">
         Save changes {{#if price }}<span class="badge">$ {{ price }}</span> {{/if}}
     </button>
-
-    <!--{{> finishedRegistering }}-->
 
     {{/autoForm}}
 </template>
