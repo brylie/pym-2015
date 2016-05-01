@@ -15,7 +15,16 @@ Template.registrantDetails.helpers({
         // Compare current value versus desired age threshold
         return age < ageThreshold;
       }
-    }
+    },
+    "registrantAgeIs": function (age) {
+      // Get current age value from form
+      let registrantAge = AutoForm.getFieldValue("age")
+
+      if (age) {
+        // Compare current value versus desired age threshold
+        return registrantAge === age;
+      }
+    },
 });
 
 Template.registrantDetails.events({
