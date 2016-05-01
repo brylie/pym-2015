@@ -31,5 +31,37 @@ Template.editRegistration.helpers({
     var registrant = Registrants.findOne(instance.registrantId);
 
     return registrant;
+  },
+  'price': function () {
+    /*
+    * Get the dynamically calculated registration fee.
+    */
+
+    //Set the registration object
+    // from current registration details.
+    try {
+      var registration = {
+        ageGroup: ageGroupVar.get(),
+        type: registrationTypeVar.get(),
+        accommodations: accommodationsVar.get(),
+        days: daysVar.get(),
+        firstTimeAttender: firstTimeAttenderVar.get(),
+        linens: linensVar.get(),
+        createdAt: new Date(),
+        carbonTax: carbonTaxVar.get(),
+        donation: donationVar.get()
+      };
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    // Calculate the price
+    try {
+      var registrationPrice = calculateRegistrationPrice(registration);
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    return registrationPrice;
   }
 });
