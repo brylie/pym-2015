@@ -6,10 +6,10 @@ Template.editRegistration.created = function () {
   var router = Router.current();
 
   // Get registrant ID from router parameters
-  var registrantId = router.params._id;
+  instance.registrantId = router.params._id;
 
   // Subscribe to current registrant
-  instance.subscribe("singleRegistrant", registrantId);
+  instance.subscribe("singleRegistrant", instance.registrantId);
 };
 
 Template.editRegistration.rendered = function () {
@@ -20,4 +20,16 @@ Template.editRegistration.events({
     'change form': function() {
         setReactiveVars();
     }
+});
+
+Template.editRegistration.helpers({
+  registrant: function () {
+    // Get reference to template instance
+    var instance = Template.instance();
+
+    // Get registrant
+    var registrant = Registrants.findOne(instance.registrantId);
+
+    return registrant;
+  }
 });
