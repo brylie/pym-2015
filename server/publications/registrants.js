@@ -10,6 +10,25 @@ Meteor.publish('registrants', function () {
     }
 });
 
+// Single registrant
+Meteor.publish('singleRegistrant', function (registrantId) {
+  // Get current user ID
+  var userId = this.userId;
+
+  // Get the registrant
+  var registrant = Registrants.findOne(registrantId);
+
+  // Make sure the current register is either
+  // original user who registered the registrant
+  // has the registrar role
+  if (Roles.userIsInRole(userId, 'registrar') || registrant.createdById === userId)
+  {
+    return Registrants.find(registrantId);
+  } else {
+    return [];
+  }
+});
+
 // Registrations for a given user
 Meteor.publish('myRegistrants', function () {
     // Check if the user is signed in
