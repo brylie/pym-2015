@@ -49,6 +49,7 @@ WizardSchemas.registrant = new SimpleSchema({
     optional: true,
     label: "School grade this year",
     allowedValues: [
+      "Pre-K",
       "K",
       "1",
       "2",
@@ -61,12 +62,14 @@ WizardSchemas.registrant = new SimpleSchema({
       "9",
       "10",
       "11",
-      "12"
+      "12",
+      "N/A or Other"
     ],
     autoform: {
       type: "select",
       options: function () {
         return [
+          {label: "Pre-K", value: "Pre-K"},
           {label: "K", value: "K"},
           {label: "1", value: "1"},
           {label: "2", value: "2"},
@@ -80,6 +83,7 @@ WizardSchemas.registrant = new SimpleSchema({
           {label: "10", value: "10"},
           {label: "11", value: "11"},
           {label: "12", value: "12"},
+          {label: "N/A or Other", value: "N/A or Other"}
         ];
       }
     }
