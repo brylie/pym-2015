@@ -107,7 +107,7 @@ Template.wizardReview.helpers({
     return subtotal;
   },
   'lateFee': function () {
-    // Check if current date is past registration deadline
+    // Check if current date is past registration deadline (UTC time)
     if (moment().utc() > moment(lateRegistrationBegins).utc()) {
       // If so, calculate late fee
 
